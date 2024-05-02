@@ -1,73 +1,77 @@
 import React from 'react';
 import './Aridesigns.css';
 import Navbar from '../Components/Navbar';
-import ari from '../Assets/ari1.jpg';
+// import zardosi1 from '../Assets/zardosi1.png';
+// import zardosi2 from '../Assets/zardosi2.png';
+import zardosi3 from '../Assets/zardosi3.jpg';
+import bridal from '../Assets/blouse.jpg';
+import emproidryblouse from '../Assets/emp1.jpg';
+
 
 function Cards() {
   return (
-    <>
-    <Navbar/>
-    <div className="main">
-      {/* Card 1 */}
+    <div className='aari'>
+      <Navbar />
+      <div className='Aridesign-heding'>
+        <h1>Rare Fairy<span> Products</span></h1></div>
       <div className="card">
-        <div className="image">
-          <img src={ari}alt="Card Image" />
+        <div className="image1">
+          <img src={emproidryblouse} alt="Card Image" />
         </div>
-        <div className="title">
-          <h1>Write title Here</h1>
+        <div className="card-title">
+          <h1>  Embroidery Design Blouses</h1>
         </div>
         <div className="des">
-          <p>You can Add Description Here...</p>
-          <button>View Profile</button>
+          {/* <p>You can add description here...</p> */}
+          <button><a href='/Login'>click here</a></button>
         </div>
       </div>
 
-     
       <div className="card">
-        <div className="image">
-          <img src={ari }alt="Card Image" />
+        <div className="image1">
+          <img src={bridal} alt="Card Image" />
         </div>
-        <div className="title">
-          <h1>Write title Here</h1>
+        <div className="card-title">
+          <h1> Bridal blouse designers</h1>
         </div>
         <div className="des">
-          <p>You can Add Description Here...</p>
-          <button>View Profile</button>
+
+          <button><a href='/'>click here</a></button>
+        </div>
+      </div>
+
+      <div className="card">
+        <div className="image1">
+          <img src={emproidryblouse} alt="Card Image" />
+        </div>
+        <div className="card-title">
+          <h1> Zaridosi Work Blouse</h1>
+        </div>
+        <div className="des">
+
+          <button className='Ari'><a href='/'>click here </a></button>
         </div>
       </div>
 
 
-      <div className="card">
-        <div className="image">
-          <img src={ari }alt="Card Image" />
-        </div>
-        <div className="title">
-          <h1>Write title Here</h1>
-        </div>
-        <div className="des">
-          <p>You can Add Description Here...</p>
-          <button>View Profile</button>
-        </div>
-      </div>
+
+
 
 
       <div className="card">
-        <div className="image">
-          <img src={ari }alt="Card Image" />
+        <div className="image1">
+          <img src={bridal} alt="Card Image" />
         </div>
-        <div className="title">
-          <h1>Write title Here</h1>
+        <div className="card-title">
+          <h1> Lehengas</h1>
         </div>
         <div className="des">
-          <p>You can Add Description Here...</p>
-          <button>View Profile</button>
+
+          <button><a href='/Login'>Click here</a></button>
         </div>
       </div>
-
-      
 
     </div>
-    </>
   );
 }
 

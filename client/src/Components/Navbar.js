@@ -5,6 +5,12 @@ import './Navbar.css';
 
 
 
+ 
+     
+ 
+
+import { Link } from 'react-router-dom';
+
 const Navbar = () => {
     return (
         <nav>
@@ -13,15 +19,15 @@ const Navbar = () => {
                 {/* <img src={Logo} alt="" /> */}
             </div>
             <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/AboutUs">About Us</a></li>
-                <li><a href="/Contact Us">Contact Us</a></li>
-                <li><a href="/Ari Designs">Ari designs</a></li>
-                <li><button><a href="/Login">Login</a></button></li>
+                <li><Link to="/">Home</Link></li>
+                <li><Link to="/AboutUs">About Us</Link></li>
+                <li><Link to="/ContactUs">Contact Us</Link></li>
+                <li><Link to="/AriDesigns">Products</Link></li>
+                <li><Link to="/AriDesigns">Gallery</Link></li>
+                <li><Link to="/Login"><button>Login</button></Link></li>
             </ul>
         </nav>
     );
 }
 
 export default Navbar;
-

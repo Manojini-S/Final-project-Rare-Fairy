@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&family=Poppins:wght@400;500;600&display=swap');
-*{
+/* *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+ 
 }
 body{
   margin: 0;
@@ -11,8 +11,8 @@ body{
   background: linear-gradient(pink, white);
   height: 100vh;
 
-}
-.center{
+} */
+.Register-center{
   position: absolute;
   top: 50%;
   left: 50%;
@@ -20,34 +20,35 @@ body{
   width: 400px;
   background: white;
   border-radius: 10px;
-  box-shadow: 10px 10px 15px rgba(0,0,0,0.05);
+  box-shadow: 10px 10px 10px pink;
 }
-.center h1{
+.Register-center h1{
   text-align: center;
   padding: 20px 0;
   border-bottom: 1px solid silver;
+  color: black;
 }
-.center form{
+/* .Register-center form{
   padding: 0 40px;
   box-sizing: border-box;
-}
-form .txt_field{
+} */
+form .txt_field1{
   position: relative;
   border-bottom: 2px solid #adadad;
-  margin: 30px 0;
+  margin: 30px 0px;
 }
-.txt_field input{
+.txt_field1 input{
   width: 100%;
   padding: 0 5px;
-  height: 40px;
+  height: 20px;
   font-size: 16px;
   border: none;
   background: none;
   outline: none;
 }
-.txt_field label{
+.txt_field1 label{
   position: absolute;
-  top: 50%;
+  top: 15%;
   left: 5px;
   color: #adadad;
   transform: translateY(-50%);
@@ -55,7 +56,7 @@ form .txt_field{
   pointer-events: none;
   transition: .5s;
 }
-.txt_field span::before{
+.txt_field1 span::before{
   content: '';
   position: absolute;
   top: 40px;

@@ -10,7 +10,9 @@ nav{
     padding: 8px 100px ;
     padding: center;
     background-color:palevioletred;
-    /* opacity: 90%; */
+    opacity: 80%;
+
+  
 
 }
 nav .logo {
@@ -49,3 +51,9 @@ transition: all 01s ease 0s;
 border-radius: 10px;
 box-sizing: 20px;
 }
+/* button{
+    color: aliceblue;
+    border-radius: 20px;
+    background-color: pink;
+    height: 40px;
+} */

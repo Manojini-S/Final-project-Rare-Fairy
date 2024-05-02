@@ -3,7 +3,7 @@ import './Login.css';
 
 function LoginForm() {
   return (
-    <div className="center">
+    <div className="Login-center">
       <h1>Login</h1>
       <form method="post">
         <div className="txt_field">

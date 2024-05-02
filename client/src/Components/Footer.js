@@ -26,10 +26,10 @@ function Footer() {
         </ul>
       </div>
       <div className="footer-col">
-        <h4></h4>
+        <h4>Quick Links</h4>
         <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">AboutUs</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Gallery</a></li>
           <li><a href="#">contact us</a></li>
         </ul>
       </div>

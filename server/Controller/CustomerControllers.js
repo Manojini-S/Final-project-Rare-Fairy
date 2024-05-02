@@ -16,7 +16,14 @@ const getUser = (req, res) => {
 };
 
 const createUser = (req, res) => {
-    const user = new User(req.body);
+    const user = new User({
+        Name:req.body.Name,
+        Email:req.body.Email,
+        Password:req.body.Password,
+    })
+    
+
+
 
     user.save()
         .then(() => {
