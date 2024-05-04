@@ -1,12 +1,13 @@
 const Mongoose = require('mongoose');
 const express = require('express');
-require('dotenv').config();
+const dotenv = require('dotenv').config();
 const envUrl = process.env.clusterUrl
+const cors = require ('cors')
 const userRoutes = require('../Routes/userRoutes')
 const app = express();
 const Port = 3002;
 app.use(express.json());
-app.use('/user' , userRoutes)
+
 
 function connect(){
     Mongoose.connect(envUrl)
@@ -19,6 +20,12 @@ function connect(){
 app.listen(Port, ()=>{
     console.log(`Server is running on the port ${Port}`)
 })
+
+app.use('/user' , userRoutes)
+app.post('register', (req,res) => {
+    Usermodel
+})
+
 
 };
 

@@ -21,12 +21,14 @@ body{
   background: white;
   border-radius: 10px;
   box-shadow: 10px 10px 10px pink;
+  margin-top: 100px;
 }
 .Register-center h1{
   text-align: center;
   padding: 20px 0;
   border-bottom: 1px solid silver;
   color: black;
+  font-size: 25px;
 }
 /* .Register-center form{
   padding: 0 40px;
@@ -62,7 +64,7 @@ form .txt_field1{
   top: 40px;
   left: 0;
   width: 0%;
-  height: 2px;
+  height: 1px;
   background:palevioletred;
   transition: .5s;
 }
@@ -96,7 +98,7 @@ input[type="submit"]{
   outline: none;
 }
 input[type="submit"]:hover{
-  border-color:maroon;
+  border-color:rgb(241, 237, 237);
   transition: .5s;
 }
 .signup_link{
@@ -105,10 +107,10 @@ input[type="submit"]:hover{
   font-size: 16px;
   color: #666666;
 }
-.signup_link a{
+/* .signup_link a{
   color:palevioletred;
   text-decoration: none;
-}
-.signup_link a:hover{
+} */
+/* .signup_link a:hover{
   text-decoration: underline;
-}
+} */

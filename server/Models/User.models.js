@@ -1,6 +1,10 @@
 const Mongoose = require ("mongoose");
 const  schema = new Mongoose.Schema({
-Name:{
+UserId:{
+    type:String,
+    required:true,
+},
+ Name:{
     type:String,
     required:true,
 
@@ -15,6 +19,11 @@ Password:{
     type:Number,
     required:true,
 },
+
+Role:{
+    type:String,
+    required:true,
+}
 
 }
 )

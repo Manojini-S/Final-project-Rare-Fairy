@@ -5,39 +5,41 @@ const User = require("../Models/User.models");
 // Define your controller functions
 
 const getUser = (req, res) => {
-   
+
     User.find({})
         .then((users) => {
             res.status(200).json(users);
         })
         .catch((err) => {
-            res.status(500).json({ message: "Something went wrong",err });
+            res.status(500).json({ message: "Something went wrong", err });
         });
 };
 
 const createUser = (req, res) => {
     const user = new User({
-        Name:req.body.Name,
-        Email:req.body.Email,
-        Password:req.body.Password,
+        Name: req.body.Name,
+        Email: req.body.Email,
+        Password: req.body.Password,
     })
-    
+
+
 
 
 
     user.save()
         .then(() => {
-            res.status(201).json({ message: "User created SuceessFully",err });
+            res.status(201).json({ message: "User created SuceessFully" });
 
         })
         .catch((err) => {
-            res.status(500).json({ message: "Something went to wrong" })
+            res.status(500).json({ message: "Something went to wrong", err })
         });
 };
 
 const updateUser = (req, res) => {
     const id = req.params.id;
     const { name, email, password } = req.body;
+
 };
 
 const deleteUser = (req, res) => {
@@ -47,12 +49,12 @@ const deleteUser = (req, res) => {
             res.status(500).json({ message: "Something went to wrong" });
         } else if (!user) {
             res.status(404).json({
-                message: "Use not foun"
+                message: "Use not found"
             });
         } else {
-            res.staus (200).json(user)
+            res.staus(200).json(user)
         }
     });
 };
 
-module.exports = {getUser,createUser,updateUser,deleteUser};
+module.exports = { getUser, createUser, updateUser, deleteUser };

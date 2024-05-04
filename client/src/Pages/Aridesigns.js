@@ -5,6 +5,7 @@ import Navbar from '../Components/Navbar';
 // import zardosi2 from '../Assets/zardosi2.png';
 import zardosi3 from '../Assets/zardosi3.jpg';
 import bridal from '../Assets/blouse.jpg';
+import salwar from '../Assets/salwar.jpeg'
 import emproidryblouse from '../Assets/emp1.jpg';
 
 
@@ -13,7 +14,11 @@ function Cards() {
     <div className='aari'>
       <Navbar />
       <div className='Aridesign-heding'>
-        <h1>Rare Fairy<span> Products</span></h1></div>
+        <h1>Rare Fairy<span> Products</span></h1>
+        <p>Rare Fairy is a clothes store in Vavuniya,  that offers a wide range of designs.
+Customers can work directly with our embroidery staff to design their bridal goods, whether it's Aari embroidery, zardozi embroidery, Lehenga or Readymade designer blouses, till it's the ideal fit. Personalized work is handled by our team, which ensures that it is completed on time for delivery.
+We pride ourselves on providing high-quality, low-cost products to our customers.Rare Fairy is a reputable and fashionable women's clothing store that offers high-quality items at reasonable prices, as well as the most up-to-date and appealing designs.</p>
+        </div>
       <div className="card">
         <div className="image1">
           <img src={emproidryblouse} alt="Card Image" />
@@ -23,7 +28,33 @@ function Cards() {
         </div>
         <div className="des">
           {/* <p>You can add description here...</p> */}
-          <button><a href='/Login'>click here</a></button>
+          <a href='/Login'><button>Click here</button></a>
+        </div>
+      </div>
+
+      <div className="card">
+        <div className="image1">
+          <img src={emproidryblouse} alt="Card Image" />
+        </div>
+        <div className="card-title">
+          <h1>  Salwar designs</h1>
+        </div>
+        <div className="des">
+          {/* <p>You can add description here...</p> */}
+          <a href='/Login'><button>Click here</button></a>
+        </div>
+      </div>
+
+      <div className="card">
+        <div className="image1">
+          <img src={emproidryblouse} alt="Card Image" />
+        </div>
+        <div className="card-title">
+          <h1>  Bridal Design Blouses</h1>
+        </div>
+        <div className="des">
+          {/* <p>You can add description here...</p> */}
+          <a href='/Login'><button>Click here</button></a>
         </div>
       </div>
 
@@ -32,11 +63,11 @@ function Cards() {
           <img src={bridal} alt="Card Image" />
         </div>
         <div className="card-title">
-          <h1> Bridal blouse designers</h1>
+          <h1> Simple blouse designes</h1>
         </div>
         <div className="des">
 
-          <button><a href='/'>click here</a></button>
+        <a href='/Login'><button>Click here</button></a>
         </div>
       </div>
 
@@ -49,7 +80,7 @@ function Cards() {
         </div>
         <div className="des">
 
-          <button className='Ari'><a href='/'>click here </a></button>
+        <a href='/Login'><button>Click here</button></a>
         </div>
       </div>
 
@@ -67,9 +98,12 @@ function Cards() {
         </div>
         <div className="des">
 
-          <button><a href='/Login'>Click here</a></button>
+        <a href='/Login'><button>Click here</button></a>
         </div>
       </div>
+
+
+     
 
     </div>
   );
