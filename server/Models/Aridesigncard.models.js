@@ -1,29 +1,32 @@
-const Mongoose = require ("mongoose");
-const  schema = new Mongoose.Schema({
-    AriId:{
-        Type:String,
-        required:true,
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
+
+const schema = new Schema({
+    AriId: {
+        type: String,
+        required: true,
     },
 
-    ImageId:{
-        Type:String,
-        required:true
+    ImageId: {
+        type: String,
+        required: true
     },
 
-    Title:{
-        Type:String,
-        required:true,
+    Tittle: {
+        type: String,
+        required: true,
     },
 
-    Price:{
-        Type:String,
-        required:true,
+    Price: {
+        type: Number,
+        required: true,
     },
 
-    Type:{
-        Type:String,
-        required:true,
-    },
-}
-   
-)
+    Type: {
+        type: String,
+        required: true,
+    }
+});
+
+const aridesigner = mongoose.model("Aridesigner", schema);
+module.exports = aridesigner;

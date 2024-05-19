@@ -1,8 +1,18 @@
+.popup-box{
+  align-items: center;
+  /* padding: 100px; */
+  /* margin-right: 300px; */
+  padding-left:540px;
+  padding-top: 120px;
+  text-align: center;
+}
+
 .popup{
-  width: 400px;  
-  background-color: blueviolet;
-  border-radius: 6px;
-  position: absolute;
+  width: 500px; 
+  height: 400px; 
+  background-color: rgb(229, 226, 232);
+  border-radius: 50px;
+  /* position: absolute; */
   top: 50%;
   left:50% ;
   transform: translate(-50,-50%);
@@ -11,12 +21,16 @@
 .popup h2{
 font-size: 38px;
 font-weight: 500;
-margin: 30px 0 10px;
+/* margin: 30px 0 10px; */
+padding-top: 60px;
+color:palevioletred;
 }
-.popup h3{
+.popup h4{
     font-size: 28px;
     font-weight: 200;
     margin: 30px 0 10px;
+    align-items: center;
+    text-align: center;
 }
 .btn {
     width: 100%;

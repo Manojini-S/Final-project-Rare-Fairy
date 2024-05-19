@@ -1,22 +1,25 @@
 const Mongoose = require ("mongoose");
 const  schema = new Mongoose.Schema({
     ReviewId:{
-        Type:String,
+        type:String,
         required:true,
     },
 
     Rating:{
-        Type:String,
+        type:String,
         required:true,
     },
 
     ReviewBy:{
-        Type:String,
+        type:String,
         required:true,
     },
 
     Description:{
-        Type:String,
+        type:String,
         required:true,
     },
-})
+});
+
+const Review = Mongoose.model("Review",schema);
+module.exports  = Review;

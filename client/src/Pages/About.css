@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    /* font-family: Arial, Helvetica, sans-serif; */
 }
 .about-us{
     width: 100%;
@@ -19,9 +19,13 @@
     justify-content: space-between;
 }
 .pic{
-    height: 500px;
-    width:500px ;
+    height: 400px;
+    width:400px ;
     border-radius: 40px;
+    transition: transform 0.3s ease;
+}
+.pic:hover{
+    transform: scale(1.05);
 }
 .about-text{
     width: 540px;
@@ -34,10 +38,10 @@
 }
 .about-text h5{
     font-size: 50px;
-    font-weight: 500;
+    font-weight: 1000;
     margin-bottom: 10px;
     letter-spacing: 1px;
-    color: palevioletred;
+    /* color: palevioletred; */
 }
 .about-text p{
     font-size:17px ;
@@ -160,8 +164,9 @@ span{
     text-align: center;
     padding-bottom: 15px;
     color:#1a1616;
-    text-shadow: 0 5px 10px rgba(0,0,0,.2);
+    /* text-shadow: 0 5px 10px rgba(0,0,0,.2); */
     font-size: 50px;
+    font-weight: 700;
 }
 
 .container .box-container{
@@ -176,6 +181,7 @@ span{
     background: #fff;
     text-align: center;
     padding:30px 20px;
+    margin-left: 20px;
 }
 
 .container .box-container .box img{
@@ -183,15 +189,15 @@ span{
 }
 
 .container .box-container .box h3{
-    color:#444;
-    font-size: 22px;
+    color:palevioletred;
+    font-size: 26px;
     padding:10px 0;
 }
 
 .container .box-container .box p{
     color:#777;
     font-size: 15px;
-    line-height: 1.8;
+    line-height: 1.9;
 }
 
 .container .box-container .box .btn{
@@ -201,7 +207,7 @@ span{
     color:#fff;
     font-size: 17px;
     border-radius: 5px;
-    padding: 8px 25px;
+    padding: 9px 25px;
 }
 
 .container .box-container .box .btn:hover{

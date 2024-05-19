@@ -11,10 +11,10 @@ function About() {
         <div className="about">
           <img src={ari} className="pic" alt="Logo" />
           <div className="about-text">
-            <h2><span></span> </h2>
-            <h5>About Us</h5>
+            <h2> </h2>
+            <h5>About <span>Us</span></h5>
             <p>
-              
+
               We Rare fairy in Vavuniya hope you will be delighted with our trending patterns and variations, whether you are a first-time visitor or a customer. Whether it's an Aari embroidery blouse or a Bridal blouse, Zardosi work, a Lehenga, a Designer saree, or readymade designer blouses, RF Ari creations has a variety of patterns and options to suit any woman's own sense of style.
               our Ari Creations makes every effort to make you appear your best. We strive to make every purchase a pleasant one. Excellent customer service, speedy order processing, and a no-hassle return policy are among our main goals.We offer a large range and variety of Aari embroidery , so take a look at our extensive range of collections and where we focus on product design, delivery, and customer satisfaction.
             </p>
@@ -70,67 +70,82 @@ function About() {
         </div>
 
       </div> */}
- <div class="container">
+      <div class="container">
 
-<h1 class="heading">Rare Fairy</h1>
+        <h1 class="heading">Rare <span>Fairy</span></h1>
 
-<div class="box-container">
+        <div class="box-container">
 
-    <div class="box">
-        {/* <!-- <img src="image/icon-1.png" alt=""> --> */}
-        <h3>Simplified Measuring</h3>
-        <p>Whether it's a lehenga, bridal blouses, or Zardosi, whether it's a luxury or a necessity, you'll always look better if it's created to measure. Make no concessions to yourself. We'd be pleased to take your measurements and create a custom fit that complements your style and body type.</p>
-      
-    </div>
+          <div class="box">
+            {/* <!-- <img src="image/icon-1.png" alt=""> --> */}
+            <h3>Simplified Measuring</h3>
+            <p>Whether it's a lehenga, bridal blouses, or Zardosi, whether it's a luxury or a necessity, you'll always look better if it's created to measure. Make no concessions to yourself. We'd be pleased to take your measurements and create a custom fit that complements your style and body type.</p>
 
-    <div class="box">
-        {/* <!-- <img src="image/icon-2.png" alt=""> --> */}
-        <h3>Online Order</h3>
-        <p>We facilitate online orders with all types of collections for your wedding and fashion apparel with high quality fabric and finest embroidery work with the widest selection of clothes for you to choose from according to your taste and style.
+          </div>
+
+          <div class="box">
+            {/* <!-- <img src="image/icon-2.png" alt=""> --> */}
+            <h3>Online Order</h3>
+            <p>We facilitate online orders with all types of collections for your wedding and fashion apparel with high quality fabric and finest embroidery work with the widest selection of clothes for you to choose from according to your taste and style.
             </p>
-        
-    </div>
 
-    <div class="box">
-        {/* <!-- <img src="image/icon-3.png" alt=""> --> */}
-        <h3>Dedicated Designers</h3>
-        <p>We facilitate online orders with all types of collections for your wedding and fashion apparel with high quality fabric and finest embroidery work with the widest selection of clothes for you to choose from according to your taste and style.</p>
-      
-    </div>
+          </div>
 
-    <div class="box">
-        {/* <!-- <img src="image/icon-4.png" alt=""> --> */}
-        <h3>Customization</h3>
-        <p>Your patterns, fabrics, and measurements are all set to make you feel comfortable and enjoy every bit of your big day when you get a custom-made dress. Your Aari work blouse or Bridal blouse dreams might come true at KP Boutique.</p>
-      
-    </div>
+          <div class="box">
+            {/* <!-- <img src="image/icon-3.png" alt=""> --> */}
+            <h3>Dedicated Designers</h3>
+            <p>We facilitate online orders with all types of collections for your wedding and fashion apparel with high quality fabric and finest embroidery work with the widest selection of clothes for you to choose from according to your taste and style.</p>
 
-    {/* <div class="box">
+          </div>
+
+          <div class="box">
+            {/* <!-- <img src="image/icon-4.png" alt=""> --> */}
+            <h3>Customization</h3>
+            <p>Your patterns, fabrics, and measurements are all set to make you feel comfortable and enjoy every bit of your big day when you get a custom-made dress. Your Aari work blouse or Bridal blouse dreams might come true at KP Boutique.</p>
+
+          </div>
+
+          <div class="box">
+            {/* <!-- <img src="image/icon-4.png" alt=""> --> */}
+            <h3>Customization</h3>
+            <p>Your patterns, fabrics, and measurements are all set to make you feel comfortable and enjoy every bit of your big day when you get a custom-made dress. Your Aari work blouse or Bridal blouse dreams might come true at KP Boutique.</p>
+
+          </div>
+
+
+          <div class="box">
+            {/* <!-- <img src="image/icon-4.png" alt=""> --> */}
+            <h3>On Time Delivery</h3>
+            <p>Your patterns, fabrics, and measurements are all set to make you feel comfortable and enjoy every bit of your big day when you get a custom-made dress. Your Aari work blouse or Bridal blouse dreams might come true at KP Boutique.</p>
+
+          </div>
+
+          {/* <div class="box">
         <!-- <img src="image/icon-4.png" alt=""> -->
         <h3>Customization</h3>
         <p>Your patterns, fabrics, and measurements are all set to make you feel comfortable and enjoy every bit of your big day when you get a custom-made dress. Your Aari work blouse or Bridal blouse dreams might come true at KP Boutique.</p>
       
     </div> */}
 
-    {/* <div class="box">
+          {/* <div class="box">
         <img src="image/icon-5.png" alt="">
         <h3>On Time Delivery</h3>
         <p>Our hardworking team works tirelessly to ensure that all purchases are tailored and delivered on time. Your designed things will always come on time thanks to the most efficient and communicative workforce here.</p>
        
     </div> */}
-{/* 
+          {/* 
     <div class="box">
         <!-- <img src="image/icon-6.png" alt=""> -->
         <h3>Online Order</h3>
         <p>We facilitate online orders with all types of collections for your wedding and fashion apparel with high quality fabric and finest embroidery work with the widest selection of clothes for you to choose from according to your taste and style.</p>
    
     </div> */}
-    
 
-</div>
 
-</div>
+        </div>
 
+      </div>
+      {/* <Footer/> */}
 
     </>
   );

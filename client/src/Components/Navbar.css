@@ -3,29 +3,51 @@
     padding: 0px;
     box-sizing: border-box;
 }
-nav{
+/* 
+.logo{
+    width: 1px;
+} */
+/* nav{
     width: 100%;
-    /* height: 75px; */
-    position: fixed;
-    padding: 8px 100px ;
-    padding: center;
-    background-color:palevioletred;
-    opacity: 80%;
-
+    position: fixed; */
+    /* padding: 0 50px ; */
+   
+    /* padding-left: 90px; */
   
+    /* font-weight: 800; */
+    /* font-size: 70px; */
+    /* padding-right: 95px; */
+
+
+    /* padding: center; */
+    /* background-color:palevioletred; */
+    /* background: linear-gradient(palevioletred, pink); */
+    /* background-color:#8e3e63; */
+    /* background-color: #d2649a;
+    opacity: 90%;
 
 }
-nav .logo {
-    font-size: 30px;
+ .logo {
+    font-size: 35px;
     font-weight: bold;
-    float: left;
+    font-weight: 700;
+    float:left;
     color:black;
-    letter-spacing: 1.5px;
+    letter-spacing: 1px;
     cursor: pointer;
+    margin-top: 37px;
+    margin-left: 30px;
     
 
 }
-nav ul {
+
+.logoimage{
+    height: 1px;
+} */
+/* .logo img {
+    height: '50px';
+} */
+/* nav ul {
     float: right;
 }
 nav li {
@@ -46,14 +68,212 @@ nav li a {
 
 nav li a:hover{
 color: black;
-transition: all 01s ease 0s;
+transition: all 01s ease 0s; */
 /* background-color: black; */
-border-radius: 10px;
+/* border-radius: 10px;
 box-sizing: 20px;
-}
+} */
 /* button{
     color: aliceblue;
     border-radius: 20px;
     background-color: pink;
     height: 40px;
 } */
+
+
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+nav {
+    width: 100%;
+    position: fixed;
+    padding: 0 90px;
+    font-weight: 800;
+    background-color: #d2649a;
+    opacity: 90%;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 35px;
+    font-weight: 700;
+    float: left;
+    color: black;
+    letter-spacing: 1px;
+    cursor: pointer;
+    margin-top: 37px;
+    margin-left: 30px;
+}
+
+.logoimage {
+    height: 1px;
+}
+
+nav ul {
+    float: right;
+    color: white;
+}
+
+nav li {
+    display: inline-block;
+    list-style: none;
+    color: white;
+}
+
+nav li a {
+    font-size: 18px;
+    text-transform: uppercase;
+    padding: 0 30px;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+nav li a:hover {
+    color: black;
+    transition: all 0.1s ease 0s;
+    border-radius: 10px;
+}
+
+
+@media screen and (max-width: 1200px) {
+    nav {
+        padding: 0 60px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    nav {
+        padding: 0 30px;
+    }
+
+    .logo {
+        margin-top: 20px;
+        margin-left: 15px;
+        font-size: 30px;
+    }
+nav li a:hover {
+    color: black;
+    transition: all 0.1s ease 0s;
+    border-radius: 10px;
+}
+    nav li a {
+        font-size: 16px;
+        padding: 0 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    nav {
+        padding: 0 20px;
+    }
+
+    .logo {
+        font-size: 28px;
+        margin-top: 15px;
+    }
+
+    nav ul {
+        float: none;
+        text-align: center;
+    }
+
+    nav li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    nav li a {
+        padding: 10px 20px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    nav {
+        padding: 0 10px;
+    }
+
+    .logo {
+        font-size: 25px;
+        margin-top: 10px;
+    }
+
+    nav li a {
+        font-size: 14px;
+        padding: 8px 10px;
+    }
+}
+
+
+.logo img{
+    width: 150px;
+} */
+
+
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color:palevioletred;
+  
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+
+.logo{
+    padding-right: 500px;
+}
+
+.logo img {
+    width: 60px;
+    height: auto;
+  border-radius: 40px;
+  transition: transform 0.3s ease;
+}
+
+.logo img:hover{
+    transform: scale(1.05);
+}
+
+.bt1{
+    padding:40px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 15px;
+    font-weight: 600;
+}
+
+.nav-links a:hover {
+    color: black;
+    border-radius: 60px;
+}

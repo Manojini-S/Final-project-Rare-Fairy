@@ -1,5 +1,5 @@
-const Mongoose = require ("mongoose")
-const schema = new Mongoose.schema({
+const Mongoose = require ("mongoose");
+const schema = new Mongoose.Schema({
     PaymentId:{
        type:String,
        required:true,
@@ -18,10 +18,13 @@ const schema = new Mongoose.schema({
     OrderId:{
         type:String,
         required:true,
-    }
+    },
 
     PaymentType:{
         type:String,
         required:true,
     },
-})
+});
+
+const payment =Mongoose.model("Payment", schema);
+module.exports = payment;

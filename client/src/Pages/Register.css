@@ -1,27 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&family=Poppins:wght@400;500;600&display=swap');
-/* *{
+
+
+*{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
- 
+  font-family: "Poppins", sans-serif;
 }
-body{
-  margin: 0;
-  padding: 0;
-  background: linear-gradient(pink, white);
-  height: 100vh;
-
-} */
 .Register-center{
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 400px;
+  width: 450px;
   background: white;
   border-radius: 10px;
-  box-shadow: 10px 10px 10px pink;
-  margin-top: 100px;
+  box-shadow: 2px 2px 2px 2px pink;
+  border: 1px solid pink;
+  text-align: center;
+  margin-top: 170px;
 }
 .Register-center h1{
   text-align: center;
@@ -30,10 +27,10 @@ body{
   color: black;
   font-size: 25px;
 }
-/* .Register-center form{
+.Register-center form{
   padding: 0 40px;
   box-sizing: border-box;
-} */
+}
 form .txt_field1{
   position: relative;
   border-bottom: 2px solid #adadad;
@@ -42,7 +39,7 @@ form .txt_field1{
 .txt_field1 input{
   width: 100%;
   padding: 0 5px;
-  height: 20px;
+  height: 40px;
   font-size: 16px;
   border: none;
   background: none;
@@ -50,7 +47,7 @@ form .txt_field1{
 }
 .txt_field1 label{
   position: absolute;
-  top: 15%;
+  top: 55%;
   left: 5px;
   color: #adadad;
   transform: translateY(-50%);
@@ -64,7 +61,7 @@ form .txt_field1{
   top: 40px;
   left: 0;
   width: 0%;
-  height: 1px;
+  height: 2px;
   background:palevioletred;
   transition: .5s;
 }
@@ -107,10 +104,3 @@ input[type="submit"]:hover{
   font-size: 16px;
   color: #666666;
 }
-/* .signup_link a{
-  color:palevioletred;
-  text-decoration: none;
-} */
-/* .signup_link a:hover{
-  text-decoration: underline;
-} */

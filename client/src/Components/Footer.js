@@ -28,9 +28,9 @@ function Footer() {
       <div className="footer-col">
         <h4>Quick Links</h4>
         <ul>
-          <li><a href="#">About Us</a></li>
-          <li><a href="#">Gallery</a></li>
-          <li><a href="#">contact us</a></li>
+          <li><a href="/AboutUs">About Us</a></li>
+          <li><a href="Products">Products</a></li>
+          <li><a href="contactUs">contact us</a></li>
         </ul>
       </div>
       <div className="footer-col">
@@ -38,7 +38,7 @@ function Footer() {
         <div className="links">
           <a href="#"><i className="fab fa-linkedin-in"></i></a>
           <a href="#"><i className="fab fa-facebook-f"></i></a>
-          <a href="#"><i className="fab fa-twitter"></i></a>
+          {/* <a href="#"><i className="fab fa-twitter"></i></a> */}
           <a href="#"><i className="fab fa-instagram"></i></a>
         </div>
       </div>

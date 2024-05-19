@@ -1,27 +1,29 @@
 const Mongoose = require ("mongoose");
 const  schema = new Mongoose.Schema({
-    OrederId:{
+    OrderId:{
         type:String,
-        required:type,
+        required:true,
     },
 
     AriId:{
         type:String,
-        required:type,
+        required:true,
     },
 
     OrderBy:{
         type:String,
-        required:type,
+        required:true,
     },
 
     PaymentId:{
         type:String,
-        required:type,
+        required:true,
     },
 
     DeadLine:{
         type:String,
-        required:type,
+        required:true,
     },
-})
+});
+const order =Mongoose.model("Order", schema);
+module.exports = order;
