@@ -8,13 +8,15 @@
   position: fixed;
   width: 300px;
   height: 100%;
-  /* background: var(--blue); */
+  /* background: palevioletred; */
   border-left: 10px solid rgb(18, 16, 17);
+  box-shadow: 1px 1px 1px;
   transition: 0.5s;
+  border: 1px solid black;
   overflow: hidden;
 }
 .title-3{
-  color: palevioletred;
+  color: rgb(29, 3, 12);
   font-size: 24px;
 }
 .tittle-1{
@@ -33,6 +35,8 @@
   top: 0;
   left: 0;
   width: 100%;
+  padding-top: 200px;
+  
 }
 
 .navigation ul li {
@@ -41,10 +45,11 @@
   list-style: none;
   border-top-left-radius: 30px;
   border-bottom-left-radius: 30px;
+  /* background-color: #f00; */
 }
 
 .navigation ul li.hover{
-  background-color: pink;
+  background-color: rgb(138, 45, 61);
 }
 
 .navigation ul li:nth-child(1) {
@@ -98,7 +103,8 @@
   height: 50px;
   background-color: transparent;
   border-radius: 50%;
-  box-shadow: 35px 35px 0 10px black;
+  
+  /* box-shadow: 35px 35px 0 10px black; */
   pointer-events: none;
 }
 .navigation ul li:hover a::after,
@@ -121,7 +127,7 @@
   width: calc(100% - 300px);
   left: 300px;
   min-height: 100vh;
-  background: rgb(252, 194, 214);
+  background:white;
   transition: 0.5s;
 }
 .main.active {
@@ -172,6 +178,13 @@
   color: rgb(12, 11, 11);
 }
 
+.details .recentOrders .cardHeader{
+  /* display: flex; */
+  text-align: center;
+  align-items: center;
+  padding-right: 200px;
+}
+
 .search label ion-icon {
   position: absolute;
   top: 0;
@@ -195,7 +208,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-} */
+}  */
 
 /* ======================= Cards ====================== */
 .cardBox {
@@ -207,37 +220,41 @@
   grid-gap: 30px;
 }
 
-/* .cardBox .card {
+.cardBox .card {
   position: relative;
-  background: var(--white);
+  background: palevioletred;
   padding: 30px;
+  /* padding-right:80px ; */
   border-radius: 20px;
+  text-align: center;
+  align-items: center;
   display: flex;
   justify-content: space-between;
   cursor: pointer;
+  border: 1px solid black;
   box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
-} */
+}
 
 .cardBox .card .numbers {
   position: relative;
   font-weight: 500;
   font-size: 2.5rem;
-  color: var(--blue);
+  color: blanchedalmond;
 }
 
 .cardBox .card .cardName {
-  color: var(--black2);
+  color: purple;
   font-size: 1.1rem;
   margin-top: 5px;
 }
 
 .cardBox .card .iconBx {
   font-size: 3.5rem;
-  color: var(--black2);
+  color: powderblue;
 }
 
 .cardBox .card:hover {
-  background: var(--blue);
+  background: white;
 }
 .cardBox .card:hover .numbers,
 .cardBox .card:hover .cardName,
@@ -251,19 +268,20 @@
   width: 100%;
   padding: 20px;
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  /* grid-template-columns: 2fr 1fr; */
   grid-gap: 30px;
- 
+ /* border: 1px solid black; */
 }
 
 .details .recentOrders {
   position: relative;
   display: grid;
-  min-height: 500px;
-  background: var(--white);
+  min-height: 600px;
+  background: white;
   padding: 20px;
   box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
   border-radius: 20px;
+  border: 1px solid black;
 }
 
 .details .cardHeader {
@@ -274,18 +292,18 @@
 .cardHeader h2 {
   font-weight: 600;
   font-size: 30px;
-  color: var(--blue);
+  color:palevioletred;
  text-align: center;
  align-items: center;
 }
-/* .cardHeader .btn {
+.cardHeader .btn {
   position: relative;
   padding: 5px 10px;
   background: var(--blue);
   text-decoration: none;
   color: var(--white);
   border-radius: 6px;
-} */
+}
 
 .details table {
   width: 100%;

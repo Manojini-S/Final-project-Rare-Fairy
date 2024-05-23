@@ -98,7 +98,7 @@ body{
 .about-content2 .Read-More{
     display: inline-block;
     padding: 10px 20px;
-    background-color:palevioletred;
+    background-color:#8f1e63;
     color: white;
     font-size: 19px;
     text-decoration: none;
@@ -132,14 +132,14 @@ body{
   }
   
   .title{
-    font-size: 30px;
+    font-size: 50px;
     text-transform: uppercase;
     color: rgb(50, 50, 50);
     margin-bottom: .5rem;
   }
   .note{
     font-size: 1.1rem;
-    color: rgb(150, 150, 150);
+    color: #ffd9f0;
     font-style: italic;
       color: palevioletred;
       transition: transform 0.3s ease;
@@ -186,7 +186,7 @@ body{
 
    
   .body-review{
-    background-color: rgb(238, 238, 238);
+    color:#ff66c4;
     padding: 5.9rem;
     box-shadow: 2px 2px 10px 3px rgb(225, 225, 225);
     transition: transform 0.3s ease;
@@ -212,7 +212,7 @@ body{
   .desc-review{
     line-height: 1.5rem;
     letter-spacing: 1px;
-    color: rgb(150, 150, 150);
+    color: #ff66c4;
   }
   
   @media (max-width: 678px){

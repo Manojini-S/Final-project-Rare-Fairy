@@ -1,425 +1,111 @@
-import React from 'react';
-import './Admin.css';
-import customer01 from '../Assets/customer01.jpeg';
-import customer02 from '../Assets/customer02.jpeg';
-import Navbar from '../Components/Navbar';
-import Footer from '../Components/Footer';
+import './userdetails.css';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
-// function Admin() {
-//     return (
-//         <>
-//             <div className=" Admin-container">
-//                 <div className="sidebar">
-//                     <h2>Rare fairy</h2>        <ul>
-//                         <li><a href="#">Dashboard</a></li>
-//                         <li><button><a href="#">Users</a></button></li>
-//                         <li><button><a href="#">Products</a></button></li>
-//                         <li><button><a href="#">Settings</a></button></li>
-//                         <li><button><a href="#">Logout</a></button></li>
-//                     </ul>
-//                 </div>
-//                 <div className="main-content">
-//                     <div className="header">
-//                         <h1>Dashboard</h1>
-//                     </div>
-//                     <table>
-//                         <thead>
-//                             <tr>
-//                                 <th>No</th>
-//                                 <th>Name</th>
-//                                 <th>Image</th>
-//                                 <th>Email</th>
-//                                 <th>Delete</th>
-//                                 <th>Edit</th>
-//                             </tr>
+const UserTable = () => {
+    const [users, setUsers] = useState([]);
+    const [error, setError] = useState('');
 
-//                             <tbody>
-//                                 <tr>
-//                                 <td>01</td>
-//                                     <td>Mano</td>
-//                                     <td>Image</td>
-//                                     <td>mano12@mail.com</td>
-//                                     <td>Delete</td>
-//                                     <td>Edit</td>
+    useEffect(() => {
+        axios.get('http://localhost:3003/user/getuser')
+            .then(response => setUsers(response.data))
+            .catch(error => {
+                console.error('Error fetching users:', error);
+                setError('An error occurred while fetching users. Please try again later.');
+            });
+    }, []);
 
-//                                 </tr>
-//                                 <tr>
-//                                 <td>02</td>
-//                                     <td>Thanu</td>
-//                                     <td>Image</td>
-//                                     <td>mano12@mail.com</td>
-//                                     <td>Delete</td>
-//                                     <td>Edit</td>
-//                                 </tr>
-//                                 <tr>
-
-//                                 <td>02</td>
-//                                     <td>Alex</td>
-//                                     <td>Image</td>
-
-//                                     <td>mano12@mail.com</td>
-//                                     <td>Delete</td>
-//                                     <td>Edit</td>
-
-
-//                                 </tr>
-//                                 <tr>
-//                                 <td>03</td>
-//                                     <td>Alex</td>
-//                                     <td>Image</td>
-
-//                                     <td>mano12@mail.com</td>
-//                                     <td>Delete</td>
-//                                     <td>Edit</td>
-
-
-//                                 </tr>
-
-//                                 <tr>
-//                                     <td>Mano</td>
-//                                     <td>Alex</td>
-//                                     <td>Image</td>
-
-//                                     <td>mano12@mail.com</td>
-//                                     <td>Delete</td>
-//                                     <td>Edit</td>
-
-
-//                                 </tr>
-//                             </tbody>
-//                         </thead>
-//                     </table>
-
-
-
-//                 </div>
-//             </div>
-
-//         </>
-//     )
-// }
-// export default Admin;
-
-
-function Admin() {
     return (
-        <>
-            <>
-                <Navbar />
-                <div className='Admin'>
-                    <div class="Admin-container">
-                        <div class="navigation">
-                            <ul>
-                                <li>
-                                    <a href="#">
-                                        <span class="icon">
-                                            {/* <ion-icon name="logo-apple"></ion-icon> */}
-                                        </span>
-                                        <div class="title" style={{ fontsize: '50px' }} >Rare Fairy</div>
-                                    </a>
-                                </li>
+        <div>
+            
+            {error ? (
+                <div>Error: {error}</div>
+            ) : (
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th> 
+                            <th>Email</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
 
-                                <li>
-                                    <a href="#">
-                                        <span class="icon">
-                                            <ion-icon name="home-outline"></ion-icon>
-                                        </span>
-                                        <a href='/Home'> <div class="title-3">Home</div></a>
-                                    </a>
-                                </li>
+                            {/* <th>Product Types</th> */}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {users.map(user => (
+                            <tr key={user._UserId}>
+                                <td>{user.Name}</td>
+                                <td>{user.Email}</td>
+                                <td>
+                                    <button className='edit' type='button'>Edit</button>
+                                    <button className='delete' type='button'>Delete</button>
+                                </td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            )}
+        </div>
+    );
+};
 
-                                <li>
-                                    <a href="#">
-                                        <span class="icon">
-                                            <ion-icon name="people-outline"></ion-icon>
-                                        </span>
-                                        <div class="title-2">Customers</div>
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a href="#">
-                                        <span class="icon">
-                                            <ion-icon name="chatbubble-outline"></ion-icon>
-                                        </span>
-                                        <div class="title-2">Products</div>
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a href="#">
-                                        <span class="icon">
-                                            <ion-icon name="help-outline"></ion-icon>
-                                        </span>
-                                        <div class="tit le-2">3.Settings</div>
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a href="#">
-                                        <span class="icon">
-                                            <ion-icon name="settings-outline"></ion-icon>
-                                        </span>
-                                        <div class="title-2">4.Sign Out</div>
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a href="#">
-                                        <span class="icon">
-                                            <ion-icon name="lock-closed-outline"></ion-icon>
-                                        </span>
-                                        {/* <div class="title-2">5.Password</div> */}
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a href="#">
-                                        <span class="icon">
-                                            <ion-icon name="log-out-outline"></ion-icon>
-                                        </span>
-                                        {/* <div class="title">Sign Out</div> */}
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
+export default UserTable;
 
 
-                        <div class="main">
-                            <div class="topbar">
-                                <div class="toggle">
-                                    <ion-icon name="menu-outline"></ion-icon>
-                                </div>
 
-                                <div class="search">
-                                    <label>
-                                        <input type="text" placeholder="Search here"></input>
-                                        <ion-icon name="search-outline"></ion-icon>
-                                    </label>
-                                </div>
+// import React, { useState } from 'react';
+// import axios from 'axios';
 
-                                <div class="user">
-                                    <img src={customer01} />
-                                </div>
-                            </div>
+// function Form() {
+//     const [Title, setTitle] = useState('');
+//     const [Created_By, setCreatedBy] = useState('');
+//     const [Created_Date, setCreatedOn] = useState('');
+//     const [Content, setContent] = useState('');
+//     const [Status, setStatus] = useState('');
+//     const [error, setError] = useState(null);
 
+//     const handleSubmit = async (event) => {
+//         event.preventDefault();
+//         const userData = {
+//             Title,
+//             Created_By,
+//             Created_Date,
+//             Content,
+//             Status
+//         };
+//         try {
+//             // Make a POST request to the server
+//             const response = await axios.post('http://localhost:3004/notes', userData);
+//             console.log('Response:', response.data);
+//         } catch (error) {
+//             // Handle errors
+//             console.error('Error:', error);
+//             setError('An error occurred while processing your request. Please try again later.');
+//         }
+//     };
 
-                            <div class="cardBox">
-                                <div class="card">
-                                    <div>
-                                        <div class="numbers">1,504</div>
-                                        <div class="cardName">Daily Views</div>
-                                    </div>
+//     return (
+//         <div className='form'>
+//             <div className='App2'>
+//                 <form onSubmit={handleSubmit}>
+//                     <label htmlFor="title">Ari Id</label>
+//                     <input type="text" className="form-control" id="title" placeholder="Enter Title" onChange={(e) => setariId(e.target.value)} />
+//                     <label htmlFor="createdOn">Image Id</label>
+//                     <input type="text" className="form-control" id="createdOn" placeholder="Enter Created On" onChange={(e) => setimageId(e.target.value)} />
+//                     <label htmlFor="createdBy">Tittle</label>
+//                     <input type="text" className="form-control" id="createdBy" placeholder="Enter Created By" onChange={(e) => setTittle(e.target.value)} />
+//                     <label htmlFor="content">Content</label>
+//                     <input type="text" className="form-control" id="content" placeholder="Enter Content" onChange={(e) => setContent(e.target.value)} />
+//                     <label htmlFor="status">Status</label>
+//                     <input type="date" className="form-control" id="status" onChange={(e) => setStatus(e.target.value)} />
+//                     <br />
+//                     <button type="submit">Submit</button>
+//                 </form>
+//                 {error && <div>Error: {error}</div>}
+//             </div>
+//         </div>
+//     );
+// }
 
-                                    <div class="iconBx">
-                                        {/* <ion-icon name="eye-outline"></ion-icon> */}
-                                    </div>
-                                </div>
-
-                                <div class="card">
-                                    <div>
-                                        <div class="numbers">80</div>
-                                        <div class="cardName">Orders</div>
-                                    </div>
-
-                                    <div class="iconBx">
-                                        <ion-icon name="cart-outline"></ion-icon>
-                                    </div>
-                                </div>
-
-                                <div class="card">
-                                    <div>
-                                        <div class="numbers">284</div>
-                                        <div class="cardName">Comments</div>
-                                    </div>
-
-                                    <div class="iconBx">
-                                        <ion-icon name="chatbubbles-outline"></ion-icon>
-                                    </div>
-                                </div>
-
-                                <div class="card">
-                                    <div>
-                                        <div class="numbers">$7,842</div>
-                                        <div class="cardName">User Counts</div>
-                                    </div>
-
-                                    <div class="iconBx">
-                                        <ion-icon name="cash-outline"></ion-icon>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                            <div class="details">
-                                <div class="recentOrders">
-                                    <div class="cardHeader">
-                                        <h2>Recent Orders</h2>
-                                        {/* <a href="#" class="btn">View All</a> */}
-                                    </div>
-
-                                    <table>
-                                        <thead>
-                                            <tr>
-                                                <td> Product Name</td>
-                                                <td>Price</td>
-                                                <td>Payment</td>
-                                                <td>Status</td>
-                                            </tr>
-                                        </thead>
-
-                                        <tbody>
-                                            <tr>
-                                                <td>Bridal designs</td>
-                                                <td>$1200</td>
-                                                <td>Paid</td>
-                                                <td><span class="status delivered">Finish</span></td>
-                                            </tr>
-
-                                            <tr>
-                                                <td>Salwar designs</td>
-                                                <td>$110</td>
-                                                <td>Due</td>
-                                                <td><span class="status pending">Pending</span></td>
-                                            </tr>
-
-                                            <tr>
-                                                <td>Zardosi designs</td>
-                                                <td>$1200</td>
-                                                <td>Paid</td>
-                                                <td><span class="status return">Return</span></td>
-                                            </tr>
-
-                                            <tr>
-                                                <td>Emproidry designs</td>
-                                                <td>$620</td>
-                                                <td>Due</td>
-                                                <td><span class="status inProgress">In Progress</span></td>
-                                            </tr>
-
-                                            <tr>
-                                                <td>Bridal Blouse</td>
-                                                <td>$1200</td>
-                                                <td>Paid</td>
-                                                <td><span class="status delivered">Finish</span></td>
-                                            </tr>
-
-                                            <tr>
-                                                <td>Bridal designs</td>
-                                                <td>$110</td>
-                                                <td>Due</td>
-                                                <td><span class="status pending">Pending</span></td>
-                                            </tr>
-
-                                            <tr>
-                                                <td>Emproidry designs</td>
-                                                <td>$1200</td>
-                                                <td>Paid</td>
-                                                <td><span class="status return">Pending</span></td>
-                                            </tr>
-
-                                            <tr>
-                                                <td>Zardosi designs</td>
-                                                <td>$620</td>
-                                                <td>Due</td>
-                                                <td><span class="status inProgress">In Progress</span></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-
-
-                                <div class="recentCustomers">
-                                    <div class="cardHeader">
-                                        <h2>Recent Customers</h2>
-                                    </div>
-
-                                    <table>
-                                        <tr>
-                                            <td width="60px">
-                                                <div class="imgBx"><img src={customer02} /></div>
-                                            </td>
-                                            <td>
-                                                <h4>Daviya <br /> <span>Vavuniya</span></h4>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td width="60px">
-                                                <div class="imgBx"><img src={customer02} /></div>
-                                            </td>
-                                            <td>
-                                                <h4>Amirtha <br /> <span>Vavuniya</span></h4>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td width="60px">
-                                                <div class="imgBx"><img src={customer01} /></div>
-                                            </td>
-                                            <td>
-                                                <h4>Daviya <br /> <span>Vavuniya</span></h4>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td width="60px">
-                                                <div class="imgBx"><img src={customer02} /></div>
-                                            </td>
-                                            <td>
-                                                <h4>Amirtha <br /> <span>Vavuniya</span></h4>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td width="60px">
-                                                <div class="imgBx"><img src={customer02} /></div>
-                                            </td>
-                                            <td>
-                                                <h4>Daviya <br /> <span>Vavuniya</span></h4>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td width="60px">
-                                                <div class="imgBx"><img src={customer01} /></div>
-                                            </td>
-                                            <td>
-                                                <h4>Amirtha <br /> <span>Vavuniya</span></h4>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td width="60px">
-                                                <div class="imgBx"><img src={customer02} /></div>
-                                            </td>
-                                            <td>
-                                                <h4>Daviya <br /> <span>Vavuniya</span></h4>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td width="60px">
-                                                <div class="imgBx"><img src={customer01} /></div>
-                                            </td>
-                                            <td>
-                                                <h4>Amirtha <br /> <span>Vavuniya</span></h4>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                </div>
-
-            </>
-        </>
-
-
-    )
-}
-
-export default Admin;
+// export default Form;

@@ -12,7 +12,7 @@ router.use(
 )
 
 router.post('/post',userController.createUser);
-router.get('/',userController.getUser);
+router.get('/getuser',userController.getUser);
 // router.put('/update',userController.updatedUser);
 // router.delete('/delete',userController.deleteUser);
 // router.post('/login',userController.loginUser);

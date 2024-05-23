@@ -19,7 +19,7 @@ footer {
     justify-content: space-between;
     margin-top: auto;
     
-    background-color: palevioletred;
+    background-color:#8f1e63;
     padding: 30px 10%;
     opacity: 90%;
 }
@@ -32,7 +32,7 @@ ul {
     flex: 1 1 25%;
     margin-bottom: 30px;
     padding: 0 15px;
-    color: white;
+    color: #ffd9f0;
 }
 
 .footer-col h4 {

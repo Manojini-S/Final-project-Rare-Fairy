@@ -10,7 +10,13 @@ const reviewRoutes = require('../Routes/reviewRoutes');
 const paymentRoutes = require('../Routes/paymentRoutes');
 const LoginRoutes = require('../Routes/LoginRoutes');
 const bodyParser = require("body-parser");
+const {upload} = require('../utils/multer.config')
+const adminRoutes = require('../Routes/adminRoutes');
+const imageRoutes = require('../Routes/imageRoutes')
 
+// const adminController = require('../Controllers/adminController');
+
+const router = express.Router();
 
 const app = express();
 const Port = 3003;
@@ -45,6 +51,19 @@ function connect() {
         console.log("Something went wrong", err);
     });
 
+    
+
+    const corsOptions = {
+      origin: "http://localhost:3000", // Front-end URL
+      credentials: true, // Allow credentials (cookies, authorization headers, etc.)
+    };
+    app.use(cors(corsOptions));
+    app.use(express.json());
+    app.use(express.json({ limit: "50mb" }));
+    app.use(bodyParser.json({ limit: "50mb" }));
+
+
+    
 
     app.use('/user', userRoutes);
     app.use('/order', orderRoutes);
@@ -52,6 +71,9 @@ function connect() {
     app.use('/review', reviewRoutes);
     app.use('/payment', paymentRoutes);
     app.use('/usercreate', LoginRoutes);
+    app.use('/admin', adminRoutes);
+    app.use('/image', imageRoutes )
+    
 
   
     // app.post('/register', (req, res) => {
@@ -59,3 +81,7 @@ function connect() {
 }
 
 module.exports = connect;
+
+
+
+

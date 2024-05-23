@@ -1,0 +1,143 @@
+/* Reset and global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* font-family: Arial, Helvetica, sans-serif; */
+}
+
+/* Body styles */
+.body {
+    background-color: white;
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+/* Container for the card types */
+.type-container {
+    width: 100%;
+}
+
+/* Row within the container */
+.type-container .row1 {
+    width: 80%;
+    margin: auto;
+}
+
+/* Header styles within the row */
+.type-container .row1 .header1 {
+    width: 90%;
+    text-align: center;
+    margin: auto;
+    font-size: 40px;
+}
+
+/* Header title styles */
+.type-container .row1 .header1 h1 {
+    padding-top: 80px;
+    font-size: 46px;
+    color: black;
+    font-weight: 1000;
+}
+
+/* Header paragraph styles */
+.type-container .row1 .header1 p {
+    margin-top: 15px;
+    font-size: 16px;
+    line-height: 1.5;
+    color: rgb(14, 14, 14);
+}
+
+/* Content styles */
+.type-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+/* Card styles */
+.type-content .card2 {
+    flex: 1 1 700px; /* Reduce the size and allow wrapping */
+    margin: 20px;
+    background-color: #ffd9f0;
+    transition: transform 0.3s ease;
+    border-radius: 20px;
+    max-width: 300px; /* Ensure cards don't get too large */
+    min-height: 400px;
+}
+
+.type-content .card2:hover {
+    transform: scale(1.05);
+}
+
+/* Image styles within cards */
+.type-content .card2 img {
+    width: 100%;
+    height: auto;
+    padding: 30px;
+    border-radius: 20px;
+    transition: transform 0.3s ease;
+}
+
+.type-content .card2 img:hover {
+    transform: scale(1.05);
+}
+
+/* Card title styles */
+.type-content .card2 h4 {
+    margin-top: 90px;
+    padding-top: 100px;
+    font-size: 18px;
+    text-align: center;
+}
+
+/* Card description styles */
+.type-content .card2 p {
+    font-size: 14px;
+    color: rgb(28, 28, 33);
+    padding: 10px;
+    line-height: 1.5;
+}
+
+/* Fake link/button container styles */
+.type-content .card2 .fake {
+    text-align: center;
+    margin-bottom: 90px;
+}
+
+/* Button styles */
+.type-content .card2 .fake button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #8f1e63;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.type-content .card2 .fake button:hover {
+    background-color:white;
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+    .type-container .row1 .header1 h1 {
+        font-size: 28px;
+        padding-top: 30px;
+    }
+
+    .type-container .row1 .header1 p {
+        font-size: 14px;
+    }
+
+    .type-content .card2 {
+        flex: 1 1 100%; /* Full width on small screens */
+        max-width: 100%;
+        margin: 10px;
+    }
+}

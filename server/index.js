@@ -4,6 +4,7 @@ const cors = require ("cors");
 const userRoutes = require("./Routes/userRoutes");
 const orderRoutes = require("./Routes/orderRoutes");
 const reviewRoutes=require("./Routes/reviewRoutes");
+// const aridesigner=require("Routes/aridesigercardRoutes")
 const app= express()
 const bodyParser = require("body-parser");
 app.use(bodyParser.json());
@@ -28,4 +29,5 @@ app.use(
 app.use(express.json);
 
 app.use('/user' , userRoutes)
+// app.use('/create',aridesignercardRoutes )
 

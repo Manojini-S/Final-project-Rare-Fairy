@@ -44,7 +44,7 @@
     font-weight: 100px;
     text-transform: uppercase;
     font-size: 62px;
-    color: #e89393;
+    color:#bf3189;
     letter-spacing: 1.5px;
     /* padding: 50px 0px; */
     
@@ -91,7 +91,8 @@
     line-height: 1.5;
     /* letter-spacing: px; */
     font-weight: 1000;
-    color:rgb(208, 145, 145);
+    color: #ffd9f0;
+   
    padding-bottom: 20px;
    padding-right: 290px;
 }
@@ -106,14 +107,15 @@ font-size: 22px;
 text-decoration: none;
 display: inline-block;
 padding: 9px 25px;
-background-color:palevioletred;
+background-color:#ff66c4;
+
 border-radius: 25px;
 text-align: right;
 /* padding-right: 290px; */
 margin-right: 270px;
-color: #fff;
+color: #ffd9f0;
 transition: transform 0.3s ease;
-border: 2px solid black;
+/* border: 2px solid black; */
 /* border: 1px solid #cc0000; */
 letter-spacing: 1.5px;
 margin-top: 20px;

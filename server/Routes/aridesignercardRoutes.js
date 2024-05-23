@@ -6,15 +6,16 @@ const cors = require('cors');
 const AridesignerController = require('../Controller/AridesigncardController');
 
 // Middleware
-router.use(
-    cors({
-        credentials: true,
-        origin: 'http://localhost:3002'
-    })
-);
+// router.use(
+//     cors({
+//         credentials: true,
+//         origin: 'http://localhost:3002'
+//     })
+// );
 
 // Define routes
 router.post('/create', AridesignerController.createAridesigner);
+router.get('/getAri', AridesignerController.getAridesigner);
 // router.put('/update',AridesignerController.updateAridesign);
 // router.get('/', AridesignerController.getAridesigner);
 

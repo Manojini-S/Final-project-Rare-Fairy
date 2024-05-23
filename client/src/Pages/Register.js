@@ -127,7 +127,7 @@ const handleSubmit = async (e) => {
   const result = { UserId: username, Name: fullname, Email: email, Password: password, Role: "user" };
 
   try {
-      const response = await fetch('http://localhost:3003/signup', {
+      const response = await fetch('http://localhost:3003/usercreate/signup', {
           method: 'POST',
           headers: {
               'Content-Type': 'application/json',
@@ -137,6 +137,7 @@ const handleSubmit = async (e) => {
 
       if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
+          console.log("succses");
       }
 
       const data = await response.json();

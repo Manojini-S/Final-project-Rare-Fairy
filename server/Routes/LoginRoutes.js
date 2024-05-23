@@ -5,4 +5,5 @@ const {login,signup, loginUpdate} = require('../Controller/LoginController')
 router.post('/login',loginUpdate)
 router.post('/signup',signup)
 
+
 module.exports = router 

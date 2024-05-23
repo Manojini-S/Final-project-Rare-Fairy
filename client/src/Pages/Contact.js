@@ -128,7 +128,7 @@ function ContactUs() {
             </div>
         </div>
     </section>
-    <Footer/>
+    {/* <Footer/> */}
     </>
   )
 }

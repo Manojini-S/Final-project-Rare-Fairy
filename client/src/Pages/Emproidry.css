@@ -53,7 +53,7 @@
 .card-emp{
     width: 300px;
     /* height: 400px; */
-    background-color:rgb(229, 226, 232) ;
+    background-color:#ffd9f0 ;
     margin: 30px;
     padding: 20px;
     border-radius: 20px;
@@ -68,7 +68,7 @@
 
 .card-emp a{
     text-decoration: none;
-    background-color: palevioletred;
+    background-color:#8f1e63;
     padding: 15px;
     color: white;
     display: block;
