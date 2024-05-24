@@ -37,10 +37,10 @@ function LoginForm() {
       if (data.Role === 'user') {
         alert('User login successful');
 
-        navigate('/Userprofile');
+        navigate('/Home');
 
       } else {
-        navigate('/admin');
+        navigate('/');
       }
 
     } catch (error) {

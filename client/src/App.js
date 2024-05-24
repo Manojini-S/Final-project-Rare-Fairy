@@ -20,6 +20,7 @@ import Payment from './Pages/Payment';
 import Admin2 from './Pages/Admin2';
 import Product from './Pages/product';
 import Designtype from './Components/designstype';
+import Booking from './Pages/Booking';
 
 function App() {
   return (
@@ -44,6 +45,7 @@ function App() {
         <Route path="/Admin2" element={<Admin2 />} />
         <Route path="/product" element={<Product />} />
         <Route path="/designtype" element={<Designtype />} />
+        <Route path="/Booking" element={<Booking />} />
       </Routes>
     </BrowserRouter>
   );

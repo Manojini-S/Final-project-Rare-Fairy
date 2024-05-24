@@ -3,6 +3,8 @@ import './About.css';
 import Navbar from '../Components/Navbar';
 import ari from '../Assets/about.png';
 import Footer from '../Components/Footer';
+import emp from '../Assets/frame1.png';
+import service from '../Assets/service.png';
 function About() {
   return (
     <>
@@ -146,6 +148,32 @@ function About() {
 
       </div>
       {/* <Footer/> */}
+
+      <div>
+      <div className="emp-head">OUR  <span> SERVICESS</span></div>
+      <div className="container-emp">
+        <div className="card-emp">
+          <img src={emp} alt="Embroidery Design " />
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam, eligendi.</p>
+          {/* <a href="Description" className="button">View</a> */}
+        </div>
+        <div className="card-emp">
+          <img src={service} alt="Embroidery Design " />
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam, eligendi.</p>
+          {/* <a href="Description" className="button">View</a> */}
+        </div>
+        <div className="card-emp">
+          <img src={emp} alt="Embroidery-Design " />
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam, eligendi.</p>
+          {/* <a href="Description" className="button">View</a> */}
+        </div>
+        <div className="card-emp">
+          <img src={emp} alt="Embroidery-Design " />
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam, eligendi.</p>
+          {/* <a href="Description" className="button">View</a> */}
+        </div>
+      </div>
+    </div>
 
     </>
   );

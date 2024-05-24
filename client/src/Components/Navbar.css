@@ -226,7 +226,7 @@ body, html {
     align-items: center;
     background-color:#8f1e63;
     box-shadow: 2px 2px  2px 2px #ffd9f0;
-  
+    opacity: 90%;
     padding: 0px 10px;
     position: fixed;
     width: 100%;

@@ -2,30 +2,43 @@ import React from 'react';
 import Card from '../Components/designstype';
 import './Aridesigsncard.css'
 
+const cardData = [
+  {
+    id: 1,
+    title: 'Emproidry ',
+    content: 'This is some sample content for the first .',
+    imageUrl: 'https://via..com/150',
+  },
+  {
+    id: 2,
+    title: 'Bridel',
+    content: 'This is some sample content for the second .',
+    imageUrl: 'https://via..com/150',
+  },
+  {
+    id: 3,
+    title: 'Salwar',
+    content: 'This is some sample content for the third .',
+    imageUrl: 'https://via..com/150',
+  },
+];
 
-function Cards() {
-    return (
-        <div className="type-content">
-            <Card
-                // imageUrl={bridalimage}
-                title="Happy In Introducing Aari Bridal Design Blouses At Best Price In Rare Fairy"
-                buttonLink="/Bridel"
-                altText="bridalimage"
-            />
-            <Card
-                // imageUrl={bridal}
-                title="Happy In Introducing Aari Embroidery Design Blouses At Best Price In Rare Fairy"
-                buttonLink="/Simpleblouse"
-                altText="bridal"
-            />
-            <Card
-                // imageUrl={zardosi3}
-                title="Happy In Introducing Aari Embroidery Design Blouses At Best Price In Rare Fairy"
-                buttonLink="/Zardosi"
-                altText="zardosi3"
-            />
-        </div>
-    );
+function App() {
+  return (
+    <div className="App">
+      <h1> <span> Products</span></h1>
+      <div className="card-container">
+        {cardData.map(card => (
+          <Card
+            key={card.id}
+            title={card.title}
+            content={card.content}
+            imageUrl={card.imageUrl}
+          />    
+        ))}
+      </div>
+    </div>
+  );
 }
 
-export default Cards;
+export default App;

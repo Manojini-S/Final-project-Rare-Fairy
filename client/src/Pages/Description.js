@@ -69,14 +69,10 @@ function Description() {
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star-half"></i>
                             </div>
-                            <StripeCheckout
-                                stripeKey="pk_test_51PJFojP7PxWjIVya2Bv5APhoOZxJODD5GkAIoYedJdeC9AwkajgyMixKSxbyRKKPVhPWCScfkFAatKx4ztdPoMnS004kNjDNrJ"
-                                token={makePayment}
-                                name="Rare Fairy"
-                                amount={product.price * 100}
-                            >
-                                <button className="dash" id="dash">Order Now</button>
-                            </StripeCheckout>
+                        
+                              
+                               <a href='/Booking'> <button className="dash" id="dash">Book Now</button></a>
+                            
 
 
 
