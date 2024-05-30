@@ -1,4 +1,5 @@
 /* Admin.css */
+/* Admin.css */
 
 /* Table Styles */
 table {
@@ -51,7 +52,16 @@ button.delete {
     background-color: #da223e; /* Red */
     color: white;
     padding-left: 30px;
-    margin-left: 400px;
+}
+
+button.save {
+    background-color: #4CAF50; /* Green */
+    color: white;
+}
+
+button.verify {
+    background-color: #008CBA; /* Blue */
+    color: white;
 }
 
 /* Error Message Styles */

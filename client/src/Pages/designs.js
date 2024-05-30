@@ -7,8 +7,14 @@ function designs() {
     return (
         <>
 
-            <Navbar />
-            
+            {/* <Navbar /> */}
+
+            <div className='search'>
+            <div class="search-container">
+                <input type="text" placeholder="Search..." class="search-input" />
+                {/* <button class="search-button">Search</button> */}
+            </div>
+            </div>
 
         </>
     )

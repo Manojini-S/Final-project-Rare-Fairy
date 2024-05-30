@@ -16,12 +16,16 @@ import Zardosi from './Pages/Zardosi';
 import UserProfile from './Pages/Userprofile';
 import Popup from './Pages/Popup';
 import Description from './Pages/Description';
-import Payment from './Pages/Payment';
-import Admin2 from './Pages/Admin2';
+// import Payment from './Pages/Payment';
+import Dashboard from './Pages/Dashboard';
 import Product from './Pages/product';
 import Designtype from './Components/designstype';
 import Booking from './Pages/Booking';
-
+import Gallery from './Pages/Gallery';
+import Aridesignscard from './Pages/Aridesignscard';
+import Designs from './Pages/designs';
+import Paymentadmin from './Pages/Paymentadmin';
+import Bookingpopup from './Pages/bookingpopup';
 function App() {
   return (
     <BrowserRouter>
@@ -41,11 +45,17 @@ function App() {
         <Route path="/Popup" element={<Popup />} />
         <Route path="/Description" element={<Description />} />
         <Route path="/Lehenga" element={<Lehenga />} />
-        <Route path="/Payment" element={<Payment />} />
-        <Route path="/Admin2" element={<Admin2 />} />
+        <Route path="/Paymentadmin" element={<Paymentadmin />} />
+        <Route path="/Dashboard" element={<Dashboard />} />
         <Route path="/product" element={<Product />} />
         <Route path="/designtype" element={<Designtype />} />
         <Route path="/Booking" element={<Booking />} />
+        <Route path="/Gallery" element={<Gallery />} />
+        <Route path="/Aridesignscard" element={<Aridesignscard/>} />
+        <Route path="/Designs" element={<Designs/>} />
+        <Route path="/Bookingpopup" element={<Bookingpopup/>} />
+
+        
       </Routes>
     </BrowserRouter>
   );

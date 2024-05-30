@@ -1,16 +1,39 @@
-import React from 'react';
+
 import './Booking.css';
 import Navbar from '../Components/Navbar';
-import StripeCheckout from "react-stripe-checkout";
-import { useState } from 'react';
+import React, { useState } from 'react';
+import StripeCheckout from 'react-stripe-checkout';
+
 
 const FormComponent = () => {
-
     const [product, setProduct] = useState({
-        name: "Rare Fairy",  // Changed to lowercase 'name'
+        name: "Rare Fairy",
         price: 50,
         productBy: "Mano",
     });
+
+    const [formData, setFormData] = useState({
+        name: "",
+        clothColor: "",
+        contactNo: "",
+        file: null,
+    });
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({
+            ...formData,
+            [name]: value,
+        });
+    };
+
+    const handleFileChange = (e) => {
+        setFormData({
+            ...formData,
+            file: e.target.files[0],
+        });
+    };
+
     const makePayment = (token) => {
         const body = {
             token,
@@ -19,7 +42,8 @@ const FormComponent = () => {
         const headers = {
             "Content-Type": "application/json",
         };
-        return fetch("http://localhost:3000/payment", {  // Ensure the backend server is running on this port
+
+        return fetch("http://localhost:3003/payment", {
             method: "POST",
             headers,
             body: JSON.stringify(body),
@@ -31,55 +55,42 @@ const FormComponent = () => {
             })
             .catch((error) => console.log(error));
     };
+
     return (
         <>
-        <Navbar/>
-        <div className='booking'>
-          
-            <div className="form-container">
-                <form action="submit_form" method="post">
-                    <div className="form-group">
-                        <label htmlFor="name" className="form-label">Name:</label>
-                        <input type="text" id="name" name="name" className="form-input" required />
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="email" className="form-label">cloth color:</label>
-                        <input type="email" id="email" name="email" className="form-input" required />
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="email" className="form-label">contact no:</label>
-                        <input type="email" id="email" name="email" className="form-input" required />
-                    </div>
-                    <div className="form-group">
-                        {/* <label htmlFor="email" className="form-label">cloth color:</label> */}
-                        {/* <input type="email" id="email" name="email" className="form-input" required /> */}
-                    </div>
-                    {/* <div className="form-group">
-          <label htmlFor="dropdown" className="form-label">Select an option:</label>
-          <select id="dropdown" name="dropdown" className="form-select" required>
-            <option value="">Please select</option>
-            <option value="option1">Option 1</option>
-            <option value="option2">Option 2</option>
-            <option value="option3">Option 3</option>
-          </select>
-        </div> */}
-                    <div className="form-group">
-                        <label htmlFor="file" className="form-label">Upload sample designs photos:</label>
-                        <input type="file" id="file" name="file" className="form-input" required />
-                    </div>
-                    <div className="form-group">
-                        <StripeCheckout
-                            stripeKey="pk_test_51PJFojP7PxWjIVya2Bv5APhoOZxJODD5GkAIoYedJdeC9AwkajgyMixKSxbyRKKPVhPWCScfkFAatKx4ztdPoMnS004kNjDNrJ"
-                            token={makePayment}
-                            name="Rare Fairy"
-                            amount={product.price * 100}
-                        >
-                            <button className="dash" id="dash">Order Now</button>
-                        </StripeCheckout>
-                    </div>
-                </form>
+            <Navbar />
+            <div className='booking'>
+                <div className="form-container">
+                    <form action="submit_form" method="post">
+                        <div className="form-group">
+                            <label htmlFor="name" className="form-label">Name:</label>
+                            <input type="text" id="name" name="name" className="form-input" value={formData.name} onChange={handleChange} required />
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="clothColor" className="form-label">Contact No:</label>
+                            <input type="text" id="clothColor" name="clothColor" className="form-input" value={formData.clothColor} onChange={handleChange} required />
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="contactNo" className="form-label">Address:</label>
+                            <input type="text" id="contactNo" name="contactNo" className="form-input" value={formData.contactNo} onChange={handleChange} required />
+                        </div>
+                        {/* <div className="form-group">
+                            <label htmlFor="file" className="form-label">Upload Sample Designs Photos:</label>
+                            <input type="file" id="file" name="file" className="form-input" onChange={handleFileChange} required />
+                        </div> */}
+                        <div className="form-group">
+                            <StripeCheckout
+                                stripeKey="pk_test_51PJFojP7PxWjIVya2Bv5APhoOZxJODD5GkAIoYedJdeC9AwkajgyMixKSxbyRKKPVhPWCScfkFAatKx4ztdPoMnS004kNjDNrJ"
+                                token={makePayment}
+                                name="Rare Fairy"
+                                amount={product.price * 10000}
+                            >
+                                <button className="dash" id="dash">Order Now</button>
+                            </StripeCheckout>
+                        </div>
+                    </form>
+                </div>
             </div>
-        </div>
         </>
     );
 };

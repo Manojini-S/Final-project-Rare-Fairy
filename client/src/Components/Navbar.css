@@ -224,19 +224,19 @@ body, html {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color:#8f1e63;
-    box-shadow: 2px 2px  2px 2px #ffd9f0;
+    background-color:white;
+    box-shadow: 2px 2px  2px 2px palevioletred;
     opacity: 90%;
     padding: 0px 10px;
     position: fixed;
     width: 100%;
     top: 0;
-    z-index: 1000;
+    z-index: 100;
 }
 
 
 .logo{
-    padding-right: 500px;
+    padding-right: 400px;
 }
 
 .logo img {
@@ -267,7 +267,7 @@ body, html {
 }
 
 .nav-links a {
-    color: #ffd9f0;
+    color: palevioletred;
     text-decoration: none;
     font-size: 18px;
     padding: 10px 15px;

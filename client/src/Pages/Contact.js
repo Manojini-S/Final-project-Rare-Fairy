@@ -1,8 +1,8 @@
-import React from 'react';
-import './Contact.css';
+// import React from 'react';
+// import './Contact.css';
 
-import Navbar from '../Components/Navbar';
-import Footer from '../Components/Footer';
+// import Navbar from '../Components/Navbar';
+// import Footer from '../Components/Footer';
 // import Con from '../Assets/heavy.jpg';
 
 // import Footer from '../Components/Footer'
@@ -39,7 +39,7 @@ import Footer from '../Components/Footer';
 
 // export default ContactUs;
 
-// import React from 'react';
+
 
 // function ContactUs() {
 //   return (
@@ -73,64 +73,381 @@ import Footer from '../Components/Footer';
 // export default ContactUs;
 
 
+// function ContactUs() {
+//   return(
+//     <>
+//     <Navbar/>
+//     <section class="contact">
+//         <div class="contact-content">
+//             <h2>Contact<span> Us</span></h2>
+//             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum nihil odit adipisci illo inventore eum, corrupti commodi delectus.</p>
+//         </div>
+//         <div class="container-Us">
+//             <div class="contactInfo">
+//                 <div class="box">
+//                     <div class="icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
+//                     <div class="text1">
+//                         <h3>Address</h3>
+//                         <p>1234 Kurumankadu Road,<br/>Vavuniya,Sri lanka,<br/>14568</p>
+//                     </div>
+//                 </div>
+//                 <div class="box">
+//                     <div class="icon"><i class="fa fa-phone" aria-hidden="true"></i></div>
+//                     <div class="text1">
+//                         <h3>Phone</h3>
+//                         <p>12345678</p>
+//                     </div>
+//                 </div>
+//                 <div class="box">
+//                     <div class="icon"><i class="fa fa-envelope-o" aria-hidden="true"></i></div>
+//                     <div class="text1">
+//                         <h3>Email</h3>
+//                         <p>rarefairy@gmail.com</p>
+//                     </div>
+//                 </div>
+//             </div>
+//             <div class="contactForm">
+//                 <form>
+//                     <h2>Send Message</h2>
+//                     <div class="inputBox">
+//                         <input type="text1" required="required"/>
+//                         <span>Full Name</span>
+//                     </div>
+//                     <div class="inputBox">
+//                         <input type="text1" required="required"/>
+//                         <span>Email</span>
+//                     </div>
+//                     <div class="inputBox">
+//                         <textarea name="" id="" required="required"></textarea>
+//                         <span>Type your Message...</span>
+//                     </div>
+//                     <div class="inputBox">
+//                         <input type="submit" value="Send"/>
+//                     </div>
+//                 </form>
+//             </div>
+//         </div>
+//     </section>
+//     {/* <Footer/> */}
+//     </>
+//   )
+// }
+
+// export default ContactUs;
+
+
+
+
+
+// import React, { useState } from 'react';
+// import './Contact.css';
+
+// import Navbar from '../Components/Navbar';
+// import Footer from '../Components/Footer';
+
+// function ContactForm() {
+//   const [formData, setFormData] = useState({
+//     name: '',
+//     email: '',
+//     message: ''
+//   });
+
+//   const [result, setResult] = useState("");
+
+//   const handleChange = (event) => {
+//     const { name, value } = event.target;
+//     setFormData({
+//       ...formData,
+//       [name]: value
+//     });
+//   };
+
+//   const onSubmit = async (event) => {
+//     event.preventDefault();
+//     setResult("Sending....");
+//     const formDataToSend = new FormData(event.target);
+//     formDataToSend.append("access_key", "YOUR_ACCESS_KEY_HERE");
+
+//     const response = await fetch("https://api.web3forms.com/submit", {
+//       method: "POST",
+//       body: formDataToSend
+//     });
+
+//     const data = await response.json();
+
+//     if (data.success) {
+//       setResult("Form Submitted Successfully");
+//       event.target.reset();
+//       setFormData({
+//         name: '',
+//         email: '',
+//         message: ''
+//       });
+//     } else {
+//       console.log("Error", data);
+//       setResult(data.message);
+//     }
+//   };
+
+//   return (
+//     <>
+//       <Navbar />
+//       <div>
+//         <form onSubmit={onSubmit}>
+           
+//           <input type="text" name="name" value={formData.name} onChange={handleChange} required />
+//           <input type="email" name="email" value={formData.email} onChange={handleChange} required />
+//           <textarea name="message" value={formData.message} onChange={handleChange} required></textarea>
+//           <button type="submit">Submit Form</button>
+//         </form>
+//         <span>{result}</span>
+//       </div>
+   
+//     </>
+//   );
+// }
+
+// export default ContactForm;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import React, { useState } from 'react';
+// import './Contact.css';
+// import Navbar from '../Components/Navbar';
+// import Footer from '../Components/Footer';
+
+// function ContactUs() {
+//   const [formData, setFormData] = useState({
+//     name: '',
+//     email: '',
+//     message: ''
+//   });
+
+//   const [result, setResult] = useState("");
+
+//   const handleChange = (event) => {
+//     const { name, value } = event.target;
+//     setFormData({
+//       ...formData,
+//       [name]: value
+//     });
+//   };
+
+//   const onSubmit = async (event) => {
+//     event.preventDefault();
+//     setResult("Sending....");
+//     const formDataToSend = new FormData(event.target);
+//     formData.append("access_key", "YOUR_ACCESS_KEY_HERE");
+
+//     const response = await fetch("https://api.web3forms.com/submit", {
+//       method: "POST",
+//       body: formDataToSend
+//     });
+
+//     const data = await response.json();
+
+//     if (data.success) {
+//       setResult("Form Submitted Successfully");
+//       event.target.reset();
+//       setFormData({
+//         name: '',
+//         email: '',
+//         message: ''
+//       });
+//     } else {
+//       console.log("Error", data);
+//       setResult(data.message);
+//     }
+//   };
+
+//   return(
+//     <>
+//       <Navbar />
+//       <section className="contact">
+//         <div className="contact-content">
+//           <h2>Contact<span> Us</span></h2>
+//           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum nihil odit adipisci illo inventore eum, corrupti commodi delectus.</p>
+//         </div>
+//         <div className="container-Us">
+//           <div className="contactInfo">
+//             <div className="box">
+//               <div className="icon"><i className="fa fa-map-marker" aria-hidden="true"></i></div>
+//               <div className="text1">
+//                 <h3>Address</h3>
+//                 <p>1234 Kurumankadu Road,<br/>Vavuniya, Sri Lanka,<br/>14568</p>
+//               </div>
+//             </div>
+//             <div className="box">
+//               <div className="icon"><i className="fa fa-phone" aria-hidden="true"></i></div>
+//               <div className="text1">
+//                 <h3>Phone</h3>
+//                 <p>12345678</p>
+//               </div>
+//             </div>
+//             <div className="box">
+//               <div className="icon"><i className="fa fa-envelope-o" aria-hidden="true"></i></div>
+//               <div className="text1">
+//                 <h3>Email</h3>
+//                 <p>rarefairy@gmail.com</p>
+//               </div>
+//             </div>
+//           </div>
+//           <div className="contactForm">
+//             <form onSubmit={onSubmit}>
+//               <h2>Send Message</h2>
+//               <div className="inputBox">
+//                 <input type="text" name="name" value={formData.name} onChange={handleChange} required />
+//                 <span>Full Name</span>
+//               </div>
+//               <div className="inputBox">
+//                 <input type="email" name="email" value={formData.email} onChange={handleChange} required />
+//                 <span>Email</span>
+//               </div>
+//               <div className="inputBox">
+//                 <textarea name="message" value={formData.message} onChange={handleChange} required></textarea>
+//                 <span>Type your Message...</span>
+//               </div>
+//               <div className="inputBox">
+//                 <input type="submit" value="Send" />
+//               </div>
+//             </form>
+//             <span>{result}</span>
+//           </div>
+//         </div>
+//       </section>
+//       <Footer />
+//     </>
+//   );
+// }
+
+// export default ContactUs;
+
+
+
+import React, { useState } from 'react';
+import './Contact.css';
+import Navbar from '../Components/Navbar';
+import Footer from '../Components/Footer';
+
 function ContactUs() {
-  return(
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+
+  const [result, setResult] = useState("");
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormData({
+      ...formData,
+      [name]: value
+    });
+  };
+
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    setResult("Sending....");
+    const formDataToSend = new FormData(event.target);
+    formDataToSend.append("access_key", "5e198b44-5c0b-4c23-85e9-3c61e955b627");
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formDataToSend
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      setResult("Form Submitted Successfully");
+      event.target.reset();
+      setFormData({
+        name: '',
+        email: '',
+        message: ''
+      });
+    } else {
+      console.log("Error", data);
+      setResult(data.message);
+    }
+  };
+
+  return (
     <>
-    <Navbar/>
-    <section class="contact">
-        <div class="contact-content">
-            <h2>Contact<span> Us</span></h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum nihil odit adipisci illo inventore eum, corrupti commodi delectus.</p>
+      <Navbar />
+      <section className="contact">
+        <div className="contact-content">
+          <h2>Contact<span> Us</span></h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum nihil odit adipisci illo inventore eum, corrupti commodi delectus.</p>
         </div>
-        <div class="container-Us">
-            <div class="contactInfo">
-                <div class="box">
-                    <div class="icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
-                    <div class="text1">
-                        <h3>Address</h3>
-                        <p>1234 Kurumankadu Road,<br/>Vavuniya,Sri lanka,<br/>14568</p>
-                    </div>
-                </div>
-                <div class="box">
-                    <div class="icon"><i class="fa fa-phone" aria-hidden="true"></i></div>
-                    <div class="text1">
-                        <h3>Phone</h3>
-                        <p>12345678</p>
-                    </div>
-                </div>
-                <div class="box">
-                    <div class="icon"><i class="fa fa-envelope-o" aria-hidden="true"></i></div>
-                    <div class="text1">
-                        <h3>Email</h3>
-                        <p>arefairy@gmail.com</p>
-                    </div>
-                </div>
+        <div className="container-Us">
+          <div className="contactInfo">
+            <div className="box">
+              <div className="icon"><i className="fa fa-map-marker" aria-hidden="true"></i></div>
+              <div className="text1">
+                <h3>Address</h3>
+                <p>1234 Kurumankadu Road,<br />Vavuniya, Sri Lanka,<br />14568</p>
+              </div>
             </div>
-            <div class="contactForm">
-                <form>
-                    <h2>Send Message</h2>
-                    <div class="inputBox">
-                        <input type="text1" required="required"/>
-                        <span>Full Name</span>
-                    </div>
-                    <div class="inputBox">
-                        <input type="text1" required="required"/>
-                        <span>Email</span>
-                    </div>
-                    <div class="inputBox">
-                        <textarea name="" id="" required="required"></textarea>
-                        <span>Type your Message...</span>
-                    </div>
-                    <div class="inputBox">
-                        <input type="submit" value="Send"/>
-                    </div>
-                </form>
+            <div className="box">
+              <div className="icon"><i className="fa fa-phone" aria-hidden="true"></i></div>
+              <div className="text1">
+                <h3>Phone</h3>
+                <p>12345678</p>
+              </div>
             </div>
+            <div className="box">
+              <div className="icon"><i className="fa fa-envelope-o" aria-hidden="true"></i></div>
+              <div className="text1">
+                <h3>Email</h3>
+                <p>rarefairy@gmail.com</p>
+              </div>
+            </div>
+          </div>
+          <div className="contactForm">
+            <form onSubmit={onSubmit}>
+              <h2>Send Message</h2>
+              <div className="inputBox">
+                <input type="text" name="name" value={formData.name} onChange={handleChange} required />
+                <span>Full Name</span>
+              </div>
+              <div className="inputBox">
+                <input type="email" name="email" value={formData.email} onChange={handleChange} required />
+                <span>Email</span>
+              </div>
+              <div className="inputBox">
+                <textarea name="message" value={formData.message} onChange={handleChange} required></textarea>
+                <span>Type your Message...</span>
+              </div>
+              <div className="inputBox">
+                <input type="submit" value="Send" />
+              </div>
+            </form>
+            <h2>{result}</h2>
+          </div>
         </div>
-    </section>
-    {/* <Footer/> */}
+      </section>
+      <Footer />
     </>
-  )
+  );
 }
 
 export default ContactUs;

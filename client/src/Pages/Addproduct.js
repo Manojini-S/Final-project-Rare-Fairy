@@ -4,7 +4,7 @@ function Cards() {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:3003/image/getImg') // Correct the URL
+        fetch('http://localhost:3003/image/getImg') 
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');

@@ -1,51 +1,150 @@
 import './userdetails.css';
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 
 const UserTable = () => {
     const [users, setUsers] = useState([]);
     const [error, setError] = useState('');
+    const [selectedUser, setSelectedUser] = useState(null);
+    const [editedName, setEditedName] = useState('');
+    const [editedEmail, setEditedEmail] = useState('');
+    const [isEditModalOpen, setIsEditModalOpen] = useState(false);
 
     useEffect(() => {
-        axios.get('http://localhost:3003/user/getuser')
-            .then(response => setUsers(response.data))
+        fetchUsers();
+    }, []);
+
+    const fetchUsers = () => {
+        fetch('http://localhost:3003/user/getUser')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Failed to fetch users');
+                }
+                return response.json();
+            })
+            .then(data => setUsers(data))
             .catch(error => {
                 console.error('Error fetching users:', error);
                 setError('An error occurred while fetching users. Please try again later.');
             });
-    }, []);
+    };
+
+    const handleDeleteClick = (userId) => {
+        fetch(`http://localhost:3003/user/deleteUser/${userId}`, {
+            method: 'DELETE'
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Failed to delete user');
+                }
+                fetchUsers();
+            })
+            .catch(error => {
+                console.error('Error deleting user:', error);
+                setError('An error occurred while deleting the user. Please try again later.');
+            });
+    };
+
+    const handleVerifyClick = (userId) => {
+        fetch(`http://localhost:3003/user/verifyUser/${userId}`, {
+            method: 'PUT'
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Failed to verify user');
+                }
+                fetchUsers();
+            })
+            .catch(error => {
+                console.error('Error verifying user:', error);
+                setError('An error occurred while verifying the user. Please try again later.');
+            });
+    };
+
+    const handleEditClick = (user) => {
+        setSelectedUser(user);
+        setEditedName(user.Name);
+        setEditedEmail(user.Email);
+        setIsEditModalOpen(true);
+    };
+
+    const handleEditSave = (e) => {
+        e.preventDefault();
+        fetch(`http://localhost:3003/user/updateUser/${selectedUser._UserId}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ Name: editedName, Email: editedEmail })
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Failed to update user');
+                }
+                setIsEditModalOpen(false);
+                fetchUsers();
+            })
+            .catch(error => {
+                console.error('Error updating user:', error);
+                setError('An error occurred while updating the user. Please try again later.');
+            });
+    };
 
     return (
-        <div>
-            
-            {error ? (
-                <div>Error: {error}</div>
-            ) : (
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Name</th> 
-                            <th>Email</th>
-                            <th>Edit</th>
-                            <th>Delete</th>
-
-                            {/* <th>Product Types</th> */}
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {users.map(user => (
-                            <tr key={user._UserId}>
-                                <td>{user.Name}</td>
-                                <td>{user.Email}</td>
-                                <td>
-                                    <button className='edit' type='button'>Edit</button>
-                                    <button className='delete' type='button'>Delete</button>
-                                </td>
-                            </tr>
-                        ))}
-                    </tbody>
-                </table>
+        <div className="container-box">
+            {isEditModalOpen && selectedUser && (
+                <div className="edit-modal">
+                    <div className="modal-content">
+                        <span className="close" onClick={() => setIsEditModalOpen(false)}>&times;</span>
+                        <h2>Edit User</h2>
+                        <form onSubmit={handleEditSave}>
+                            <label>Name:</label>
+                            <input
+                                type="text"
+                                value={editedName}
+                                onChange={(e) => setEditedName(e.target.value)}
+                            />
+                            <label>Email:</label>
+                            <input
+                                type="email"
+                                value={editedEmail}
+                                onChange={(e) => setEditedEmail(e.target.value)}
+                            />
+                            <button type="submit">Save</button>
+                        </form>
+                    </div>
+                </div>
             )}
+            {error && <div className="error">Error: {error}</div>}
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Delete</th>
+                        <th>Verify</th>
+                        <th>Edit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {users.map((user) => (
+                        <tr key={user._UserId}>
+                            <td>{user.Name}</td>
+                            <td>{user.Email}</td>
+                            <td>
+                                <button className="delete" onClick={() => handleDeleteClick(user._UserId)}>Delete</button>
+                            </td>
+                            <td>
+                                {!user.Verified && (
+                                    <button className="verify" onClick={() => handleVerifyClick(user._UserId)}>Verify</button>
+                                )}
+                            </td>
+                            <td>
+                                <button className="edit" onClick={() => handleEditClick(user)}>Edit</button>
+                            </td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
         </div>
     );
 };
@@ -54,58 +153,8 @@ export default UserTable;
 
 
 
-// import React, { useState } from 'react';
-// import axios from 'axios';
 
-// function Form() {
-//     const [Title, setTitle] = useState('');
-//     const [Created_By, setCreatedBy] = useState('');
-//     const [Created_Date, setCreatedOn] = useState('');
-//     const [Content, setContent] = useState('');
-//     const [Status, setStatus] = useState('');
-//     const [error, setError] = useState(null);
 
-//     const handleSubmit = async (event) => {
-//         event.preventDefault();
-//         const userData = {
-//             Title,
-//             Created_By,
-//             Created_Date,
-//             Content,
-//             Status
-//         };
-//         try {
-//             // Make a POST request to the server
-//             const response = await axios.post('http://localhost:3004/notes', userData);
-//             console.log('Response:', response.data);
-//         } catch (error) {
-//             // Handle errors
-//             console.error('Error:', error);
-//             setError('An error occurred while processing your request. Please try again later.');
-//         }
-//     };
 
-//     return (
-//         <div className='form'>
-//             <div className='App2'>
-//                 <form onSubmit={handleSubmit}>
-//                     <label htmlFor="title">Ari Id</label>
-//                     <input type="text" className="form-control" id="title" placeholder="Enter Title" onChange={(e) => setariId(e.target.value)} />
-//                     <label htmlFor="createdOn">Image Id</label>
-//                     <input type="text" className="form-control" id="createdOn" placeholder="Enter Created On" onChange={(e) => setimageId(e.target.value)} />
-//                     <label htmlFor="createdBy">Tittle</label>
-//                     <input type="text" className="form-control" id="createdBy" placeholder="Enter Created By" onChange={(e) => setTittle(e.target.value)} />
-//                     <label htmlFor="content">Content</label>
-//                     <input type="text" className="form-control" id="content" placeholder="Enter Content" onChange={(e) => setContent(e.target.value)} />
-//                     <label htmlFor="status">Status</label>
-//                     <input type="date" className="form-control" id="status" onChange={(e) => setStatus(e.target.value)} />
-//                     <br />
-//                     <button type="submit">Submit</button>
-//                 </form>
-//                 {error && <div>Error: {error}</div>}
-//             </div>
-//         </div>
-//     );
-// }
 
-// export default Form;
+

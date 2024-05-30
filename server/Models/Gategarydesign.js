@@ -2,11 +2,11 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const schema = new Schema({
-    CategoryName: { // Corrected field name
+    CategoryName: { 
         type: String,
         required: true,
     },
-    imageUrl: { // Corrected field name
+    imageUrl: { 
         type: String,
         required: true,
     },
@@ -16,5 +16,5 @@ const schema = new Schema({
     },
 });
 
-const Category = mongoose.model("Category", schema); // Renamed the model to "Category"
+const Category = mongoose.model("Category", schema); 
 module.exports = Category;

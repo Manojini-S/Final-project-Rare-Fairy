@@ -1,49 +1,39 @@
-// import React, { useState, useEffect } from 'react';
-// import axios from 'axios';
-// import zardosi3 from '../Assets/zardosi3.jpg';
-// import bridal from '../Assets/blouse.jpg';
-// import salwar from '../Assets/salwar.jpeg';
-// import emproidryblouse from '../Assets/emp1.jpg';
-// import SalwarImage from '../Assets/salwar2.png';
-// import bridalimage from '../Assets/bridal3.png';
-// import salwar4 from '../Assets/salwar5.png';
-// // import Navbar from '../Components/Navbar'; 
-// import './designstype.css'
-
-
-
-
-// const Card = ({ imageUrl, title, buttonLink, altText }) => {
-//     return (
-//         <div className="card1">
-//             <img src={imageUrl} alt={altText} />
-//             <h4>{title}</h4>
-//             <div className="fake">
-//                 <a href={buttonLink}><button>Click here</button></a>
-//             </div>
-//         </div>
-//     );
-// };
-
-// export default Card;
-
-
-import React from 'react';
-import './designstype';
+import React, { useState, useEffect } from 'react';
+import './designstype.css'; // Assuming it's a CSS file
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const Card = ({ title, content, imageUrl }) => {
+  const [cardImage, setCardImage] = useState([]);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const fetchCardImage = async () => {
+      try {
+        const response = await axios.get(`http://localhost:3003/image/showimage/${title}`);
+        setCardImage(response.data);
+      } catch (error) {
+        console.error('Error fetching card images:', error);
+      }
+    };
+
+    fetchCardImage();
+  }, [title]); // Dependency array to fetch on title change
+
+  const handleClick = () => {
+    navigate("/Emproidry", { state: { title, cardImage } });
+  };
+
   return (
     <div className="card">
       {imageUrl && <img src={imageUrl} alt={title} className="card-image" />}
       <div className="card-content">
         <h2 className="card-title">{title}</h2>
         <p className="card-text">{content}</p>
-
-    <button><a href="/Emproidry" className="button">View </a></button>
+        <button onClick={handleClick}>View Images</button>
       </div>
     </div>
   );
 };
 
 export default Card;
-

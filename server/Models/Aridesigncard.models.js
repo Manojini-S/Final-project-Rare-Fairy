@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const schema = new Schema({
-    AriId: {
+    Name: {
         type: String,
         required: true,
     },

@@ -144,6 +144,8 @@ Reset and global styles
 
 
 
+/* designstype.css */
+
 .card {
     border: 1px solid #ddd;
     border-radius: 8px;
@@ -151,6 +153,12 @@ Reset and global styles
     overflow: hidden;
     max-width: 300px;
     margin: 16px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   }
   
   .card-image {
@@ -170,5 +178,20 @@ Reset and global styles
   .card-text {
     font-size: 1rem;
     color: #555;
+  }
+  
+  button {
+    background-color:palevioletred;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  button:hover {
+    background-color: black;
+    color: white;
   }
   

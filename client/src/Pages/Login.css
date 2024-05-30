@@ -12,7 +12,9 @@
   height: 120vh;
  
 } */
-
+.login-body{
+  background: linear-gradient(pink, white);
+}
 
 .Login-center{
   position: absolute;

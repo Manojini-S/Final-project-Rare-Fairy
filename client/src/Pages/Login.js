@@ -37,7 +37,7 @@ function LoginForm() {
       if (data.Role === 'user') {
         alert('User login successful');
 
-        navigate('/Home');
+        navigate('/');
 
       } else {
         navigate('/');
@@ -53,6 +53,7 @@ function LoginForm() {
   return (
     <>
       <Navbar />
+      <div className='login-body'>
       <div className='log'>
         <div className="Login-center">
           <h1>Login</h1>
@@ -74,6 +75,7 @@ function LoginForm() {
             </div>
           </form>
         </div>
+      </div>
       </div>
     </>
   );

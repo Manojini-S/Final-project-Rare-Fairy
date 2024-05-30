@@ -5,6 +5,7 @@ const imageController = require('../Controller/imageController');
 
 router.post('/upload', imageController.uploadImage);
 router.get('/getImg',imageController.getImage)
+router.get ('/showimage/:CategoryName',imageController.showAllImage)
 
 
 module.exports = router;

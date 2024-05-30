@@ -1,261 +1,261 @@
 
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    /* font-family: Arial, Helvetica, sans-serif; */
-  }
-  
-  
-  
-  /* .product .designs-title h1{
-      text-align: center;
-      padding-bottom: 30px;
-  } */
-  /* .main{
-  
-      margin: 2%;
-     }
-      */
-  
-     /* .Aridesign-heding h1{
-      text-align: center;
-      font-size: 50px;
-      padding-top: 190px;
-      padding-bottom: 25px;
-      
-     } */
-  
-     /* .Aridesign-heding p{
-      text-align: center;
-      font-size: 18px;
-      align-items: center;
-     padding-left: 200px;
-     padding-right: 200px;
-     position: absolute;
-      
-     } */
-  
-     /* .span-p{
-      color: pink;
-     } */
-     /* .card{
-          width: 20%;
-          display: inline-block; */
-          /* box-shadow: 5px 5px 90px rgb(205, 200, 200); */
-          /* box-shadow: px px px black;
-          border-radius: 500px; 
-          margin: 4%;
-          padding-bottom: 1px;
-          padding-left: 30px; */
-          
-          /* padding-top: 0px; */
-         /* }
-     
-     .image1 img{
-       width: 100%;
-       padding-left: 3px; */
-       /* border-top-right-radius: px; */
-       /* border-top-left-radius: 5px; */
-       /* border-bottom-left-radius: 5px; */
-       
-     
-      
-      /* }
-     
-     .card-title{
-      color: rgb(13, 16, 16);
-       text-align: center;
-       padding: px;
-       
-      } */
-     
-     /* h1{
-       font-size: 20px;
-      }
-     
-     .des {
-       padding: 89px;
-       padding-left: 60px;
-       text-align: center;
-       color: white;
-      
-       padding-top: 5px;
-       border-bottom-right-radius: 5px;
-       border-bottom-left-radius: 5px;
-     }
-     button{
-       margin-top: 40px;
-       margin-bottom: 10px;
-       background-color:rgb(188, 100, 129);
-       border: 1px solid black;
-       border-radius: 5px;
-       color: aliceblue;
-       padding:10px;
-       font-size: 20px;
-       width: 95px;
-      
-     }
-     button:hover{
-       background-color: palevioletred;
-       color: rgb(20, 13, 13);
-       transition: .5s;
-       cursor: pointer;
-     } */
-  
-     /* .card{
-      width: 20%;
-      display: inline-block;
-      box-shadow: 2px 2px 20px black;
-      border-radius: 5px; 
-      margin: 2%;
-     }
-  
-  .image img{
-   width: 100%;
-   border-top-right-radius: 5px;
-   border-top-left-radius: 5px;
-   
-  
-  
-  }
-  
-  .title{
-  
-   text-align: center;
-   padding: 10px;
-   
-  }
-  
-  h1{
-   font-size: 20px;
-  }
-  
-  .des{
-   padding: 3px;
-   text-align: center;
-  
-   padding-top: 10px;
-         border-bottom-right-radius: 5px;
-   border-bottom-left-radius: 5px;
-  }
-  button{
-   margin-top: 40px;
-   margin-bottom: 10px;
-   background-color: white;
-   border: 1px solid black;
-   border-radius: 5px;
-   padding:10px;
-  }
-  button:hover{
-   background-color: black;
-   color: white;
-   transition: .5s;
-   cursor: pointer;
-  } */
-  
-  .body{
-    background-color:white;
-    padding: 0px;
-    margin: 0px;
-    box-sizing: border-box;
-    position: relative;
-    /* padding-top: 300px; */
-  }
-  
-  .type-container{
-    width: 100%;
-   
-  }
-  .type-container .row1{
-    width: 80%;
-    margin: auto;
-   
-  }
-  
-  .type-container .row1 .header1{
-    width: 90%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* font-family: Arial, Helvetica, sans-serif; */
+}
+
+
+
+/* .product .designs-title h1{
     text-align: center;
-    margin: auto;
-    font-size: 40px;
-    /* font-weight: 1000; */
-  }
-  
-  
-  
-  .type-container .row1 .header1 h1{
-    padding-top: 110px;
-    font-size: 45px;
-    color: black;
-     font-weight: 1000;
-  }
-  
-  .type-container .row1 .header1 p{
-    margin-top: 15px;
+    padding-bottom: 30px;
+} */
+/* .main{
+
+    margin: 2%;
+   }
+    */
+
+   /* .Aridesign-heding h1{
+    text-align: center;
+    font-size: 50px;
+    padding-top: 190px;
+    padding-bottom: 25px;
+    
+   } */
+
+   /* .Aridesign-heding p{
+    text-align: center;
     font-size: 18px;
-    line-height: 1.5;
-    color: rgb(14, 14, 14);
-  }
-  
-  .type-content{
-    display: flex;
-    justify-content: center;
     align-items: center;
-    margin: auto;
-  }
-  
-  .type-content .card1{
-    flex: 1;
-    margin: 50px 20px;
-    /* box-shadow: px 0px 5px 0px rgba(red, green, blue, alpha); */
-    background-color:#ffd9f0 ;
-    transition: transform 0.3s ease;
-    border-radius: 40px;
-  }
-  .type-content .card1:hover{
-    transform: scale(1.05);
-  }
-  
-  .type-content .card1 img{
-    width: 100%;
-    height: 370px;
-    padding: 10px;
-    border-radius: 50px;
-    transition: transform 0.3s ease;
-  }
-  .type-content .card1 img:hover{
-    transform: scale(1.05);
-  }
-  .type-content .card1 h4{
-    margin-top: 10px;
-    margin-left: 10px;
-    font-size: 18px;
-    text-align: center;
-  }
-  
-  .type-content .card1 p{
-    font-size: 15px;
-    color: rgb(28, 28, 33);
-    padding: 10px;
-    line-height: 1.5;
-  }
-  
-  
-  .type-content .card1 {
-    font-size: 15px;
-    color: rgb(28, 28, 33);
-    padding: 10px;
-    line-height: 1.5;
-  }
-  
-  
-  
-  .type-content .card1 .fake {
+   padding-left: 200px;
+   padding-right: 200px;
+   position: absolute;
+    
+   } */
+
+   /* .span-p{
+    color: pink;
+   } */
+   /* .card{
+        width: 20%;
+        display: inline-block; */
+        /* box-shadow: 5px 5px 90px rgb(205, 200, 200); */
+        /* box-shadow: px px px black;
+        border-radius: 500px; 
+        margin: 4%;
+        padding-bottom: 1px;
+        padding-left: 30px; */
+        
+        /* padding-top: 0px; */
+       /* }
+   
+   .image1 img{
+     width: 100%;
+     padding-left: 3px; */
+     /* border-top-right-radius: px; */
+     /* border-top-left-radius: 5px; */
+     /* border-bottom-left-radius: 5px; */
+     
+   
+    
+    /* }
+   
+   .card-title{
+    color: rgb(13, 16, 16);
+     text-align: center;
+     padding: px;
+     
+    } */
+   
+   /* h1{
+     font-size: 20px;
+    }
+   
+   .des {
+     padding: 89px;
+     padding-left: 60px;
+     text-align: center;
+     color: white;
+    
+     padding-top: 5px;
+     border-bottom-right-radius: 5px;
+     border-bottom-left-radius: 5px;
+   }
+   button{
+     margin-top: 40px;
+     margin-bottom: 10px;
+     background-color:rgb(188, 100, 129);
+     border: 1px solid black;
+     border-radius: 5px;
+     color: aliceblue;
+     padding:10px;
+     font-size: 20px;
+     width: 95px;
+    
+   }
+   button:hover{
+     background-color: palevioletred;
+     color: rgb(20, 13, 13);
+     transition: .5s;
+     cursor: pointer;
+   } */
+
+   /* .card{
+    width: 20%;
+    display: inline-block;
+    box-shadow: 2px 2px 20px black;
+    border-radius: 5px; 
+    margin: 2%;
+   }
+
+.image img{
+ width: 100%;
+ border-top-right-radius: 5px;
+ border-top-left-radius: 5px;
+ 
+
+
+}
+
+.title{
+
+ text-align: center;
+ padding: 10px;
+ 
+}
+
+h1{
+ font-size: 20px;
+}
+
+.des{
+ padding: 3px;
+ text-align: center;
+
+ padding-top: 10px;
+       border-bottom-right-radius: 5px;
+ border-bottom-left-radius: 5px;
+}
+button{
+ margin-top: 40px;
+ margin-bottom: 10px;
+ background-color: white;
+ border: 1px solid black;
+ border-radius: 5px;
+ padding:10px;
+}
+button:hover{
+ background-color: black;
+ color: white;
+ transition: .5s;
+ cursor: pointer;
+} */
+
+.body{
+  background-color:white;
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  position: relative;
+  /* padding-top: 300px; */
+}
+
+.type-container{
+  width: 100%;
+ 
+}
+.type-container .row1{
+  width: 80%;
+  margin: auto;
+ 
+}
+
+.type-container .row1 .header1{
+  width: 90%;
   text-align: center;
-  /* background-color: aqua; */
-  }
-  
-  /* 
-  @media screen and (max-width: 768px) {
-    .content
-  } */
+  margin: auto;
+  font-size: 40px;
+  /* font-weight: 1000; */
+}
+
+
+
+.type-container .row1 .header1 h1{
+  padding-top: 110px;
+  font-size: 45px;
+  color: black;
+   font-weight: 1000;
+}
+
+.type-container .row1 .header1 p{
+  margin-top: 15px;
+  font-size: 18px;
+  line-height: 1.5;
+  color: rgb(14, 14, 14);
+}
+
+.type-content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.type-content .card1{
+  flex: 1;
+  margin: 50px 20px;
+  /* box-shadow: px 0px 5px 0px rgba(red, green, blue, alpha); */
+  background-color:#ffd9f0 ;
+  transition: transform 0.3s ease;
+  border-radius: 40px;
+}
+.type-content .card1:hover{
+  transform: scale(1.05);
+}
+
+.type-content .card1 img{
+  width: 100%;
+  height: 370px;
+  padding: 10px;
+  border-radius: 50px;
+  transition: transform 0.3s ease;
+}
+.type-content .card1 img:hover{
+  transform: scale(1.05);
+}
+.type-content .card1 h4{
+  margin-top: 10px;
+  margin-left: 10px;
+  font-size: 18px;
+  text-align: center;
+}
+
+.type-content .card1 p{
+  font-size: 15px;
+  color: rgb(28, 28, 33);
+  padding: 10px;
+  line-height: 1.5;
+}
+
+
+.type-content .card1 {
+  font-size: 15px;
+  color: rgb(28, 28, 33);
+  padding: 10px;
+  line-height: 1.5;
+}
+
+
+
+.type-content .card1 .fake {
+text-align: center;
+/* background-color: aqua; */
+}
+
+/* 
+@media screen and (max-width: 768px) {
+  .content
+} */

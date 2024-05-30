@@ -23,6 +23,15 @@
 
 
 
+
+
+
+
+
+
+
+
+
 .emproidry-back{
     background-color: black;
 }
@@ -91,3 +100,82 @@
     transform: scale(1.05);
     color: black;
 }
+
+
+
+
+
+
+
+
+/* Background Section */
+.emproidry-back {
+    background-color: black;
+  }
+  
+  /* Heading Section */
+  .emp-head {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 50px;
+    font-weight: 900;
+    color: black;
+    padding-top: 110px;
+  }
+  
+  /* Container */
+  .container-emp {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    /* background-color: aqua; */
+  }
+  
+  /* Card Styles */
+  .card-emp {
+    width: 300px;
+    background-color: #ffd9f0;
+    margin: 30px;
+    padding: 20px;
+    border-radius: 20px;
+    border: 2px solid palevioletred;
+    transition: transform 0.3s ease;
+    text-align: center;
+  }
+  
+  .card-emp img {
+    width: 260px;
+    height: 280px;
+    border-radius: 20px;
+  }
+  
+  .card-emp p {
+    padding-top: 20px;
+  }
+  
+  .card-emp:hover {
+    transform: scale(1.05);
+  }
+  
+  .card-emp a {
+    text-decoration: none;
+    background-color: #8f1e63;
+    padding: 15px;
+    color: white;
+    display: block;
+    margin: 20px auto;
+    border-radius: 20px;
+    width: 80px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    font-size: 20px;
+  }
+  
+  .card-emp a:hover {
+    transform: scale(1.05);
+    color: black;
+  }
+  

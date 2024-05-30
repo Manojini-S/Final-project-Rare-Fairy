@@ -17,7 +17,7 @@ function Home() {
           </div>
           <div className="Home-content">
             <div className="article">
-              <h2>Hi Hello! Welcome to Rare  Fairy Designs World </h2>
+              <h2> Hello! Welcome to Rare  Fairy Designs World </h2>
               {/* <img src={home} className="picture" alt="Logo" /> */}
               <p></p>
               <a href="Register" className="button">Register Now</a>
@@ -28,7 +28,7 @@ function Home() {
       <About />   
       <Card/>
       <ContactUs />
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

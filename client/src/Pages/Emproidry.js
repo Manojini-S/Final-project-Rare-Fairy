@@ -1,96 +1,36 @@
+// Emproidry.js
 import React from 'react';
-import './Emproidry.css';
-import emp from '../Assets/emp3.jpeg';
+import { useLocation } from 'react-router-dom';
 import Navbar from '../Components/Navbar';
 import Footer from '../Components/Footer';
-import emp4 from '../Assets/emp4.png';
-import emp5 from '../Assets/emp5.png';
+import { useNavigate } from 'react-router-dom';
 
+const Emproidry = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const { title, cardImage } = location.state || {};
 
+  const handleClick = () => {
+    navigate("/Description", { state: { title, cardImage } });
+  };
 
-function Emproidry() {
-    return (
-
-        <>
-            <Navbar />
-            <div class="emp-head">Emproidry <span> Designs</span></div>
-            <div class="container-emp">
-                <div class="card-emp">
-                    <img src={emp} />
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam, eligendi.</p>
-                    <a href="Description" className="button">View </a>
-
-                </div>
-                <div class="card-emp">
-                    <img src={emp} />
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam, eligendi.</p>
-                    <a href="Description" className="button">View </a>
-                </div>
-                <div class="card-emp">
-                    <img src={emp} />
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam, eligendi.</p>
-                    <a href="Description" className="button">View </a>
-                </div>
-                <div class="card-emp">
-                    <img src={emp} />
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam, eligendi.</p>
-                    <a href="Description" className="button">View </a>
-                </div>
-            </div>
-
-            <div class="container-emp">
-                <div class="card-emp">
-                    <img src={emp4} />
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam, eligendi.</p>
-                    <a href="Description" className="button">View </a>
-
-                </div>
-                <div class="card-emp">
-                    <img src={emp4} />
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam, eligendi.</p>
-                    <a href="Description" className="button">View </a>
-                </div>
-                <div class="card-emp">
-                    <img src={emp4} />
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam, eligendi.</p>
-                    <a href="Description" className="button">View </a>
-                </div>
-                <div class="card-emp">
-                    <img src={emp4} />
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam, eligendi.</p>
-                    <a href="Description" className="button">View </a>
-                </div>
-
-
-
-            </div>
-
-            <div class="container-emp">
-                <div class="card-emp">
-                    <img src={emp5} />
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam, eligendi.</p>
-                    <a href="Register" className="button">View</a>
-
-                </div>
-                <div class="card-emp">
-                    <img src={emp5} />
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam, eligendi.</p>
-                    <a href="Register" className="button">View</a>
-                </div>
-                <div class="card-emp">
-                    <img src={emp5} />
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam, eligendi.</p>
-                    <a href="Register" className="button">View</a>
-                </div>
-                <div class="card-emp">
-                    <img src={emp5} />
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam, eligendi.</p>
-                    <a href="Register" className="button">View</a>
-                </div>
-            </div>
-            <Footer />
-        </>
-    )
-}
+  return (
+    <>
+      <Navbar />
+      <div className="emp-head">{title}<span> </span></div>
+      <div className="container-emp">
+        {cardImage && cardImage.map((image, index) => (
+          <div key={index} className="card-emp">
+            <h2>{title}</h2>
+            <img src={image.imageUrl || image} alt={title} />
+            <p>{image.Description}</p>
+            <a className="button" onClick={handleClick}>View</a>
+          </div>
+        ))}
+      </div>
+      <Footer />
+    </>
+  );
+};
 
 export default Emproidry;

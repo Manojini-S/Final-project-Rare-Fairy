@@ -49,7 +49,7 @@ const Nav = () => {
                 <ul class="nav-links">
                     <li><Link to="/">Home</Link></li>
                     <li><Link to="/AboutUs">About Us</Link></li>
-                    <li><Link to="/AriDesigns">Products</Link></li>
+                    <li><Link to="/AriDesignscard">Products</Link></li>
                     <li><Link to="/ContactUs">Contact Us</Link></li>
                     <li><Link to="/Login">Login</Link></li>
 

@@ -29,7 +29,7 @@ const uploadImage = (req, res) => {
 
 const getImage = async (req, res) => {
     try {
-        const imageFinder = await Category.find(); // Ensure this matches the model name
+        const imageFinder = await Category.find(); 
         if (imageFinder.length > 0) {
             res.json(imageFinder);
         } else {
@@ -41,7 +41,26 @@ const getImage = async (req, res) => {
     }
 };
 
+const showAllImage = async (req, res) => {
+    const { CategoryName } = req.params;
+    try {
+        const allImages = await Category.find({ CategoryName: CategoryName });
+
+        if (allImages.length === 0) {
+            return res.status(404).json({ message: "No images found for this category." });
+        }
+
+        return res.status(200).json(allImages);
+    } catch (error) {
+        console.error("Error finding images:", error);
+        return res.status(500).json({ message: "Internal server error." });
+    }
+};
+
+
+
 module.exports = {
     uploadImage,
-    getImage
+    getImage,
+    showAllImage
 };

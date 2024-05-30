@@ -9,6 +9,7 @@ function About() {
   return (
     <>
       <Navbar />
+      <div className='about-back'>
       <div className="about-us">
         <div className="about">
           <img src={ari} className="pic" alt="Logo" />
@@ -173,6 +174,7 @@ function About() {
           {/* <a href="Description" className="button">View</a> */}
         </div>
       </div>
+    </div>
     </div>
 
     </>
