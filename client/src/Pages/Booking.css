@@ -9,14 +9,17 @@
 } */
 
 .form-container {
-    /* padding-top: 20px; */
     background-color: #fff;
-    padding: 20px;
+    padding: 40px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    /* border: 1px solid ; */
     width: 400px;
-  
+}
+
+.form-container .order {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 form {
@@ -24,42 +27,46 @@ form {
     flex-direction: column;
 }
 
-.form-group {
-    margin-bottom: 19px;
+.book {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
-.form-label {
+.book-name {
     margin-bottom: 8px;
     font-weight: bold;
 }
 
-.form-input,
+.book-input,
 .form-select {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 16px;
+    width: 100%;
+    box-sizing: border-box; /* Ensures padding is included in the width */
 }
 
-.form-button {
+.dash {
     padding: 10px;
     border: none;
     border-radius: 4px;
-    background-color:purple;
+    background-color:palevioletred;
     color: white;
     font-size: 16px;
     cursor: pointer;
+    width: 100%;
+    box-sizing: border-box; /* Ensures padding is included in the width */
 }
 
-.form-button:hover {
-    background-color:red;
+.dash:hover {
+    background-color: peachpuff;
 }
-.booking{
+
+.booking {
     display: flex;
     justify-content: center;
     align-items: center;
     padding-top: 150px;
 }
-
-
-

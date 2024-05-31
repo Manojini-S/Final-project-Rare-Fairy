@@ -3,8 +3,11 @@ import './About.css';
 import Navbar from '../Components/Navbar';
 import ari from '../Assets/about.png';
 import Footer from '../Components/Footer';
-import emp from '../Assets/frame1.png';
-import service from '../Assets/service.png';
+// import emp from '../Assets/frame1.png';
+import service1 from '../Assets/service1.jpg';
+import service2 from '../Assets/service2.jpg';
+import service3 from '../Assets/service3.jpg';
+import service4 from '../Assets/service4.jpg';
 function About() {
   return (
     <>
@@ -79,12 +82,12 @@ function About() {
 
         <div class="box-container">
 
-          <div class="box">
-            {/* <!-- <img src="image/icon-1.png" alt=""> --> */}
+          {/* <div class="box">
+            <!-- <img src="image/icon-1.png" alt=""> -->
             <h3>Simplified Measuring</h3>
             <p>Whether it's a lehenga, bridal blouses, or Zardosi, whether it's a luxury or a necessity, you'll always look better if it's created to measure. Make no concessions to yourself. We'd be pleased to take your measurements and create a custom fit that complements your style and body type.</p>
 
-          </div>
+          </div> */}
 
           <div class="box">
             {/* <!-- <img src="image/icon-2.png" alt=""> --> */}
@@ -101,25 +104,25 @@ function About() {
 
           </div>
 
-          <div class="box">
-            {/* <!-- <img src="image/icon-4.png" alt=""> --> */}
+          {/* <div class="box">
+            <!-- <img src="image/icon-4.png" alt=""> -->
             <h3>Customization</h3>
-            <p>Your patterns, fabrics, and measurements are all set to make you feel comfortable and enjoy every bit of your big day when you get a custom-made dress. Your Aari work blouse or Bridal blouse dreams might come true at KP Boutique.</p>
+            <p>Your patterns, fabrics, and measurements are all set to make you feel comfortable and enjoy every bit of your big day when you get a custom-made dress. Your Aari work blouse or Bridal blouse dreams might come true at Rare Fairy.</p>
 
-          </div>
+          </div> */}
 
-          <div class="box">
-            {/* <!-- <img src="image/icon-4.png" alt=""> --> */}
+          {/* <div class="box">
+            <!-- <img src="image/icon-4.png" alt=""> -->
             <h3>Customization</h3>
-            <p>Your patterns, fabrics, and measurements are all set to make you feel comfortable and enjoy every bit of your big day when you get a custom-made dress. Your Aari work blouse or Bridal blouse dreams might come true at KP Boutique.</p>
+            <p>Your patterns, fabrics, and measurements are all set to make you feel comfortable and enjoy every bit of your big day when you get a custom-made dress. Your Aari work blouse or Bridal blouse dreams might come true at Rare Fairy.</p>
 
-          </div>
+          </div> */}
 
 
           <div class="box">
             {/* <!-- <img src="image/icon-4.png" alt=""> --> */}
             <h3>On Time Delivery</h3>
-            <p>Your patterns, fabrics, and measurements are all set to make you feel comfortable and enjoy every bit of your big day when you get a custom-made dress. Your Aari work blouse or Bridal blouse dreams might come true at KP Boutique.</p>
+            <p>Your patterns, fabrics, and measurements are all set to make you feel comfortable and enjoy every bit of your big day when you get a custom-made dress. Your Aari work blouse or Bridal blouse dreams might come true at rare fairy.</p>
 
           </div>
 
@@ -151,26 +154,26 @@ function About() {
       {/* <Footer/> */}
 
       <div>
-      <div className="emp-head">OUR  <span> SERVICESS</span></div>
+      <div className="emp-head">OUR<span>SERVICESS</span></div>
       <div className="container-emp">
         <div className="card-emp">
-          <img src={emp} alt="Embroidery Design " />
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam, eligendi.</p>
+          <img src={service2} alt="Embroidery Design " />
+          {/* <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam, eligendi.</p> */}
           {/* <a href="Description" className="button">View</a> */}
         </div>
         <div className="card-emp">
-          <img src={service} alt="Embroidery Design " />
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam, eligendi.</p>
+          <img src={service1} alt="Embroidery Design " />
+          {/* <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam, eligendi.</p> */}
           {/* <a href="Description" className="button">View</a> */}
         </div>
         <div className="card-emp">
-          <img src={emp} alt="Embroidery-Design " />
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam, eligendi.</p>
+          <img src={service4} alt="Embroidery-Design " />
+          {/* <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam, eligendi.</p> */}
           {/* <a href="Description" className="button">View</a> */}
         </div>
         <div className="card-emp">
-          <img src={emp} alt="Embroidery-Design " />
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam, eligendi.</p>
+          <img src={service3} alt="Embroidery-Design " />
+          {/* <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam, eligendi.</p> */}
           {/* <a href="Description" className="button">View</a> */}
         </div>
       </div>

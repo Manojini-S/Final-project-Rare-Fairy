@@ -216,18 +216,18 @@ const Description = () => {
                                 <img src={image.imageUrl || image} alt={title} />
 
                                 <div className="about-content2">
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint voluptates sed dolores maiores sequi incidunt voluptas tenetur. Quaerat itaque corrupti veritatis. Ipsam laborum quas iste cum animi? Facere molestias laudantium consectetur odio, ratione, velit maiores dignissimos possimus necessitatibus perspiciatis quod ut soluta fugit eos est delectus autem. Aliquam, at consequuntur quaerat commodi perspiciatis voluptatibus accusamus ex facilis assumenda. Cupiditate, possimus quo. Laudantium, cum cupiditate. Expedita odit vitae ab dolor, incidunt labore necessitatibus architecto quidem id sapiente est consequatur iste ipsa, fuga hic quaerat? In autem incidunt, exercitationem sed officia numquam illo modi facere tempora debitis nisi delectus iusto voluptates labore.</p>
+                                    <p>tas tenetur necessitatibus perspiciatis quod ut soluta fugit eos est delectus autem. Aliquam, at consequuntur quaerat commodi perspiciatis voluptatibus accusamus ex facilis assumenda. Cupiditate, possimus quo. Laudantium, cum cupiditate. Expedita odit vitae ab dolor, incidunt labore necessitatibus architecto quidem id sapiente est consequatur iste ipsa, fuga hic quaerat? In autem incidunt, exercitationem sed officia numquam illo modi facere tempora debitis nisi delectus iusto voluptates labore.</p>
                                     <p>{image.Description}</p>
                                     {/* <h3>{price}</h3> */}
-                                      <h3>price = 5000/=</h3>
-                                    <div className="rating">
+                                      <h3>price = 50/=</h3>
+                                    {/* <div className="rating">
                                         <i className="fas fa-star"></i>
                                         <i className="fas fa-star"></i>
                                         <i className="fas fa-star"></i>
                                         <i className="fas fa-star"></i>
                                         <i className="fas fa-star-half"></i>
-                                    </div>
-                                    <a href='/Booking'> <button className="dash" id="dash">Book Now</button></a>
+                                    </div> */}
+                                    <a href='/Booking'> <button className="dash1" id="dash">Book Now</button></a>
                                 </div>
                             </div>
                         ))}
@@ -235,9 +235,9 @@ const Description = () => {
                 </div>
             </div>
             <div class="rev-section">
-    <h2 class="title">Our Guests <span>Love Us</span></h2>
+    {/* <h2 class="title">Our Guests <span>Love Us</span></h2> */}
     <div class="reviews">
-        <div class="review">
+        {/* <div class="review">
             <div class="head-review">
                 <img class="review-img" src="https://images.unsplash.com/photo-1479936343636-73cdc5aae0c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80" width="250px" />
             </div>
@@ -253,8 +253,8 @@ const Description = () => {
                 </div>
                 <div class="desc-review">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati eligendi suscipit illum officia ex eos.</div>
             </div>
-        </div>
-        <div class="review">
+        </div> */}
+        {/* <div class="review">
             <div class="head-review">
                 <img class="review-img" src="https://images.unsplash.com/photo-1479936343636-73cdc5aae0c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80" width="250px" />
             </div>
@@ -270,8 +270,8 @@ const Description = () => {
                 </div>
                 <div class="desc-review">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati eligendi suscipit illum officia ex eos.</div>
             </div>
-        </div>
-        <div class="review">
+        </div> */}
+        {/* <div class="review">
             <div class="head-review">
                 <img class="review-img" src="https://images.unsplash.com/photo-1479936343636-73cdc5aae0c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80" width="250px" />
             </div>
@@ -287,8 +287,8 @@ const Description = () => {
                 </div>
                 <div class="desc-review">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati eligendi suscipit illum officia ex eos.</div>
             </div>
-        </div>
-        <div class="review">
+        </div> */}
+        {/* <div class="review">
             <div class="head-review">
                 <img class="review-img" src="https://images.unsplash.com/photo-1479936343636-73cdc5aae0c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80" width="250px" />
             </div>
@@ -304,8 +304,8 @@ const Description = () => {
                 </div>
                 <div class="desc-review">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati eligendi suscipit illum officia ex eos.</div>
             </div>
-        </div>
-        <div class="review">
+        </div> */}
+        {/* <div class="review">
             <div class="head-review">
                 <img class="review-img" src="https://images.unsplash.com/photo-1479936343636-73cdc5aae0c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80" width="250px" />
             </div>
@@ -321,8 +321,8 @@ const Description = () => {
                 </div>
                 <div class="desc-review">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati eligendi suscipit illum officia ex eos.</div>
             </div>
-        </div>
-        <div class="review">
+        </div> */}
+        {/* <div class="review">
             <div class="head-review">
                 <img class="review-img" src="https://images.unsplash.com/photo-1479936343636-73cdc5aae0c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80" width="250px" />
             </div>
@@ -338,7 +338,7 @@ const Description = () => {
                 </div>
                 <div class="desc-review">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati eligendi suscipit illum officia ex eos.</div>
             </div>
-        </div>
+        </div> */}
     </div>
 </div>
 

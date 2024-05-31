@@ -60,25 +60,22 @@ const FormComponent = () => {
         <>
             <Navbar />
             <div className='booking'>
-                <div className="form-container">
+                <div className="form-container"><h1 className='order'>Designs  order</h1>
                     <form action="submit_form" method="post">
-                        <div className="form-group">
-                            <label htmlFor="name" className="form-label">Name:</label>
-                            <input type="text" id="name" name="name" className="form-input" value={formData.name} onChange={handleChange} required />
+                        <div className="book">
+                            <label htmlFor="name" className="book-name">Name:</label>
+                            <input type="text" id="name" name="name" className="book-input" value={formData.name} onChange={handleChange} required />
                         </div>
-                        <div className="form-group">
-                            <label htmlFor="clothColor" className="form-label">Contact No:</label>
-                            <input type="text" id="clothColor" name="clothColor" className="form-input" value={formData.clothColor} onChange={handleChange} required />
+                        <div className="book">
+                            <label htmlFor="clothColor" className="book-name">Contact No:</label>
+                            <input type="text" id="clothColor" name="clothColor" className="book-input" value={formData.clothColor} onChange={handleChange} required />
                         </div>
-                        <div className="form-group">
-                            <label htmlFor="contactNo" className="form-label">Address:</label>
-                            <input type="text" id="contactNo" name="contactNo" className="form-input" value={formData.contactNo} onChange={handleChange} required />
+                        <div className="book">
+                            <label htmlFor="contactNo" className="book-name">Address:</label>
+                            <input type="text" id="contactNo" name="contactNo" className="book-input" value={formData.contactNo} onChange={handleChange} required />
                         </div>
-                        {/* <div className="form-group">
-                            <label htmlFor="file" className="form-label">Upload Sample Designs Photos:</label>
-                            <input type="file" id="file" name="file" className="form-input" onChange={handleFileChange} required />
-                        </div> */}
-                        <div className="form-group">
+                        
+                        <div className="book">
                             <StripeCheckout
                                 stripeKey="pk_test_51PJFojP7PxWjIVya2Bv5APhoOZxJODD5GkAIoYedJdeC9AwkajgyMixKSxbyRKKPVhPWCScfkFAatKx4ztdPoMnS004kNjDNrJ"
                                 token={makePayment}

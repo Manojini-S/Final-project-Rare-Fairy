@@ -1,4 +1,4 @@
-.Admin-container{
+/* .Admin-container{
   position: relative;
   width: 100%;
 }
@@ -469,6 +469,169 @@
     right: 0;
     left: initial;
   }
+} */
+
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
+
+body {
+  background-color: #f4f4f4;
+}
+
+.dashboard {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 250px;
+  background-color:palevioletred;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sidebar-header {
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+  background-color:palevioletred;
+}
+
+.sidebar-menu {
+  list-style: none;
+  padding: 20px 0;
+  width: 100%;
+}
+
+.sidebar-menu li {
+  width: 100%;
+  text-align: left;
+}
+
+.sidebar-menu li a {
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  color: #fff;
+  text-decoration: none;
+  width: 100%;
+  transition: background-color 0.3s;
+}
+
+.sidebar-menu li a:hover {
+  background-color: #575757;
+}
+
+.sidebar-menu li a i {
+  margin-right: 10px;
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  background-color: #f4f4f4;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  background-color: #fff;
+  padding: 10px 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.header-left h1 {
+  color: #333;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.search-bar input {
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+}
+
+/* .search-bar button {
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  border-left: none;
+  border-radius: 0 5px 5px 0;
+  background-color: #333;
+  color: #fff;
+  cursor: pointer;
+} */
+
+.notification {
+  margin-right: 20px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+}
+
+.profile img {
+  border-radius: 70%;
+  margin-right: 10px;
+  width: 30px;
+}
+
+.profile span {
+  color: #333;
+  font-size: 20px;
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card-dash {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 20px;
+  flex: 1;
+  min-width: 200px;
+  max-width: calc(50% - 20px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.card h3 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.card p {
+  color: #666;
+}
+
 
   
