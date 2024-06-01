@@ -1,14 +1,14 @@
-const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
+// const mongoose = require("mongoose");
+// const Schema = mongoose.Schema;
 
-const schema = new Schema({
+// const schema = new Schema({
   
-    imageUrl: { 
-        type: String,
-        required: true,
-    },
+//     imageUrl: { 
+//         type: String,
+//         required: true,
+//     },
   
-});
+// });
 
-const Gallery = mongoose.model("Gallery", schema); 
-module.exports = Gallery;
+// const Gallery = mongoose.model("Gallery", schema); 
+// module.exports = Gallery;

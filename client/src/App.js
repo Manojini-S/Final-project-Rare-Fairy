@@ -16,12 +16,12 @@ import Zardosi from './Pages/Zardosi';
 import UserProfile from './Pages/Userprofile';
 import Popup from './Pages/Popup';
 import Description from './Pages/Description';
-// import Payment from './Pages/Payment';
+
 import Dashboard from './Pages/Dashboard';
 import Product from './Pages/product';
 import Designtype from './Components/designstype';
 import Booking from './Pages/Booking';
-import Gallery from './Pages/Gallery';
+
 import Aridesignscard from './Pages/Aridesignscard';
 import Designs from './Pages/designs';
 import Paymentadmin from './Pages/Paymentadmin';
@@ -50,7 +50,7 @@ function App() {
         <Route path="/product" element={<Product />} />
         <Route path="/designtype" element={<Designtype />} />
         <Route path="/Booking" element={<Booking />} />
-        <Route path="/Gallery" element={<Gallery />} />
+      
         <Route path="/Aridesignscard" element={<Aridesignscard/>} />
         <Route path="/Designs" element={<Designs/>} />
         <Route path="/Bookingpopup" element={<Bookingpopup/>} />

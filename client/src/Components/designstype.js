@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './designstype.css'; // Assuming it's a CSS file
+import './designstype.css';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
@@ -18,7 +18,7 @@ const Card = ({ title, content, imageUrl }) => {
     };
 
     fetchCardImage();
-  }, [title]); // Dependency array to fetch on title change
+  }, [title]);
 
   const handleClick = () => {
     navigate("/Emproidry", { state: { title, cardImage } });
@@ -30,7 +30,7 @@ const Card = ({ title, content, imageUrl }) => {
       <div className="card-content">
         <h2 className="card-title">{title}</h2>
         <p className="card-text">{content}</p>
-        <button onClick={handleClick}>View Images</button>
+        <button onClick={handleClick}>View Designs</button>
       </div>
     </div>
   );

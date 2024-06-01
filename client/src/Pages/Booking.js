@@ -8,7 +8,7 @@ import StripeCheckout from 'react-stripe-checkout';
 const FormComponent = () => {
     const [product, setProduct] = useState({
         name: "Rare Fairy",
-        price: 50,
+        price: 500,
         productBy: "Mano",
     });
 
@@ -80,7 +80,7 @@ const FormComponent = () => {
                                 stripeKey="pk_test_51PJFojP7PxWjIVya2Bv5APhoOZxJODD5GkAIoYedJdeC9AwkajgyMixKSxbyRKKPVhPWCScfkFAatKx4ztdPoMnS004kNjDNrJ"
                                 token={makePayment}
                                 name="Rare Fairy"
-                                amount={product.price * 10000}
+                                amount={product.price * 0}
                             >
                                 <button className="dash" id="dash">Order Now</button>
                             </StripeCheckout>

@@ -6,7 +6,7 @@ const uploadImage = (req, res) => {
         if (err) {
             console.error(err);
             return res.status(500).send('An error occurred while uploading the image.');
-        }
+        } 
 
         const { CategoryName, Description } = req.body;
         const imageUrl = req.file ? req.file.path : null; // Ensure this matches the field name

@@ -351,9 +351,9 @@ const UserTable = () => {
                         <th>Name</th>
                         <th>Email</th>
                         <th>Delete</th>
-                        <th>Verify</th>
+                        {/* <th>Verify</th> */}
                         <th>Edit</th>
-                        <th>Add</th>
+                        {/* <th>Add</th> */}
                     </tr>
                 </thead>
                 <tbody>
@@ -364,17 +364,17 @@ const UserTable = () => {
                             <td>
                                 <button className="delete" onClick={() => handleDeleteClick(user._UserId)}>Delete</button>
                             </td>
-                            <td>
+                            {/* <td>
                                 {!user.Verified && (
                                     <button className="verify" onClick={() => handleVerifyClick(user._UserId)}>Verify</button>
                                 )}
-                            </td>
+                            </td> */}
                             <td>
                                 <button className="edit" onClick={() => handleEditClick(user)}>Edit</button>
                                
                             </td>
                             <td>
-                            <button className="add-user" onClick={() => setIsAddModalOpen(true)}>Add </button>
+                            {/* <button className="add-user" onClick={() => setIsAddModalOpen(true)}>Add </button> */}
                                
                             </td>   
                         </tr>

@@ -783,10 +783,10 @@ const AdminDashboard = () => {
                         <h3>Order</h3>
                         <p>Number of orders:12</p>
                     </div>
-                    <div className="card-dash">
+                    {/* <div className="card-dash">
                         <h3>Order</h3>
                         <p>Reports generated: 567</p>
-                    </div>
+                    </div> */}
                  
                 </div>
                 <Admin/>

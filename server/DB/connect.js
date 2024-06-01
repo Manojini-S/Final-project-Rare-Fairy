@@ -13,7 +13,7 @@ const bodyParser = require("body-parser");
 const {upload} = require('../utils/multer.config')
 const adminRoutes = require('../Routes/adminRoutes');
 const imageRoutes = require('../Routes/imageRoutes')
-const galleryRoutes = require('../Routes/gallery.Routes')
+// const galleryRoutes = require('../Routes/gallery.Routes')
 
 // const adminController = require('../Controllers/adminController');
 
@@ -74,7 +74,7 @@ function connect() {
     app.use('/usercreate', LoginRoutes);
     app.use('/admin', adminRoutes);
     app.use('/image', imageRoutes )
-    app.use('/api/gallery', galleryRoutes);
+    // app.use('/api/gallery', galleryRoutes);
     
 
   
