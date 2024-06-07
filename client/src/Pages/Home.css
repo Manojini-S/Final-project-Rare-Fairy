@@ -23,7 +23,7 @@
 .Home-container{
     width: 100%;
     /* background-color:rgb(208, 145, 145); */
-    background-image: url("../Assets/image copy 4.png");
+    background-image: url("../Assets/123.webp");
     opacity: 100%;
     background-size: cover;
     background-position: center;
@@ -91,7 +91,7 @@
     line-height: 1.5;
     /* letter-spacing: px; */
     font-weight: 1000;
-    color: white;
+    color: rgb(59, 45, 45);
    
    padding-bottom: 20px;
    padding-right: 290px;

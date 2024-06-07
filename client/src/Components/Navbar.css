@@ -240,7 +240,7 @@ body, html {
 }
 
 .logo img {
-    width: 100px;
+    width: 70px;
     height: auto;
   border-radius: 30px;
   transition: transform 0.8s ease;
@@ -277,4 +277,18 @@ body, html {
 .nav-links a:hover {
     color: black;
     border-radius: 60px;
+}
+
+.btn-log {
+    background-color: #ff5733;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
 }

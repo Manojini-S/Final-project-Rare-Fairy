@@ -18,11 +18,16 @@ function About() {
           <img src={ari} className="pic" alt="Logo" />
           <div className="about-text">
             <h2> </h2>
-            <h5>About <span>Us</span></h5>
+            <h5>Best Customized Designer <span>Rare Fairy At Vavuniya</span></h5>
+            
             <p>
+            If you're looking for something unique, Rare Fairy in Vavuniya has a wide range of collections to choose from, as well as courteous guidance. Aari embroidered blouses, Bridal blouses, Saree waist belts, Lehengas, and Readymade designer blouses are among our specialty and wholesale offerings. We have the most acceptable and exclusive stylish blouse designs on the market.
 
-              We Rare fairy in Vavuniya hope you will be delighted with our trending patterns and variations, whether you are a first-time visitor or a customer. Whether it's an Aari embroidery blouse or a Bridal blouse, Zardosi work, a Lehenga, a Designer saree, or readymade designer blouses, RF Ari creations has a variety of patterns and options to suit any woman's own sense of style.
-              our Ari Creations makes every effort to make you appear your best. We strive to make every purchase a pleasant one. Excellent customer service, speedy order processing, and a no-hassle return policy are among our main goals.We offer a large range and variety of Aari embroidery , so take a look at our extensive range of collections and where we focus on product design, delivery, and customer satisfaction.
+Our enthusiasm for precisely designed and personalized aari work blouses, bridal collections, and Zardosi has brought us the maximum happiness from our consumers. We are aware of our clients' needs and will make every effort to satisfy them. KP Boutique is a convenience store in Coimbatore that sells a wide selection of clothing brands. We have branded clothing and a variety of product styles for you to choose from.
+
+If you have any queries regarding our products or want to check on their availability, please contact us.
+
+
             </p>
           </div>
         </div>

@@ -10,6 +10,7 @@ function RegistrationForm() {
   const [password, setPassword] = useState('');
   const [confirmpassword, setConfirmPassword] = useState('');
   const [errors, setErrors] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const navigate = useNavigate();
 
   const validate = () => {
@@ -19,6 +20,10 @@ function RegistrationForm() {
     if (!email) newErrors.email = "Email is required";
     else if (!/\S+@\S+\.\S+/.test(email)) newErrors.email = "Email is invalid";
     if (!password) newErrors.password = "Password is required";
+    else if (password.length < 8) newErrors.password = "Password must be at least 8 characters";
+    else if (!/[A-Z]/.test(password)) newErrors.password = "Password must contain at least one uppercase letter";
+    else if (!/[a-z]/.test(password)) newErrors.password = "Password must contain at least one lowercase letter";
+    else if (!/[0-9]/.test(password)) newErrors.password = "Password must contain at least one number";
     if (!confirmpassword) newErrors.confirmpassword = "Confirm Password is required";
     else if (password !== confirmpassword) newErrors.confirmpassword = "Passwords do not match";
     return newErrors;
@@ -32,6 +37,7 @@ function RegistrationForm() {
       return;
     }
 
+    setIsSubmitting(true);
     const result = { UserId: username, Name: fullname, Email: email, Password: password, Role: "user" };
 
     try {
@@ -44,7 +50,10 @@ function RegistrationForm() {
       });
 
       if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
+        const errorData = await response.json();
+        setErrors({ apiError: errorData.message });
+        setIsSubmitting(false);
+        return;
       }
 
       const data = await response.json();
@@ -52,6 +61,8 @@ function RegistrationForm() {
       navigate('/login'); // Redirect to login page after successful registration
     } catch (error) {
       console.error('Error:', error);
+      setErrors({ apiError: 'An error occurred. Please try again later.' });
+      setIsSubmitting(false);
     }
   };
 
@@ -114,9 +125,11 @@ function RegistrationForm() {
             />
             <span></span>
             <label>Confirm Password</label>
-            {errors.confirmpassword && <span className="error">{errors.confirmpassword}</span>}
+            {errors.confirmpassword && <h1 className="error">{errors.confirmpassword}</h1>}
           </div>
-          <input type="submit" value="Register Now" />
+          <input type="submit" value="Register Now" disabled={isSubmitting} />
+          {isSubmitting && <span className="loading">Submitting...</span>}
+          {errors.apiError && <span className="error">{errors.apiError}</span>}
           <Link to="/Popup"></Link>
         </form>
       </div>
@@ -125,4 +138,3 @@ function RegistrationForm() {
 }
 
 export default RegistrationForm;
-

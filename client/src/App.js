@@ -16,7 +16,7 @@ import Zardosi from './Pages/Zardosi';
 import UserProfile from './Pages/Userprofile';
 import Popup from './Pages/Popup';
 import Description from './Pages/Description';
-
+import Addproduct from './Pages/Addproduct';
 import Dashboard from './Pages/Dashboard';
 import Product from './Pages/product';
 import Designtype from './Components/designstype';
@@ -50,7 +50,7 @@ function App() {
         <Route path="/product" element={<Product />} />
         <Route path="/designtype" element={<Designtype />} />
         <Route path="/Booking" element={<Booking />} />
-      
+        <Route path="/Addproduct" element={<Addproduct />} />
         <Route path="/Aridesignscard" element={<Aridesignscard/>} />
         <Route path="/Designs" element={<Designs/>} />
         <Route path="/Bookingpopup" element={<Bookingpopup/>} />

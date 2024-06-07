@@ -74,6 +74,9 @@ const FormComponent = () => {
                             <label htmlFor="contactNo" className="book-name">Address:</label>
                             <input type="text" id="contactNo" name="contactNo" className="book-input" value={formData.contactNo} onChange={handleChange} required />
                         </div>
+                        <div className="book">
+                        <button className="dash" id="dash">Order Now</button>
+                        </div>
                         
                         <div className="book">
                             <StripeCheckout
@@ -82,7 +85,8 @@ const FormComponent = () => {
                                 name="Rare Fairy"
                                 amount={product.price * 0}
                             >
-                                <button className="dash" id="dash">Order Now</button>
+                                <button className="dash" id="dash">Pay Now</button>
+                              
                             </StripeCheckout>
                         </div>
                     </form>
@@ -93,3 +97,8 @@ const FormComponent = () => {
 };
 
 export default FormComponent;
+
+
+
+
+
