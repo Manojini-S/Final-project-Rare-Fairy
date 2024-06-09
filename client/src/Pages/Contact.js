@@ -395,29 +395,31 @@ function ContactUs() {
       <Navbar />
       <section className="contact">
         <div className="contact-content">
-          <h2>Contact<span> Us</span></h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum nihil odit adipisci illo inventore eum, corrupti commodi delectus.</p>
+          <h2>Let's Get In<span>Touch</span></h2>
+          <h3>
+If you have any comment or suggestions just leave us a message</h3>
         </div>
         <div className="container-Us">
           <div className="contactInfo">
             <div className="box">
               <div className="icon"><i className="fa fa-map-marker" aria-hidden="true"></i></div>
               <div className="text1">
-                <h3>Address</h3>
+                <h3>RARE FAIRY
+SHOPPING ADDRESS</h3>
                 <p>1234 Kurumankadu Road,<br />Vavuniya, Sri Lanka,<br />14568</p>
               </div>
             </div>
             <div className="box">
               <div className="icon"><i className="fa fa-phone" aria-hidden="true"></i></div>
               <div className="text1">
-                <h3>Phone</h3>
+                <h3>SAY “HELLO“</h3>
                 <p>12345678</p>
               </div>
             </div>
             <div className="box">
               <div className="icon"><i className="fa fa-envelope-o" aria-hidden="true"></i></div>
               <div className="text1">
-                <h3>Email</h3>
+                <h3>EMAILING ADDRESS</h3>
                 <p>rarefairy@gmail.com</p>
               </div>
             </div>

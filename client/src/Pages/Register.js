@@ -128,7 +128,7 @@ function RegistrationForm() {
             {errors.confirmpassword && <h1 className="error">{errors.confirmpassword}</h1>}
           </div>
           <input type="submit" value="Register Now" disabled={isSubmitting} />
-          {isSubmitting && <span className="loading">Submitting...</span>}
+          {isSubmitting && <span className="loading">Registred successful</span>}
           {errors.apiError && <span className="error">{errors.apiError}</span>}
           <Link to="/Popup"></Link>
         </form>

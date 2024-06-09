@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './Pages/Home';
 import About from './Pages/About';
 import Contact from './Pages/Contact';
@@ -17,18 +17,18 @@ import UserProfile from './Pages/Userprofile';
 import Popup from './Pages/Popup';
 import Description from './Pages/Description';
 import Addproduct from './Pages/Addproduct';
-import Dashboard from './Pages/Dashboard';
+import AdminDashboard from './Pages/Dashboard';
 import Product from './Pages/product';
 import Designtype from './Components/designstype';
 import Booking from './Pages/Booking';
-
 import Aridesignscard from './Pages/Aridesignscard';
 import Designs from './Pages/designs';
 import Paymentadmin from './Pages/Paymentadmin';
 import Bookingpopup from './Pages/bookingpopup';
+
 function App() {
   return (
-    <BrowserRouter>
+    <Router>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/AboutUs" element={<About />} />
@@ -40,24 +40,22 @@ function App() {
         <Route path="/Salwar" element={<Salwar />} />
         <Route path="/Bridel" element={<Bridel />} />
         <Route path="/Simpleblouse" element={<Simpleblouse />} />
+        <Route path="/Lehenga" element={<Lehenga />} />
         <Route path="/Zardosi" element={<Zardosi />} />
         <Route path="/Userprofile" element={<UserProfile />} />
         <Route path="/Popup" element={<Popup />} />
         <Route path="/Description" element={<Description />} />
-        <Route path="/Lehenga" element={<Lehenga />} />
-        <Route path="/Paymentadmin" element={<Paymentadmin />} />
-        <Route path="/Dashboard" element={<Dashboard />} />
+        <Route path="/Addproduct" element={<Addproduct />} />
+        <Route path="/Dashboard" element={<AdminDashboard />} />
         <Route path="/product" element={<Product />} />
         <Route path="/designtype" element={<Designtype />} />
         <Route path="/Booking" element={<Booking />} />
-        <Route path="/Addproduct" element={<Addproduct />} />
-        <Route path="/Aridesignscard" element={<Aridesignscard/>} />
-        <Route path="/Designs" element={<Designs/>} />
-        <Route path="/Bookingpopup" element={<Bookingpopup/>} />
-
-        
+        <Route path="/Aridesignscard" element={<Aridesignscard />} />
+        <Route path="/Designs" element={<Designs />} />
+        <Route path="/Paymentadmin" element={<Paymentadmin />} />
+        <Route path="/Bookingpopup" element={<Bookingpopup />} />
       </Routes>
-    </BrowserRouter>
+    </Router>
   );
 }
 

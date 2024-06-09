@@ -21,7 +21,7 @@ function About() {
             <h5>Best Customized Designer <span>Rare Fairy At Vavuniya</span></h5>
             
             <p>
-            If you're looking for something unique, Rare Fairy in Vavuniya has a wide range of collections to choose from, as well as courteous guidance. Aari embroidered blouses, Bridal blouses, Saree waist belts, Lehengas, and Readymade designer blouses are among our specialty and wholesale offerings. We have the most acceptable and exclusive stylish blouse designs on the market.
+            If you're looking for something unique, Rare Fairy in  has a wide range of collections to choose from, as well as courteous guidance. Aari embroidered blouses, Bridal blouses, Saree waist belts, Lehengas, and Readymade designer blouses are among our specialty and wholesale offerings. We have the most acceptable and exclusive stylish blouse designs on the market.
 
 Our enthusiasm for precisely designed and personalized aari work blouses, bridal collections, and Zardosi has brought us the maximum happiness from our consumers. We are aware of our clients' needs and will make every effort to satisfy them. KP Boutique is a convenience store in Coimbatore that sells a wide selection of clothing brands. We have branded clothing and a variety of product styles for you to choose from.
 

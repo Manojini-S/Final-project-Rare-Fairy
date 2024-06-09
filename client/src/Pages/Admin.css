@@ -255,3 +255,45 @@ button[type="submit"] {
 button[type="submit"]:hover {
   background-color: #444547;
 } */
+
+.confirmation-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.confirmation-modal h2 {
+  margin-top: 0;
+}
+
+.confirmation-modal p {
+  margin-bottom: 30px;
+}
+
+.confirmation-modal button {
+  padding: 10px 20px;
+  background-color: palevioletred;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.confirmation-modal button:hover {
+  background-color: palevioletred;
+}
+
+.confirmation-modal .cancel-btn {
+  background-color: #ccc;
+  margin-right: 10px;
+}
+
+.confirmation-modal .cancel-btn:hover {
+  background-color: #999;
+}

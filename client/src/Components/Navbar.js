@@ -52,6 +52,7 @@ const Nav = () => {
                     <li><Link to="/AriDesignscard">Products</Link></li>
                     <li><Link to="/ContactUs">Contact Us</Link></li>
                     <li><Link to="/Login">Login</Link></li>
+                    {/* <li><Link to="/Login">Logout</Link></li> */}
 
                 </ul>
             </nav>

@@ -1,10 +1,9 @@
 const express = require("express");
-const mongoose = require ("mongoose")
+const router = express.Router();
 const Admin = require('../Models/Admin.models');
 
-
 // Create a new admin entry
-exports.createAdmin = async (req, res) => {
+router.post('/', async (req, res) => {
     const { Producttype, Price, Payment, Status } = req.body;
 
     try {
@@ -20,20 +19,20 @@ exports.createAdmin = async (req, res) => {
     } catch (error) {
         res.status(500).json({ error: 'Server error' });
     }
-};
+});
 
 // Get all admin entries
-exports.getAllAdmins = async (req, res) => {
+router.get('/', async (req, res) => {
     try {
         const admins = await Admin.find();
         res.status(200).json(admins);
     } catch (error) {
         res.status(500).json({ error: 'Server error' });
     }
-};
+});
 
 // Get a single admin entry by ID
-exports.getAdminById = async (req, res) => {
+router.get('/:id', async (req, res) => {
     const { id } = req.params;
 
     try {
@@ -45,10 +44,10 @@ exports.getAdminById = async (req, res) => {
     } catch (error) {
         res.status(500).json({ error: 'Server error' });
     }
-};
+});
 
 // Update an admin entry by ID
-exports.updateAdmin = async (req, res) => {
+router.put('/:id', async (req, res) => {
     const { id } = req.params;
     const { Producttype, Price, Payment, Status } = req.body;
 
@@ -68,10 +67,10 @@ exports.updateAdmin = async (req, res) => {
     } catch (error) {
         res.status(500).json({ error: 'Server error' });
     }
-};
+});
 
 // Delete an admin entry by ID
-exports.deleteAdmin = async (req, res) => {
+router.delete('/:id', async (req, res) => {
     const { id } = req.params;
 
     try {
@@ -85,4 +84,6 @@ exports.deleteAdmin = async (req, res) => {
     } catch (error) {
         res.status(500).json({ error: 'Server error' });
     }
-};
+});
+
+module.exports = router;

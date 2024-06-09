@@ -1,5 +1,7 @@
 const express = require("express");
-const User = require("../Models/User.models");
+//const User = require("../Models/User.models");
+ 
+const User = require('../Models/User.models');
 
 exports.getUser = (req, res) => { 
     User.find({})
@@ -29,17 +31,35 @@ exports.createUser = (req, res) => {
         });
 };
 
+
 exports.updateUser = async (req, res) => {
+    const userId = req.params.id;
+    const updates = req.body;
+
     try {
-        const { id } = req.params;
-        await User.findByIdAndUpdate(id, req.body);
-        const user = await User.findById(id);
+        const user = await User.findByIdAndUpdate(userId, updates, { new: true });
+        if (!user) {
+            return res.status(404).json({ message: 'User not found' });
+        }
         res.status(200).json(user);
     } catch (error) {
-        res.status(400).send(error);
+        res.status(400).json({ error: error.message });
     }
 };
 
+// Other controller functions...
+
+// exports.updatedUser = async (req, res) => {
+//     try {
+//         const { id } = req.params;
+//         await User.findByIdAndUpdate(id, req.body);
+//         const user = await User.findById(id);
+//         res.status(200).json(user);
+//     } catch (error) {
+//         res.status(400).send(error);
+//     }
+// };
+/*
 exports.deleteUser = (req, res) => {
     const id = req.params.id;
     User.findByIdAndRemove(id, (err, user) => {
@@ -51,22 +71,38 @@ exports.deleteUser = (req, res) => {
             res.status(200).json(user);
         }
     });
-};
+};*/
 
-exports.verifyUser = (req, res) => {
+
+
+/*exports.deleteUser = (req, res) => {
     const id = req.params.id;
-    User.findByIdAndUpdate(id, { Verified: true }, { new: true })
-        .then((user) => {
-            if (!user) {
-                res.status(404).json({ message: "User not found" });
-            } else {
-                res.status(200).json({ message: "User verified successfully", user });
-            }
+    User.findByIdAndRemove(id, (err, user) => {
+        if (err) {
+            return res.status(500).json({ message: "Something went wrong" });
+        } else if (!user) {
+            return res.status(404).json({ message: "User not found" });
+        } else {
+            return res.status(200).json({ message: "User deleted successfully", user });
+        }
+    });
+};*/
+exports.deleteUser = (req, res) => {
+    const userId = req.params.id;
+    User.findByIdAndDelete(userId)
+        .then(() => {
+            res.status(200).json({ message: 'User deleted successfully' });
         })
         .catch((err) => {
-            res.status(500).json({ message: "Something went wrong", err });
+            res.status(500).json({ message: 'Failed to delete user', error: err });
         });
 };
+
+
+
+ 
+ 
+ 
 
 exports.loginUser = (req, res) => {
     const { username } = req.params;

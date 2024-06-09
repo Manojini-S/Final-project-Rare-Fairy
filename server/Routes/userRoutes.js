@@ -1,20 +1,24 @@
 const express = require('express');
 const router = express.Router();
-const cors = require ('cors')
-const userController = require('../Controller/UserController')
+const User = require('../Models/User.models');
+const cors = require('cors');
+const userController = require('../Controller/UserController');
 
-//middleware
+// Middleware
 router.use(
     cors({
         credentials: true,
-        origin: 'http://localhost:3000' 
+        origin: 'http://localhost:3000'
     })
-)
+);
 
-router.post('/post',userController.createUser);
-router.get('/getuser',userController.getUser);
-// router.put('/update',userController.updatedUser);
-router.delete('/delete',userController.deleteUser);
-// router.post('/login',userController.loginUser);
+// Route Definitions
+router.post('/post', userController.createUser);
+router.get('/getuser', userController.getUser);
+//router.put('/update', userController.updatedUser);
+//router.delete('/delete', userController.deleteUser);
+// router.post('/login', userController.loginUser);
+router.put('/updateUser/:id', userController.updateUser); 
+router.delete('/deleteUser/:id', userController.deleteUser);
 
 module.exports = router;

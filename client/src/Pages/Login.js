@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios'
+import axios from 'axios';
 import './Login.css';
 import Navbar from '../Components/Navbar';
 
@@ -31,16 +31,16 @@ function LoginForm() {
       }
 
       const data = await response.json();
-      // localStorage.setItem('Token', data.token);
-      console.log(data.Role)
+      console.log(data.Role);
 
       if (data.Role === 'user') {
         alert('User login successful');
-
         navigate('/');
-
+      } else if (data.Role === 'admin') {
+        alert('Admin login successful');
+        navigate('/dashboard');
       } else {
-        navigate('/');
+        alert('Invalid role.');
       }
 
     } catch (error) {
@@ -49,33 +49,32 @@ function LoginForm() {
     }
   };
 
-
   return (
     <>
       <Navbar />
       <div className='login-body'>
-      <div className='log'>
-        <div className="Login-center">
-          <h1>Login</h1>
-          <form method="post" onSubmit={handleSubmit}>
-            <div className="txt_field">
-              <input type="email" required value={email} onChange={(e) => setEmail(e.target.value)} />
-              <span></span>
-              <label>Email</label>
-            </div>
-            <div className="txt_field">
-              <input type="password" required value={password} onChange={(e) => setPassword(e.target.value)} />
-              <span></span>
-              <label>Password</label>
-            </div>
-            <div className="pass">Forgot Password?</div>
-            <input type="submit" value="Login" />
-            <div className="signup_link">
-              Not a member? <a href="Register">Signup</a>
-            </div>
-          </form>
+        <div className='log'>
+          <div className="Login-center">
+            <h1>Login</h1>
+            <form method="post" onSubmit={handleSubmit}>
+              <div className="txt_field">
+                <input type="email" required value={email} onChange={(e) => setEmail(e.target.value)} />
+                <span></span>
+                <label>Email</label>
+              </div>
+              <div className="txt_field">
+                <input type="password" required value={password} onChange={(e) => setPassword(e.target.value)} />
+                <span></span>
+                <label>Password</label>
+              </div>
+              <div className="pass">Forgot Password?</div>
+              <input type="submit" value="Login" />
+              <div className="signup_link">
+                Not a member? <a href="Register">Signup</a>
+              </div>
+            </form>
+          </div>
         </div>
-      </div>
       </div>
     </>
   );
