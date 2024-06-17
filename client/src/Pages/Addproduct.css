@@ -1,79 +1,63 @@
-.ProductForm {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 2rem;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .ProductForm h1 {
-    margin-bottom: 2.5rem;
-    font-size: 1.5rem;
-    text-align: center;
-  }
-  
-  /* .txt_field {
-    position: relative;
-    margin-bottom: 1.5rem;
-  } */
-  
-  /* .txt_field input[type="text"],
-  .txt_field input[type="file"] {
-    width: 100%;
-    padding: 0.5rem;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    outline: none;
-  } */
-/*   
-  .txt_field label {
-    position: absolute;
-    top: 50%;
-    left: 0.5rem;
-    transform: translateY(-50%);
-    color: #aaa;
-    transition: 0.3s;
-    pointer-events: none;
-  } */
-/*   
-  .txt_field input[type="text"]:focus + label,
-  .txt_field input[type="text"]:not(:placeholder-shown) + label,
-  .txt_field input[type="file"]:focus + label,
-  .txt_field input[type="file"]:not(:placeholder-shown) + label {
-    top: -0.5rem;
-    left: 0.5rem;
-    color: #333;
-    font-size: 0.8rem;
-    background: #f9f9f9;
-    padding: 0 0.25rem;
-  }
-   */
-  /* .txt_field input[type="file"] {
-    padding: 0.5rem 0.5rem 0.5rem 0;
-  }
-   */
-  .error {
-    color: red;
-    font-size: 0.8rem;
-  }
-  
-  input[type="submit"] {
-    width: 100%;
-    padding: 0.5rem;
-    font-size: 2rem;
-    background-color:palevioletred;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  input[type="submit"]:hover {
-    background-color: wheat;
-    color: black;
-    
-  }
-  
+/* ProductForm.css */
+.add-bc{
+  background-color: #45a049;
+}
+.product-form-container {
+  width: 400px;
+  margin: 140px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+}
+.add{
+  color: palevioletred;
+  text-align: center;
+  font-size: 35px;
+}
+.product-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  font-weight: bold;
+}
+
+.form-control {
+  width: 100%;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.btn-submit {
+  background-color: palevioletred;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.btn-submit:hover {
+  background-color:black;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}

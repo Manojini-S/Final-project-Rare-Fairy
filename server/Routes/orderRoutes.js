@@ -1,19 +1,16 @@
 const express = require('express');
 const router = express.Router();
-const cors = require ('cors')
-const orderController = require('../Controller/OrderController')
+const cors = require('cors'); // Ensure CORS middleware is properly configured if needed
+const orderController = require('../Controller/OrderController');
 
-//middleware
-router.use(
-    cors({
-        credentials: true,
-        origin: 'http://localhost:3002'
-    })
-)
+// Enable CORS if required
+router.use(cors());
 
-router.post('/create',orderController.createOrder);
-router.get('/',orderController.getOrder);
-// router.put('./update',orderController.updateOrder);
-// router.post('/login',orderController.loginUser)
+// Define routes
+router.get('/orders', orderController.getAllOrders);
+router.get('/orders/:id', orderController.getOrderById);
+router.post('/create', orderController.createOrder);
+router.put('/orders/:id', orderController.updateOrder);
+router.delete('/orders/:id', orderController.deleteOrder);
 
 module.exports = router;

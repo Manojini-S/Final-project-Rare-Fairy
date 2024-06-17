@@ -159,7 +159,8 @@ If you have any queries regarding our products or want to check on their availab
       {/* <Footer/> */}
 
       <div>
-      <div className="emp-head">OUR<span>SERVICESS</span></div>
+      {/* <h1 class="heading">Rare <span>Fairy</span></h1> */}
+      <div className="emp-head">OUR  <span>SERVICES</span></div>
       <div className="container-emp">
         <div className="card-emp">
           <img src={service2} alt="Embroidery Design " />

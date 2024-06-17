@@ -25,7 +25,7 @@
   height: 4px;
   display: block;
   margin: 30px auto 0;
-  background-color: aliceblue;
+  /* background-color: aliceblue; */
 }
 
 .heading-des p {
@@ -53,6 +53,7 @@
 .about2-image {
   flex: 1;
   margin-right: 10px;
+  align-items: center;
 }
 
 .about2-image img {
@@ -73,11 +74,6 @@
   padding: 40px;
 }
 
-.about-content2 h2 {
-  font-size: 23px;
-  margin-bottom: 15px;
-  color: aqua;
-}
 
 .about-content2 p {
   font-size: 18px;
@@ -89,7 +85,7 @@
   display: inline-block;
   padding: 10px 20px;
   background-color: #8f1e63;
-  color: white;
+ 
   font-size: 19px;
   text-decoration: none;
   border-radius: 25px;
@@ -97,12 +93,7 @@
   transition: 0.3s ease;
 }
 
-.about-content2 .Read-More:hover {
-  transform: scale(1.05);
-  background-color: white;
-  color: black;
-  border: 1px solid black;
-}
+
 
 
 *{

@@ -1,29 +1,33 @@
-const Mongoose = require ("mongoose");
-const  schema = new Mongoose.Schema({
-    OrderId:{
-        type:String,
-        required:true,
-    },
+const mongoose = require('mongoose');
 
-    AriId:{
-        type:String,
-        required:true,
+const orderSchema = new mongoose.Schema({
+    name: {
+        type: String,
+        required: true
     },
+    email: {
+        type: String,
+        required: true
+    },
+    contactNumber: {
+        type: String,
+        required: true
+    },
+    address: {
+        type: String,
+        required: true
+    },
+    deadline: {
+        type: Date,
+        required: true
+    },
+    status: {
+        type: String,
+        enum: ['pending', 'accepted', 'rejected'],
+        default: 'accepted'
+    }
+}, { timestamps: true });
 
-    OrderBy:{
-        type:String,
-        required:true,
-    },
+const Order = mongoose.model('Order', orderSchema);
 
-    PaymentId:{
-        type:String,
-        required:true,
-    },
-
-    DeadLine:{
-        type:String,
-        required:true,
-    },
-});
-const order =Mongoose.model("Order", schema);
-module.exports = order;
+module.exports = Order;

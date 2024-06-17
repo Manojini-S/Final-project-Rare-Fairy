@@ -1,150 +1,162 @@
-// import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import "./Addproduct.css"; 
+import Navbar  from "../Components/Navbar";
 
-// function Cards() {
-//     const [products, setProducts] = useState([]);
+const ProductForm = () => {
+	const [productName, setProductName] = useState("");
+	const [description, setDescription] = useState("");
+	const [categoryName, setCategoryName] = useState("");
+	const [photo, setPhoto] = useState(null);
+	const [errors, setErrors] = useState({});
+	const [categories, setCategories] = useState([]);
 
-//     useEffect(() => {
-//         fetch('http://localhost:3003/image/getImg') 
-//             .then(response => {
-//                 if (!response.ok) {
-//                     throw new Error('Network response was not ok');
-//                 }
-//                 return response.json();
-//             })
-//             .then(data => {
-//                 setProducts(data);
-//             })
-//             .catch(error => {
-//                 console.error('Error fetching products:', error);
-//             });
-//     }, []);
 
-//     return (
-//         <div>
-//             {products.length > 0 ? (
-//                 products.map((product) => (
-//                     <div key={product._id}>
-//                         <h3>{product.CategoryName}</h3>
-//                         <p>{product.Description}</p>
-//                         <img src={product.imageUrl} alt={product.CategoryName} />
-//                     </div>
-//                 ))
-//             ) : (
-//                 <p>No products available.</p>
-//             )}
-//         </div>
-//     );
-// }
+	const dummyCategories = [
+		{ id: 1, name: "Emproidry" },
+		{ id: 2, name: "Salwar designs" },
+		{ id: 3, name: "Bridel" },
+		{ id: 4, name: "Zardosi designs" },
+    { id: 5, name: "Legenha designs" },
+    { id: 5, name: "Simple blouse designs" },
+	];
 
-// export default Cards;
+	useEffect(() => {
+		// Simulate fetching categories from an API
+		// Replace with actual API call in your application
+		setCategories(dummyCategories);
+	}, []);
 
-import React, { useState } from 'react';
-import './Addproduct.css';
+	const validate = () => {
+		const newErrors = {};
+		if (!productName) newErrors.productName = "Product Name is required";
+		if (!description) newErrors.description = "Description is required";
+		if (!categoryName) newErrors.categoryName = "Category Name is required";
+		if (!photo) newErrors.photo = "Photo is required";
+		return newErrors;
+	};
 
-function ProductForm() {
-  const [productName, setProductName] = useState('');
-  const [description, setDescription] = useState('');
-  const [price, setPrice] = useState('');
-  const [photo, setPhoto] = useState(null);
-  const [errors, setErrors] = useState({});
+	const handleSubmit = async (e) => {
+		e.preventDefault();
+		const newErrors = validate();
+		if (Object.keys(newErrors).length > 0) {
+			setErrors(newErrors);
+			return;
+		}
 
-  const validate = () => {
-    const newErrors = {};
-    if (!productName) newErrors.productName = "Product Name is required";
-    if (!description) newErrors.description = "Description is required";
-    if (!price) newErrors.price = "Price is required";
-    else if (isNaN(price) || price <= 0) newErrors.price = "Price must be a positive number";
-    if (!photo) newErrors.photo = "Photo is required";
-    return newErrors;
-  };
+		const formData = new FormData();
+		formData.append("ProductName", productName);
+		formData.append("Description", description);
+		formData.append("CategoryName", categoryName);
+		formData.append("photo", photo);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const newErrors = validate();
-    if (Object.keys(newErrors).length > 0) {
-      setErrors(newErrors);
-      return;
-    }
+		try {
+			const response = await fetch("http://localhost:3003/image/upload", {
+				method: "POST",
+				body: formData,
+			});
 
-    const formData = new FormData();
-    formData.append('name', productName);
-    formData.append('description', description);
-    formData.append('price', parseFloat(price));
-    formData.append('photo', photo);
+			if (!response.ok) {
+				const errorText = await response.text(); 
+				throw new Error(
+					`HTTP error! Status: ${response.status}, Message: ${errorText}`
+				);
+			}
 
-    try {
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/products`, {
-        method: 'POST',
-        body: formData,
-      });
+			const data = await response.json();
+			toast.success("Product added successfully!");
 
-      if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
-      }
+			// Clear the form
+			setProductName("");
+			setDescription("");
+			setCategoryName("");
+			setPhoto(null);
+			setErrors({});
+		} catch (error) {
+			console.error("Error:", error);
+			toast.error("Failed to add product. Please try again.");
+		}
+	};
 
-      const data = await response.json();
-      console.log('Success:', data);
-      // Clear the form
-      setProductName('');
-      setDescription('');
-      setPrice('');
-      setPhoto(null);
-    } catch (error) {
-      console.error('Error:', error);
-    }
-  };
+	return (
+    <>
+    <Navbar/>
 
-  return (
-    <div className="ProductForm">
-      <h1>Add Product</h1>
-      <form onSubmit={handleSubmit}>
-        <div className="txt_field">
-          <input 
-            type="text" 
-            required 
-            value={productName} 
-            onChange={(e) => setProductName(e.target.value)} 
-          />
-          <span></span>
-          <label>Product Name</label>
-          {errors.productName && <span className="error">{errors.productName}</span>}
-        </div>
-        <div className="txt_field">
-          <input 
-            type="text" 
-            required 
-            value={description} 
-            onChange={(e) => setDescription(e.target.value)} 
-          />
-          <span></span>
-          <label>Description</label>
-          {errors.description && <span className="error">{errors.description}</span>}
-        </div>
-        <div className="txt_field">
-          <input 
-            type="text" 
-            required 
-            value={price} 
-            onChange={(e) => setPrice(e.target.value)} 
-          />
-          <span></span>
-          <label>Price</label>
-          {errors.price && <span className="error">{errors.price}</span>}
-        </div>
-        <div className="txt_field">
-          <input 
-            type="file" 
-            required 
-            onChange={(e) => setPhoto(e.target.files[0])} 
-          />
-          <span></span>
-          <label>Photo</label>
-          {errors.photo && <span className="error">{errors.photo}</span>}
-        </div>
-        <input type="submit" value="Add Product" />
-      </form>
-    </div>
-  );
-}
+		<div className="product-form-container">
+			<ToastContainer />
+      
+			<h2 className="add">Add Product</h2>
+			<form onSubmit={handleSubmit} className="product-form">
+				<div className="form-group">
+					<label htmlFor="categoryName">Category Name:</label>
+					<select
+						id="categoryName"
+						value={categoryName}
+						onChange={(e) => setCategoryName(e.target.value)}
+						className="form-control"
+						required
+					>
+						<option value="">Select category</option>
+						{categories.map((category) => (
+							<option key={category.id} value={category.name}>
+								{category.name}
+							</option>
+						))}
+					</select>
+					{errors.categoryName && (
+						<span className="error">{errors.categoryName}</span>
+					)}
+				</div>
+				<div className="form-group">
+					<label htmlFor="productName">Product Name:</label>
+					<input
+						type="text"
+						id="productName"
+						value={productName}
+						onChange={(e) => setProductName(e.target.value)}
+						className="form-control"
+						placeholder="Enter product name"
+						required
+					/>
+					{errors.productName && (
+						<span className="error">{errors.productName}</span>
+					)}
+				</div>
+				<div className="form-group">
+					<label htmlFor="description">Description:</label>
+					<input
+						type="text"
+						id="description"
+						value={description}
+						onChange={(e) => setDescription(e.target.value)}
+						className="form-control"
+						placeholder="Enter description"
+						required
+					/>
+					{errors.description && (
+						<span className="error">{errors.description}</span>
+					)}
+				</div>
+
+				<div className="form-group">
+					<label htmlFor="photo">Photo:</label>
+					<input
+						type="file"
+						id="photo"
+						onChange={(e) => setPhoto(e.target.files[0])}
+						className="form-control"
+						required
+					/>
+					{errors.photo && <span className="error">{errors.photo}</span>}
+				</div>
+				<button type="submit" className="btn-submit">
+					Add Product
+				</button>
+			</form>
+		</div>
+    </>
+	);
+};
 
 export default ProductForm;

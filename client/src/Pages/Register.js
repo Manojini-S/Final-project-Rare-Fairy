@@ -1,7 +1,13 @@
+
+
+
 import React, { useState } from 'react';
 import './Register.css';
 import Navbar from '../Components/Navbar';
 import { Link, useNavigate } from 'react-router-dom';
+import Modal from '../Components/Modal';
+import { toast, ToastContainer } from 'react-toastify'; // Import toastify
+import 'react-toastify/dist/ReactToastify.css'; // Import toastify CSS
 
 function RegistrationForm() {
   const [fullname, setFullName] = useState('');
@@ -11,6 +17,7 @@ function RegistrationForm() {
   const [confirmpassword, setConfirmPassword] = useState('');
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const navigate = useNavigate();
 
   const validate = () => {
@@ -53,22 +60,31 @@ function RegistrationForm() {
         const errorData = await response.json();
         setErrors({ apiError: errorData.message });
         setIsSubmitting(false);
+        toast.error(errorData.message); // Toast notification for API error
         return;
       }
 
       const data = await response.json();
       console.log('Success:', data);
-      navigate('/login'); // Redirect to login page after successful registration
+      setIsModalOpen(true); // Open the modal on successful registration
+      toast.success("Registration successful!"); // Toast notification for success
     } catch (error) {
       console.error('Error:', error);
       setErrors({ apiError: 'An error occurred. Please try again later.' });
       setIsSubmitting(false);
+      toast.error('An error occurred. Please try again later.'); // Toast notification for error
     }
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    navigate('/login'); // Redirect to login page after closing the modal
   };
 
   return (
     <>
       <Navbar />
+      <ToastContainer /> {/* ToastContainer to display the toasts */}
       <div className="Register-center">
         <h1>Registration Form</h1>
         <form onSubmit={handleSubmit}>
@@ -83,17 +99,7 @@ function RegistrationForm() {
             <label>Full Name</label>
             {errors.fullname && <span className="error">{errors.fullname}</span>}
           </div>
-          <div className="txt_field">
-            <input 
-              type="text" 
-              required 
-              value={username} 
-              onChange={(e) => setUserName(e.target.value)} 
-            />
-            <span></span>
-            <label>User Name</label>
-            {errors.username && <span className="error">{errors.username}</span>}
-          </div>
+          
           <div className="txt_field">
             <input 
               type="email" 
@@ -128,13 +134,17 @@ function RegistrationForm() {
             {errors.confirmpassword && <h1 className="error">{errors.confirmpassword}</h1>}
           </div>
           <input type="submit" value="Register Now" disabled={isSubmitting} />
-          {isSubmitting && <span className="loading">Registred successful</span>}
+          {/* {isSubmitting && <span className="loading">Registering...</span>} */}
           {errors.apiError && <span className="error">{errors.apiError}</span>}
           <Link to="/Popup"></Link>
         </form>
+        <Modal isOpen={isModalOpen} message="Registration successful!" onClose={closeModal} />
       </div>
     </>
   );
 }
 
 export default RegistrationForm;
+
+
+

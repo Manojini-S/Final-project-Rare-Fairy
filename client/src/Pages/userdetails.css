@@ -1,72 +1,134 @@
-/* Admin.css */
-/* Admin.css */
+/* userdetails.css */
 
-/* Table Styles */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-    font-size: 18px;
-    text-align: left;
+.user-table-container {
+  width: 100%;
+  padding: 20px;
 }
 
-thead tr {
-    background-color: #e7728d;
-    color: #ffffff;
-    text-align: left;
-    font-weight: bold;
+.user-table-header {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 24px;
+  color: #333;
 }
 
-th, td {
-    padding: 12px 15px;
+.user-table-error {
+  color: red;
+  font-size: 16px;
+  text-align: center;
 }
 
-tbody tr {
-    border-bottom: 1px solid #dddddd;
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 18px;
+  text-align: left;
 }
 
-tbody tr:nth-of-type(even) {
-    background-color: #f3f3f3;
+.user-table th,
+.user-table td {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
 }
 
-tbody tr:last-of-type {
-    border-bottom: 2px solid #c02d4b;
+.user-table thead {
+  background-color: #f2f2f2;
 }
 
-/* Button Styles */
-button {
-    padding: 8px 16px;
-    margin-right: 8px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
+.user-table thead th {
+  background-color: #f4f4f4;
+  color: #333;
 }
 
-button.edit {
-    background-color: #2b0725; 
-    color: white;
+.user-table-delete,
+.user-table-edit {
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-button.delete {
-    background-color: #da223e; /* Red */
-    color: white;
-    padding-left: 30px;
+.user-table-delete {
+  background-color: #f44336;
+  color: white;
 }
 
-button.save {
-    background-color: #4CAF50; /* Green */
-    color: white;
+.user-table-edit {
+  background-color: #4caf50;
+  color: white;
 }
 
-button.verify {
-    background-color: #008CBA; /* Blue */
-    color: white;
+.user-table-delete:hover,
+.user-table-edit:hover {
+  opacity: 0.8;
 }
 
-/* Error Message Styles */
-div.error {
-    color: #8f1b1b;
-    font-weight: bold;
-    margin: 20px 0;
+.edit-confirmation-modal,
+.delete-confirmation-modal,
+.edit-user-modal {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 400px;
+  text-align: center;
+}
+
+.modal-content .close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.edit-user-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.edit-user-form label {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+.edit-user-form input[type="text"],
+.edit-user-form input[type="email"] {
+  width: 80%;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.edit-user-form button[type="submit"] {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.edit-user-form button[type="submit"]:hover {
+  opacity: 0.8;
+}
+

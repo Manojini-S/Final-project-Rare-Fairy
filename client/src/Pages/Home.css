@@ -1,20 +1,4 @@
-.main{
-    /* height:10vh; */
-}
-*{
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-   
-}
-/* .home {
-    width: 100%;
-    height: 87vh;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-} */
+
 
 .picture{
    padding-top: 200px;
@@ -91,8 +75,8 @@
     line-height: 1.5;
     /* letter-spacing: px; */
     font-weight: 1000;
-    color: rgb(59, 45, 45);
-   
+   /* color: palevioletred; */
+    color: linear-gradient( #ff7e5f, #feb47b);
    padding-bottom: 20px;
    padding-right: 290px;
 }
@@ -107,7 +91,7 @@ font-size: 22px;
 text-decoration: none;
 display: inline-block;
 padding: 9px 25px;
-background-color:palevioletred;
+background-color:#DE3893;
 
 border-radius: 25px;
 text-align: right;

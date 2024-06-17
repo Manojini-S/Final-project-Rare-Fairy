@@ -1,19 +1,8 @@
-const express = require("express");
-const mongoose = require("mongoose");
 const User = require('../Models/User.models')
-
 const jwt = require("jsonwebtoken");
-const app = express();
-app.use(express.json());
-const bcrypt = require('bcryptjs');
-const { use } = require("../Routes/LoginRoutes");
-
-
-
+const bcrypt = require("bcrypt");
 
 const signup =  async(req,res)=>{
-    
-
     try{
         const{UserId, Name,Email,Password,Role} = req.body;
         const emailExist = await User.findOne({ Email }) ;
@@ -32,43 +21,32 @@ const signup =  async(req,res)=>{
 }
 
 
-const loginUpdate = async (req,res) => {
-    const { email, password } = req.body;
-    const user = await User.findOne({Email:email})
-    console.log(user)
-    return res.status(200).json(user)
-    
-
-}
- 
-
 const login = async (req, res, next) => {
-    const { email, password } = req.body;
-    // req.body = JSON.stringify(email,password);
+  // get email and password from body
+  const { Email, Password } = req.body;
 
-  
-    try {
-        // const email = "jaanu12@mail.com"
-    //   const user = await User.findOne({ email });
-        console.log(email,password)
-        const user = await User.findOne({email})
-        console.log(user)
-  
-      if (!user) {
-        return res.status(404).send('User not found');
+  try {
+    // check email exist
+      const user = await User.findOne({Email})
+      if(!user){
+        return res.status(400).json({ error: " User is not found"})
       }
-  
-      const match = await bcrypt.compare(password, user.Password);
-      if (match) {
-        const token = jwt.sign({ Email: user.Email }, process.env.JWT, { expiresIn: '1h' }); // Use a secret key from your environment variables
-        res.header('Token', token).send({ token, Role: user.Role }); // Send the token and user role back to the client
-      } else {
-        res.status(401).send('Invalid credentials');
+
+      // check password
+      const match = await bcrypt.compare(Password, user.Password)
+      if(!match){
+        return res.status(400).json({error:"password invalid"})
       }
+      
+      // create token
+      const token= jwt.sign({id:User._id},process.env.JWT,{expiresIn:'1h'}) 
+      res.status(200).json({token, user})
+
     } catch (error) {
-      next(error);
+      console.log(error)
+      res.status (500).json({sucess:false, error})
     }
   };
 
-module.exports = {signup,login,loginUpdate}
+module.exports = {signup,login}
 

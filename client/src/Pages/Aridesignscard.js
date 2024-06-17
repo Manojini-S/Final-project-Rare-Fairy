@@ -1,39 +1,3 @@
-// import React from 'react';
-// import Card from '../Components/designstype';
-// import './Aridesigsncard.css';
-// import Navbar from '../Components/Navbar';
-
-// function App() {
-//   const categoryNames = ["Emproidry", "Bridel", "Salwar Designs", "Legenha designs", "Zardosi designs", "Simple blouse designs"];
-//   return (
-//     <>
-//       <Navbar />
-//       <div className="App">
-//         <h1> <span> Products</span></h1>
-//         <div className="card-container">
-//           {categoryNames.map((category, index) => (
-//             <Card
-//               key={index}
-//               title={category}
-//               content={`This is some sample content for ${category}.`}
-//               imageUrl={`https://via.placeholder.com/150?text=${category}`} 
-              
-              
-//             />
-
-            
-//           ))}
-//         </div>
-//       </div>
-//     </>
-//   );
-// }
-
-
-
-// export default App;
-
-
 import React from 'react';
 import Card from '../Components/designstype';
 import './Aridesigsncard.css';

@@ -24,7 +24,7 @@ Role: {
     type: String,
     required: true,
     default: 'user',
-    enum: ['user', 'Admin'] 
+    enum: ['user', 'admin'] 
 }
 
 }
