@@ -20,7 +20,7 @@ function Home() {
               <h2> Welcome to <span className='article'> Rare  Fairy </span>Designs World </h2>
               {/* <img src={home} className="picture" alt="Logo" /> */}
               <p></p>
-              <a href="Register" className="button">Register Now</a>
+              <a href="Register" className="regi">Register Now</a>
             </div>
           </div>
         </div>  

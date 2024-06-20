@@ -58,7 +58,7 @@ function connect() {
     app.use('/order', orderRoutes);
     app.use('/Aridesigner', Aridesigner);
     app.use('/review', reviewRoutes);
-    // app.use('/payment', paymentRoutes);
+    app.use('/payment', paymentRoutes);
     app.use('/usercreate', LoginRoutes);
     app.use('/admin', adminRoutes);
     app.use('/image', imageRoutes )

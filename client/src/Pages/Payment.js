@@ -396,7 +396,7 @@ const Payment = () => {
       <table className="Payment">
         <thead>
           <tr>
-            <th> Order ID</th>
+          <th>Name</th>
             <th>User ID </th>
             <th>Paid Amount</th>
             <th>PaymentStatus</th>
@@ -406,8 +406,8 @@ const Payment = () => {
         </thead>
         <tbody>
           {payment.map((payment) => (
-            <tr key={payment._id}>
-               <td>{payment.user}</td>
+            <tr key={order._id}>
+               <td>{order.name}</td>
               <td>{payment._id}</td>
               <td>{payment.amount}</td>
               <td>{payment.paymentStatus}</td>

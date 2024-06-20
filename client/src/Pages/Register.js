@@ -11,7 +11,7 @@ import 'react-toastify/dist/ReactToastify.css'; // Import toastify CSS
 
 function RegistrationForm() {
   const [fullname, setFullName] = useState('');
-  const [username, setUserName] = useState('');
+  // const [username, setUserName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmpassword, setConfirmPassword] = useState('');
@@ -23,7 +23,7 @@ function RegistrationForm() {
   const validate = () => {
     const newErrors = {};
     if (!fullname) newErrors.fullname = "Full Name is required";
-    if (!username) newErrors.username = "User Name is required";
+    // if (!username) newErrors.username = "User Name is required";
     if (!email) newErrors.email = "Email is required";
     else if (!/\S+@\S+\.\S+/.test(email)) newErrors.email = "Email is invalid";
     if (!password) newErrors.password = "Password is required";
@@ -45,7 +45,7 @@ function RegistrationForm() {
     }
 
     setIsSubmitting(true);
-    const result = { UserId: username, Name: fullname, Email: email, Password: password, Role: "user" };
+    const result = { Name: fullname, Email: email, Password: password, Role: "user" };
 
     try {
       const response = await fetch('http://localhost:3003/usercreate/signup', {
@@ -99,6 +99,17 @@ function RegistrationForm() {
             <label>Full Name</label>
             {errors.fullname && <span className="error">{errors.fullname}</span>}
           </div>
+          {/* <div className="txt_field">
+            <input 
+              type="text" 
+              required 
+              value={username} 
+              onChange={(e) => setUserName(e.target.value)} 
+            />
+            <span></span>
+            <label>User Name</label>
+            {errors.username && <span className="error">{errors.username}</span>}
+          </div> */}
           
           <div className="txt_field">
             <input 

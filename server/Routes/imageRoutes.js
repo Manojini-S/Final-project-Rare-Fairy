@@ -9,7 +9,7 @@ router.get ('/showimage/:CategoryName',imageController.showAllImage)
 
 // router.put('/edit/:id', upload.single('image'), imageController.editProduct); // Add this line
 router.delete('/delete/:id', imageController.deleteProduct); // Add this line
-router.get('/product/count', imageController.countAllProducts ); // Get count of all products
+router.get('/count', imageController.countAllProducts ); // Get count of all products
 
 
 

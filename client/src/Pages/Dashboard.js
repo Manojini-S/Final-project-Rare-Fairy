@@ -42,7 +42,7 @@ const AdminDashboard = () => {
 
     const fetchOrdersCount = async () => {
         try {
-            const response = await fetch("http://localhost:3003/orders/count");
+            const response = await fetch("http://localhost:3003/order/count");
             if (!response.ok) {
                 throw new Error("Network response was not ok");
             }
@@ -55,7 +55,7 @@ const AdminDashboard = () => {
 
     const fetchProductsCount = async () => {
         try {
-            const response = await fetch("http://localhost:3003/orders/count");
+            const response = await fetch("http://localhost:3003/image/count");
             if (!response.ok) {
                 throw new Error("Network response was not ok");
             }
@@ -102,7 +102,7 @@ const AdminDashboard = () => {
                             </a>
                         </li>
                         <li>
-                            <Link to="/payment">
+                            <Link to="/Payment">
                                 <i className="fas fa-credit-card"></i> Payment
                             </Link>
                         </li>

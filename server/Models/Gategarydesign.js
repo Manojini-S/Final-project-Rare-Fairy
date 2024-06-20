@@ -18,6 +18,10 @@ const schema = new Schema({
         type: String,
         required: true,
     },
+    Price:{
+        type:Number,
+        required:true,
+    }
 });
 
 const Category = mongoose.model("Category", schema); 

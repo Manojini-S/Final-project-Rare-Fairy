@@ -1,344 +1,13 @@
-
-// import React, { useState, useEffect, useRef } from "react";
-// import "./productadmin.css";
-// import emailjs from "@emailjs/browser";
-
-// function OrderList() {
-//   const [orders, setOrders] = useState([]);
-//   const [error, setError] = useState(null);
-//   const [selectedOrder, setSelectedOrder] = useState(null);
-//   const [showEmailForm, setShowEmailForm] = useState(false);
-//   const form = useRef();
-
-//   useEffect(() => {
-//     // Fetch orders when the component mounts
-//     fetch("http://localhost:3003/order/orders")
-//       .then((response) => response.json())
-//       .then((data) => {
-//         setOrders(data); // Set fetched orders to state
-//       })
-//       .catch((error) => {
-//         console.error("Error fetching orders:", error);
-//         setError("Failed to fetch orders. Please try again later.");
-//       });
-//   }, []);
-
-//   const handleAccept = (orderId) => {
-//     console.log(`Accepting order with ID: ${orderId}`);
-//     fetch(`http://localhost:3003/order/orders/${orderId}`, {
-//       method: "PATCH",
-//       headers: {
-//         "Content-Type": "application/json",
-//       },
-//       body: JSON.stringify({ status: "accepted" }),
-//     })
-//       .then((response) => response.json())
-//       .then((data) => {
-//         console.log("Order accepted:", data);
-//         setOrders(
-//           orders.map((order) => (order._id === orderId ? data : order))
-//         );
-//         setSelectedOrder(data);
-//         setShowEmailForm(true);
-//       })
-//       .catch((error) => {
-//         console.error("Error accepting order:", error);
-//       });
-//   };
-
-//   const handleReject = (orderId) => {
-//     console.log(`Rejecting order with ID: ${orderId}`);
-//     fetch(`http://localhost:3003/order/orders/${orderId}`, {
-//       method: "PATCH",
-//       headers: {
-//         "Content-Type": "application/json",
-//       },
-//       body: JSON.stringify({ status: "rejected" }),
-//     })
-//       .then((response) => response.json())
-//       .then((data) => {
-//         console.log("Order rejected:", data);
-//         setOrders(
-//           orders.map((order) => (order._id === orderId ? data : order))
-//         );
-//       })
-//       .catch((error) => {
-//         console.error("Error rejecting order:", error);
-//       });
-//   };
-
-//   const sendEmail = (e) => {
-//     e.preventDefault();
-
-//     emailjs
-//       .sendForm(
-//         "service_7v4vmve",
-//         "template_gswksyh",
-//         form.current,
-//         "hpy_Ow2NKTCTlRRDq"
-//       )
-//       .then(
-//         () => {
-//           console.log("Email sent successfully!");
-//           setShowEmailForm(false);
-//         },
-//         (error) => {
-//           console.log("Failed to send email...", error.text);
-//         }
-//       );
-//   };
-
-//   return (
-//     <div>
-//       <h1 className="order">Order List</h1>
-//       {error && <p>{error}</p>}
-//       <table>
-//         <thead>
-//           <tr>
-//             <th>Name</th>
-//             <th>Email</th>
-//             <th>Contact Number</th>
-//             <th>Address</th>
-//             <th>Deadline</th>
-//             <th>Actions</th>
-//           </tr>
-//         </thead>
-//         <tbody>
-//           {orders.map((order) => (
-//             <tr key={order._id}>
-//               <td>{order.name}</td>
-//               <td>{order.email}</td>
-//               <td>{order.contactNumber}</td>
-//               <td>{order.address}</td>
-//               <td>{new Date(order.deadline).toLocaleDateString()}</td>
-//               <td>
-//                 <button
-//                   className="accept"
-//                   onClick={() => handleAccept(order._id)}
-//                 >
-//                   Accept
-//                 </button>
-//                 <button
-//                   className="reject"
-//                   onClick={() => handleReject(order._id)}
-//                 >
-//                   Reject
-//                 </button>
-//               </td>
-//             </tr>
-//           ))}
-//         </tbody>
-//       </table>
-//       {showEmailForm && (
-//         <form ref={form} onSubmit={sendEmail}>
-//           <label>Name</label>
-//           <input
-//             type="text"
-//             name="user_name"
-//             defaultValue={selectedOrder ? selectedOrder.name : ""}
-//             readOnly
-//           />
-//           <label>Email</label>
-//           <input
-//             type="email"
-//             name="user_email"
-//             defaultValue={selectedOrder ? selectedOrder.email : ""}
-//             readOnly
-//           />
-//           <label>Message</label>
-//           <textarea name="message"></textarea>
-//           <input type="submit" value="Send" />
-//         </form>
-//       )}
-//     </div>
-//   );
-// }
-
-// export default OrderList;
-
-// import React, { useState, useEffect, useRef } from "react";
-// import "./productadmin.css";
-// import emailjs from "@emailjs/browser";
-// import { ToastContainer, toast } from "react-toastify";
-// import "react-toastify/dist/ReactToastify.css";
-
-// function OrderList() {
-//   const [orders, setOrders] = useState([]);
-//   const [error, setError] = useState(null);
-//   const [selectedOrder, setSelectedOrder] = useState(null);
-//   const [showEmailForm, setShowEmailForm] = useState(false);
-//   const form = useRef();
-
-//   useEffect(() => {
-//     // Fetch orders when the component mounts
-//     fetchOrders();
-//   }, []);
-
-//   const fetchOrders = () => {
-//     fetch("http://localhost:3003/order/orders")
-//       .then((response) => response.json())
-//       .then((data) => {
-//         setOrders(data); // Set fetched orders to state
-//       })
-//       .catch((error) => {
-//         console.error("Error fetching orders:", error);
-//         setError("Failed to fetch orders. Please try again later.");
-//       });
-//   };
-
-//   const handleAccept = (orderId) => {
-//     console.log(`Accepting order with ID: ${orderId}`);
-//     fetch(`http://localhost:3003/order/orders/${orderId}`, {
-//       method: "PATCH",
-//       headers: {
-//         "Content-Type": "application/json",
-//       },
-//       body: JSON.stringify({ status: "accepted" }),
-//     })
-//       .then((response) => response.json())
-//       .then((data) => {
-//         console.log("Order accepted:", data);
-//         setOrders(
-//           orders.map((order) => (order._id === orderId ? data : order))
-//         );
-//         setSelectedOrder(data);
-//         setShowEmailForm(true);
-//         toast.success("Order accepted successfully!");
-//       })
-//       .catch((error) => {
-//         console.error("Error accepting order:", error);
-//         toast.error("Failed to accept the order.");
-//       });
-//   };
-//   const handleReject = (orderId) => {
-//     console.log(`Rejecting order with ID: ${orderId}`);
-//     fetch(`http://localhost:3003/order/orders/${orderId}`, {
-//       method: "PATCH",  // Using PATCH method for partial update
-//       headers: {
-//         "Content-Type": "application/json",
-//       },
-//       body: JSON.stringify({ status: "rejected" }),  // Updating only the status field
-//     })
-//       .then((response) => {
-//         if (!response.ok) {
-//           throw new Error("Failed to reject order");  // Throw error if response is not ok
-//         }
-//         return response.json();  // Parse response as JSON
-//       })
-//       .then((data) => {
-//         console.log("Order rejected:", data);
-//         // Update local state or UI as needed
-//         toast.success("Order rejected successfully!");
-//       })
-//       .catch((error) => {
-//         console.error("Error rejecting order:", error);
-//         toast.error("Failed to reject the order.");
-//       });
-//   };
-  
-
-//   const sendEmail = (e) => {
-//     e.preventDefault();
-
-//     emailjs
-//       .sendForm(
-//         "service_7v4vmve",
-//         "template_gswksyh",
-//         form.current,
-//         "hpy_Ow2NKTCTlRRDq"
-//       )
-//       .then(
-//         () => {
-//           console.log("Email sent successfully!");
-//           setShowEmailForm(false);
-//         },
-//         (error) => {
-//           console.log("Failed to send email...", error.text);
-//         }
-//       );
-//   };
-
-//   return (
-//     <div>
-//       <h1 className="order">Order List</h1>
-//       {error && <p>{error}</p>}
-//       <table>
-//         <thead>
-//           <tr>
-//             <th>Name</th>
-//             <th>Email</th>
-//             <th>Contact Number</th>
-//             <th>Address</th>
-//             <th>Deadline</th>
-//             <th>Actions</th>
-//           </tr>
-//         </thead>
-//         <tbody>
-//           {orders.map((order) => (
-//             <tr key={order._id}>
-//               <td>{order.name}</td>
-//               <td>{order.email}</td>
-//               <td>{order.contactNumber}</td>
-//               <td>{order.address}</td>
-//               <td>{new Date(order.deadline).toLocaleDateString()}</td>
-//               <td>
-//                 <button
-//                   className="accept"
-//                   onClick={() => handleAccept(order._id)}
-//                 >
-//                   Accept
-//                 </button>
-//                 <button
-//                   className="reject"
-//                   onClick={() => handleReject(order._id)}
-//                 >
-//                   Reject
-//                 </button>
-//               </td>
-//             </tr>
-//           ))}
-//         </tbody>
-//       </table>
-//       {showEmailForm && (
-//         <form ref={form} onSubmit={sendEmail}>
-//           <label>Name</label>
-//           <input
-//             type="text"
-//             name="user_name"
-//             defaultValue={selectedOrder ? selectedOrder.name : ""}
-//             readOnly
-//           />
-//           <label>Email</label>
-//           <input
-//             type="email"
-//             name="user_email"
-//             defaultValue={selectedOrder ? selectedOrder.email : ""}
-//             readOnly
-//           />
-//           <label>Message</label>
-//           <textarea name="message"></textarea>
-//           <input type="submit" value="Send" />
-//         </form>
-//       )}
-//       <ToastContainer />
-//     </div>
-//   );
-// }
-
-// export default OrderList;
-
-
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
-import emailjs from "@emailjs/browser";
 import "react-toastify/dist/ReactToastify.css";
 import "./Dashboard.css";
 import "./productadmin.css";
-import Admin from "../Pages/Admin";
 import customer02 from "../Assets/customer02.jpeg";
 import Modal from "../Components/Modal";
 import ProductForm from "./Addproduct";
+import axios from 'axios';
 
 const AdminDashboard = () => {
   const [search, setSearch] = useState("");
@@ -348,9 +17,6 @@ const AdminDashboard = () => {
   const [productsCount, setProductsCount] = useState(0);
   const [orders, setOrders] = useState([]);
   const [error, setError] = useState(null);
-  const [selectedOrder, setSelectedOrder] = useState(null);
-  const [showEmailForm, setShowEmailForm] = useState(false);
-  const form = useRef();
 
   useEffect(() => {
     fetchUsersCount();
@@ -359,9 +25,11 @@ const AdminDashboard = () => {
     fetchOrders();
   }, []);
 
+  const API_BASE_URL = "http://localhost:3003";
+
   const fetchUsersCount = async () => {
     try {
-      const response = await fetch("http://localhost:3003/user/count");
+      const response = await fetch(`${API_BASE_URL}/user/count`);
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
@@ -374,7 +42,7 @@ const AdminDashboard = () => {
 
   const fetchOrdersCount = async () => {
     try {
-      const response = await fetch("http://localhost:3003/orders/count");
+      const response = await fetch(`${API_BASE_URL}/order/count`);
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
@@ -387,7 +55,7 @@ const AdminDashboard = () => {
 
   const fetchProductsCount = async () => {
     try {
-      const response = await fetch("http://localhost:3003/products/count");
+      const response = await fetch(`${API_BASE_URL}/image/count`);
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
@@ -398,82 +66,40 @@ const AdminDashboard = () => {
     }
   };
 
-  const fetchOrders = () => {
-    fetch("http://localhost:3003/order/orders")
-      .then((response) => response.json())
-      .then((data) => {
-        setOrders(data);
-      })
-      .catch((error) => {
-        console.error("Error fetching orders:", error);
-        setError("Failed to fetch orders. Please try again later.");
-      });
+  const fetchOrders = async () => {
+    try {
+      const response = await fetch(`${API_BASE_URL}/order/orders`);
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      const data = await response.json();
+      setOrders(data);
+    } catch (error) {
+      console.error("Error fetching orders:", error);
+      setError("Failed to fetch orders. Please try again later.");
+    }
   };
 
-  const handleAccept = (orderId) => {
-    fetch(`http://localhost:3003/order/orders/${orderId}`, {
-      method: "PATCH",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ status: "accepted" }),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        setOrders(orders.map((order) => (order._id === orderId ? data : order)));
-        setSelectedOrder(data);
-        setShowEmailForm(true);
-        toast.success("Order accepted successfully!");
-      })
-      .catch((error) => {
-        console.error("Error accepting order:", error);
-        toast.error("Failed to accept the order.");
-      });
+  const handleAccept = async (orderId) => {
+    try {
+      const response = await axios.put(`${API_BASE_URL}/orders/${orderId}/accept`);
+      setOrders(orders.map((order) => (order._id === orderId ? response.data : order)));
+      toast.success("Order accepted successfully!");
+    } catch (error) {
+      console.error("Error accepting order:", error);
+      toast.error("Failed to accept the order.");
+    }
   };
 
-  const handleReject = (orderId) => {
-    fetch(`http://localhost:3003/order/orders/${orderId}`, {
-      method: "PATCH",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ status: "rejected" }),
-    })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Failed to reject order");
-        }
-        return response.json();
-      })
-      .then((data) => {
-        setOrders(orders.filter((order) => order._id !== orderId));
-        toast.success("Order rejected successfully!");
-      })
-      .catch((error) => {
-        console.error("Error rejecting order:", error);
-        toast.error("Failed to reject the order.");
-      });
-  };
-
-  const sendEmail = (e) => {
-    e.preventDefault();
-
-    emailjs
-      .sendForm(
-        "service_7v4vmve",
-        "template_gswksyh",
-        form.current,
-        "hpy_Ow2NKTCTlRRDq"
-      )
-      .then(
-        () => {
-          console.log("Email sent successfully!");
-          setShowEmailForm(false);
-        },
-        (error) => {
-          console.log("Failed to send email...", error.text);
-        }
-      );
+  const handleReject = async (orderId) => {
+    try {
+      const response = await axios.put(`${API_BASE_URL}/orders/${orderId}/reject`);
+      setOrders(orders.map((order) => (order._id === orderId ? response.data : order)));
+      toast.success("Order rejected successfully!");
+    } catch (error) {
+      console.error("Error rejecting order:", error);
+      toast.error("Failed to reject the order.");
+    }
   };
 
   const handleSearchChange = (e) => {
@@ -589,16 +215,10 @@ const AdminDashboard = () => {
                   <td>{order.address}</td>
                   <td>{new Date(order.deadline).toLocaleDateString()}</td>
                   <td>
-                    <button
-                      className="accept"
-                      onClick={() => handleAccept(order._id)}
-                    >
+                    <button className="accept" onClick={() => handleAccept(order._id)}>
                       Accept
                     </button>
-                    <button
-                      className="reject"
-                      onClick={() => handleReject(order._id)}
-                    >
+                    <button className="reject" onClick={() => handleReject(order._id)}>
                       Reject
                     </button>
                   </td>
@@ -606,33 +226,8 @@ const AdminDashboard = () => {
               ))}
             </tbody>
           </table>
-          {showEmailForm && (
-            <form ref={form} onSubmit={sendEmail}>
-              <label>Name</label>
-              <input
-                type="text"
-                name="user_name"
-                defaultValue={selectedOrder ? selectedOrder.name : ""}
-                readOnly
-              />
-              <label>Email</label>
-              <input
-                type="email"
-                name="user_email"
-                defaultValue={selectedOrder ? selectedOrder.email : ""}
-                readOnly
-              />
-              <label>Message</label>
-              <textarea name="message"></textarea>
-              <input type="submit" value="Send" />
-            </form>
-          )}
-         
         </div>
       </div>
-      <Modal show={showModal} handleClose={handleClose}>
-        <ProductForm />
-      </Modal>
       <ToastContainer />
     </>
   );

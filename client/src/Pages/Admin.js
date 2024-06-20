@@ -105,7 +105,7 @@ const UserTable = () => {
 
     return (
         <div className="container-box">
-            <h1>Users</h1>
+            <h1 className="order">Users</h1>
             {isEditConfirmationOpen && (
                 <div className="confirmation-modal">
                     <div className="modal-content">
