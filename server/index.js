@@ -9,7 +9,8 @@ connect();
 
 app.use(
     cors({
-      origin: ["http://localhost:3000","https://psd-1.onrender.com"],
+      // origin: ["http://localhost:3000","https://psd-1.onrender.com"],
+      origin: ["https://final-project-rare-fairy.vercel.app"],
       methods: ["GET", "POST", "PUT", "DELETE",],
       credentials: true,
     })
