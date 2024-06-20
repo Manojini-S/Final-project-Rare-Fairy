@@ -12,9 +12,9 @@ const OrderController = {
   },
 
   getOrderById: async (req, res) => {
-    const { id } = req.params;
+    const { userId } = req.params;
     try {
-      const order = await Order.findById(id);
+      const order = await Order.findById(userId);
       if (!order) {
         return res.status(404).json({ error: "Order not found" });
       }
@@ -26,9 +26,13 @@ const OrderController = {
   },
 
   createOrder: async (req, res) => {
-    const { name, email, contactNumber, address, deadline } = req.body;
+    const { name, email, contactNumber, address, deadline, } = req.body;
+    const {id} = req.params
+    const userId = id;
+    console.log(id, userId);
     try {
       const newOrder = new Order({
+        userId,
         name,
         email,
         contactNumber,

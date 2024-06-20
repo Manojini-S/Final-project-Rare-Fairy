@@ -15,7 +15,7 @@ function Admin() {
     const [isEditModalOpen, setIsEditModalOpen] = useState(false);
 
     useEffect(() => {
-        axios.get('http://localhost:3003/image/getImg')
+        axios.get('https://final-project-rare-fairy-backend.onrender.com/image/getImg')
             .then(response => setProducts(response.data))
             .catch(error => {
                 console.error('Error fetching products:', error);

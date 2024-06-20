@@ -19,7 +19,7 @@ const UserTable = () => {
     }, []);
 
     const fetchUsers = () => {
-        fetch('http://localhost:3003/user/getUser')
+        fetch('https://final-project-rare-fairy-backend.onrender.com/user/getUser')
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Failed to fetch users');
@@ -67,7 +67,7 @@ const UserTable = () => {
 
     const handleEditSave = (e) => {
         e.preventDefault();
-        fetch(`http://localhost:3003/user/updateUser/${selectedUser._id}`, {
+        fetch(`https://final-project-rare-fairy-backend.onrender.com/user/updateUser/${selectedUser._id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
@@ -88,7 +88,7 @@ const UserTable = () => {
     };
 
     const deleteHandler = (userId) => {
-        fetch(`http://localhost:3003/user/deleteUser/${userId}`, {
+        fetch(`https://final-project-rare-fairy-backend.onrender.com/user/deleteUser/${userId}`, {
             method: 'DELETE'
         })
             .then(response => {

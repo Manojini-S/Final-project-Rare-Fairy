@@ -5,6 +5,10 @@ const orderSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    userId:{
+        type:mongoose.Types.ObjectId,
+        ref: "User",
+    },
     email: {
         type: String,
         required: true
@@ -27,6 +31,7 @@ const orderSchema = new mongoose.Schema({
         default: 'pending'
     }
 }, { timestamps: true });
+
 
 const Order = mongoose.model('Order', orderSchema);
 

@@ -99,7 +99,7 @@ const FormComponent = () => {
 		}
 
 		try {
-			const response = await fetch("http://localhost:3003/order/create", {
+			const response = await fetch("https://final-project-rare-fairy-backend.onrender.com/order/create", {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",

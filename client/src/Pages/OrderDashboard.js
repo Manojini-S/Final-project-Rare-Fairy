@@ -25,7 +25,7 @@ const AdminDashboard = () => {
     fetchOrders();
   }, []);
 
-  const API_BASE_URL = "http://localhost:3003";
+  const API_BASE_URL = "https://final-project-rare-fairy-backend.onrender.com";
 
   const fetchUsersCount = async () => {
     try {
@@ -82,7 +82,7 @@ const AdminDashboard = () => {
 
   const handleAccept = async (orderId) => {
     try {
-      const response = await axios.put(`${API_BASE_URL}/orders/${orderId}/accept`);
+      const response = await axios.put(`${API_BASE_URL}/order/orders/${orderId}/accept`);
       setOrders(orders.map((order) => (order._id === orderId ? response.data : order)));
       toast.success("Order accepted successfully!");
     } catch (error) {
@@ -93,7 +93,7 @@ const AdminDashboard = () => {
 
   const handleReject = async (orderId) => {
     try {
-      const response = await axios.put(`${API_BASE_URL}/orders/${orderId}/reject`);
+      const response = await axios.put(`${API_BASE_URL}/order/orders/${orderId}/reject`);
       setOrders(orders.map((order) => (order._id === orderId ? response.data : order)));
       toast.success("Order rejected successfully!");
     } catch (error) {

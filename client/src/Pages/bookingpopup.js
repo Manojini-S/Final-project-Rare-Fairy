@@ -42,7 +42,7 @@ const BookingPopup = ({ message, onClose }) => {
             "Content-Type": "application/json",
         };
 
-        return fetch("http://localhost:3003/payment", {
+        return fetch("https://final-project-rare-fairy-backend.onrender.com/payment", {
             method: "POST",
             headers,
             body: JSON.stringify(body),

@@ -29,7 +29,7 @@ const AdminDashboard = () => {
 
     const fetchUsersCount = async () => {
         try {
-            const response = await fetch("http://localhost:3003/user/count");
+            const response = await fetch("https://final-project-rare-fairy-backend.onrender.com/user/count");
             if (!response.ok) {
                 throw new Error("Network response was not ok");
             }
@@ -42,7 +42,7 @@ const AdminDashboard = () => {
 
     const fetchOrdersCount = async () => {
         try {
-            const response = await fetch("http://localhost:3003/order/count");
+            const response = await fetch("https://final-project-rare-fairy-backend.onrender.com/order/count");
             if (!response.ok) {
                 throw new Error("Network response was not ok");
             }
@@ -55,7 +55,7 @@ const AdminDashboard = () => {
 
     const fetchProductsCount = async () => {
         try {
-            const response = await fetch("http://localhost:3003/image/count");
+            const response = await fetch("https://final-project-rare-fairy-backend.onrender.com/image/count");
             if (!response.ok) {
                 throw new Error("Network response was not ok");
             }

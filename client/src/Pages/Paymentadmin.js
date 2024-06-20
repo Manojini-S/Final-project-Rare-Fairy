@@ -8,7 +8,7 @@ const PaymentTable = () => {
   useEffect(() => {
     const fetchPayments = async () => {
       try {
-        const response = await fetch('http://localhost:3003/payment/payment'); // Corrected endpoint
+        const response = await fetch('https://final-project-rare-fairy-backend.onrender.com/payment/payment'); // Corrected endpoint
         if (!response.ok) {
           throw new Error('Failed to fetch payments');
         }
@@ -42,7 +42,7 @@ const PaymentTable = () => {
           <tbody>
             {payments.map(payment => (
               <tr key={payment._id}>
-                {/* Adjust property names based on your backend response */}
+
                 <td>{payment.PaidAmount}</td>
                 <td>{payment.PaidBy}</td>
                 <td>{payment.OrderId}</td>

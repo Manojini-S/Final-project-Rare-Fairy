@@ -50,7 +50,7 @@
 // 		formData.append("photo", photo);
 
 // 		try {
-// 			const response = await fetch("http://localhost:3003/image/upload", {
+// 			const response = await fetch("https://final-project-rare-fairy-backend.onrender.com/image/upload", {
 // 				method: "POST",
 // 				body: formData,
 // 			});
@@ -210,7 +210,7 @@ const ProductForm = () => {
 		formData.append("photo", photo);
 
 		try {
-			const response = await fetch("http://localhost:3003/image/upload", {
+			const response = await fetch("https://final-project-rare-fairy-backend.onrender.com/image/upload", {
 				method: "POST",
 				body: formData,
 			});

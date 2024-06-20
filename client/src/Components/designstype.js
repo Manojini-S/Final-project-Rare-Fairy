@@ -10,7 +10,7 @@
 //   useEffect(() => {
 //     const fetchCardImage = async () => {
 //       try {
-//         const response = await axios.get(`http://localhost:3003/image/showimage/${title}`);
+//         const response = await axios.get(`https://final-project-rare-fairy-backend.onrender.com/image/showimage/${title}`);
 //         setCardImage(response.data);
 //       } catch (error) {
 //         console.error('Error fetching card images:', error);
@@ -52,7 +52,7 @@ const Card = ({ title, content, imageUrl }) => {
   useEffect(() => {
     const fetchCardImage = async () => {
       try {
-        const response = await axios.get(`http://localhost:3003/image/showimage/${title}`);
+        const response = await axios.get(`https://final-project-rare-fairy-backend.onrender.com/image/showimage/${title}`);
         setCardImage(response.data);
       } catch (error) {
         console.error('Error fetching card images:', error);
